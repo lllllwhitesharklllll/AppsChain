@@ -9,16 +9,12 @@
 
     &__logo {
         min-width: 150px;
-        margin-right: 38px;
+        margin-right: 40px;
         @media (max-width: 1245px) {
             margin-right: 25px;
             width: 150px;
             height: 25px;
         }
-    }
-
-    &__logo-img {
-        margin-left: 3px;
     }
 
     &__menu {
@@ -44,7 +40,6 @@
             color: #10e17d;
         }
     }
-
     &__item--dropdown {
         display: flex;
         align-items: center;
@@ -56,7 +51,8 @@
             .sub-menu {
                 opacity: 1;
                 visibility: visible;
-                transform: translateY(0); // Возвращаем меню на место при наведении
+                transform: translateY(0);
+                pointer-events: auto; // [ИЗМЕНЕНИЕ] Разрешаем клики при наведении
             }
             .arrow {
                 background-color: #10e17d;
@@ -64,18 +60,18 @@
             }
         }
 
-        // --- ДЛЯ МОБИЛЬНЫХ (ПЛЮС ИСПРАВЛЕНИЕ ОШИБКИ ЗАКРЫТИЯ) ---
-        // Использован знак &, чтобы правильно привязать класс .is-open
+        // --- ДЛЯ МОБИЛЬНЫХ ---
         @media (max-width: 1024px) {
             &.is-open {
                 .sub-menu {
                     opacity: 1;
                     visibility: visible;
-                    transform: translateY(0); // Показываем меню на мобилках
+                    transform: translateY(0);
+                    pointer-events: auto; // [ИЗМЕНЕНИЕ] Разрешаем клики при тапе
                 }
                 .arrow {
                     background-color: #10e17d;
-                    transform: rotate(-180deg); // Поворачиваем стрелочку по клику
+                    transform: rotate(-180deg);
                 }
             }
         }
@@ -100,9 +96,11 @@
 }
 
 .sub-menu {
+    padding: 0 10px;
     text-align: center;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none; // [ИЗМЕНЕНИЕ] Запрещаем взаимодействие, пока скрыто
     font-size: 14px;
     display: flex;
     flex-direction: column;
@@ -118,13 +116,13 @@
     box-shadow: 10px 5px 20px 0 rgba(15, 136, 78, 0.2);
     background: linear-gradient(262.53deg, #eaeaea 16.01%, #f9f8f8 48.3%, #f9f8f8 80.59%);
 
-    // ЭФФЕКТ ПОЯВЛЕНИЯ: изначально меню смещено чуть вниз на 15px
     transform: translateY(15px);
-    // Добавлен transition 0.5s на прозрачность, видимость и движение (transform)
+    // [ИЗМЕНЕНИЕ] Добавили pointer-events в плавный переход
     transition:
         opacity 0.5s ease,
         visibility 0.5s ease,
-        transform 0.5s ease;
+        transform 0.5s ease,
+        pointer-events 0.5s ease;
 
     &::before {
         content: "";
@@ -158,11 +156,17 @@
 
 .lang {
     position: relative;
-
-    // Эффект поворота стрелочки для ПК
+    padding-bottom: 15px; // [ИСПРАВЛЕНО] Создаем непрерывную зону hover для языка
+    margin-bottom: -15px; // Компенсируем паддинг
     &:hover {
         .arrow {
             transform: rotate(-180deg);
+        }
+        .lang__dropdown-link {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0); // Возвращаем меню языков на место на ПК
+            pointer-events: auto; // [ДОБАВЛЕНО] Разрешаем клики при наведении
         }
     }
 
@@ -174,13 +178,6 @@
         align-items: center;
         display: flex;
         cursor: pointer;
-
-        &:hover ~ .lang__dropdown-link,
-        &:hover + .lang__dropdown-link {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0); // Возвращаем меню языков на место на ПК
-        }
     }
 
     // --- ДЛЯ МОБИЛЬНЫХ ЯЗЫКОВ ---
@@ -190,6 +187,7 @@
                 opacity: 1;
                 visibility: visible;
                 transform: translateY(0); // Открываем меню языков по клику
+                pointer-events: auto; // [ДОБАВЛЕНО] Разрешаем клики при тапе
             }
             .arrow {
                 transform: rotate(-180deg);
@@ -216,22 +214,27 @@
         border-radius: 15px;
         opacity: 0;
         visibility: hidden;
+        pointer-events: none;
         background: #eaeaea;
         align-items: center;
         display: flex;
 
         // ЭФФЕКТ ПОЯВЛЕНИЯ ЯЗЫКОВ: изначально смещено вниз
         transform: translateY(15px);
-        // Добавлен transition 0.5s на все состояния
+
+        // [ИЗМЕНЕНИЕ] Добавлен pointer-events в список плавного перехода
         transition:
             opacity 0.5s ease,
             visibility 0.5s ease,
-            transform 0.5s ease;
+            transform 0.5s ease,
+            pointer-events 0.5s ease;
 
+        // Этот hover дублирует поведение родителя, гарантируя стабильность
         &:hover {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
+            pointer-events: auto;
         }
     }
 }

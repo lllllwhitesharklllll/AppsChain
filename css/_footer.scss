@@ -1,27 +1,65 @@
 .footer {
-    padding-bottom: 40px;
-    display: flex;
-    flex-direction: column;
+    padding: 40px 0;
     background: linear-gradient(262.53deg, #eaeaea 18.66%, #f9f8f8 52.78%, #f9f8f8 86.91%);
-    &__logo {
-        display: block;
-        margin-top: 42px;
+
+    @media (max-width: 757px) {
+        padding: 50px 20px;
     }
-    &__link {
+
+    // Если у вас в HTML есть внутренний контейнер (например, <div class="footer__container container">)
+    &__container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__logo {
+        order: 1; // 1. Логотип на самом верху
         display: block;
-        text-align: right;
-        text-decoration: underline;
-        text-decoration-skip-ink: none;
-        &:hover {
-            text-decoration: none;
+
+        @media (max-width: 757px) {
+            margin-bottom: 20px;
+        }
+        @media (max-width: 757px) {
+            margin-bottom: 30px;
         }
     }
 
     &__copy {
+        order: 2; // 2. Копирайт идет вторым
         margin-bottom: 30px;
+
+        @media (max-width: 757px) {
+            margin-bottom: 15px;
+        }
+        @media (max-width: 557px) {
+            font-size: 14px;
+        }
     }
 
     &__text {
+        order: 3; // 3. Основной текст идет третьим
         font-size: 14px;
+
+        @media (max-width: 557px) {
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__link {
+        order: 4; // 4. [ИСПРАВЛЕНО] Ссылка ЖЕСТКО уходит в самый низ под весь контент
+        display: block;
+
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        @media (max-width: 757px) {
+            margin-top: 10px; // Небольшой зазор сверху от текста
+        }
     }
 }

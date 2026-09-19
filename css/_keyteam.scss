@@ -1,10 +1,19 @@
 .keyteam {
-    &__container {
-        margin-bottom: 140px;
+    padding: 140px 0;
+    @media (max-width: 530px) {
+        padding: 70px 0;
+    }
+
+    &__card {
+        justify-self: center;
+        width: 100%;
+        max-width: 555px;
     }
     &__title {
-        margin-top: 140px;
         margin-bottom: 105px;
+        @media (max-width: 530px) {
+            margin-bottom: 45px;
+        }
     }
     &__wrapper {
         display: grid;
@@ -12,6 +21,10 @@
         grid-template: 1fr/1fr 1fr 1fr;
         @media (max-width: 1210px) {
             grid-template: 1fr/1fr 1fr;
+            row-gap: 35px;
+        }
+        @media (max-width: 720px) {
+            grid-template: 1fr/1fr;
             row-gap: 35px;
         }
     }
@@ -50,6 +63,9 @@
         @media (max-width: 1210px) {
             padding-left: 70px;
         }
+        @media (max-width: 530px) {
+            padding-left: 0;
+        }
         li {
             font-size: 14px;
             position: relative;
@@ -58,6 +74,9 @@
             padding-right: 30px;
             @media (max-width: 1210px) {
                 margin-bottom: 16px;
+            }
+            @media (max-width: 530px) {
+                margin-bottom: 14px;
             }
 
             &::before {

@@ -50,7 +50,6 @@
             display: none;
         }
 
-        // --- МЕДИА-ЗАПРОС НА 1245px ДЛЯ ПЕРЕКЛЮЧЕНИЯ ТЕКСТА ---
         @media (max-width: 1245px) {
             &--desktop {
                 display: none;
@@ -81,72 +80,50 @@
     }
 
     &__btn {
-        align-self: flex-start; /* Позиционирование кнопки в hero */
+        align-self: flex-start;
     }
 
-    /* Логика переключения текста работает ТОЛЬКО внутри hero */
     &__btn-text {
         &--desktop {
-            display: inline; /* По умолчанию длинный текст виден */
+            display: inline;
         }
 
         &--mobile {
             padding: 0 16px;
-            display: none; /* По умолчанию ЗАКАЗАТЬ скрыто */
+            display: none;
         }
 
-        // --- МЕДИА-ЗАПРОС НА 1245px ---
         @media (max-width: 1245px) {
             &--desktop {
-                display: none; /* Скрываем на 1245px */
+                display: none;
             }
 
             &--mobile {
-                display: inline; /* Показываем ЗАКАЗАТЬ на 1245px */
+                display: inline;
             }
+        }
+    }
+
+    // [ОПТИМИЗИРОВАНО С ПОДСТРОЙКОЙ ПОД МЕДИА-ЗАПРОСЫ]
+    &__picture {
+        width: 100%;
+        max-width: 586px; // Базовая ширина для ноутбука на ПК
+
+        // От 1245px до 757px (когда в HTML показывается телефон)
+        @media (min-width: 757px) and (max-width: 1245px) {
+            max-width: 470px; // Размер под габариты netphone.png
+            margin-top: 5px;
+        }
+
+        // Меньше 757px (когда картинка падает наверх, и возвращается ноутбук)
+        @media (max-width: 757px) {
+            max-width: 586px;
+            margin: 0 auto; // Центрируем ноутбук по горизонтали на мобильных
         }
     }
 
     &__img {
         object-fit: cover;
-        flex-shrink: 1; /* Запрещает искажать пропорции картинок */
-
-        /* По умолчанию на дескрипторах */
-        &--desktop {
-            display: block; /* Показываем ноутбук */
-            width: 100%;
-            max-width: 586px;
-            height: auto;
-        }
-
-        &--mobile {
-            display: none; /* Прячем новую объединенную картинку */
-        }
-    }
-
-    // --- МЕДИА-ЗАПРОС НА 1245px ---
-    @media (max-width: 1245px) {
-        &__img {
-            &--desktop {
-                display: none; /* Прячем ноутбук */
-            }
-
-            &--mobile {
-                margin-top: 5px;
-                display: block; /* Показываем объединенную картинку */
-            }
-        }
-    }
-    @media (max-width: 757px) {
-        &__img {
-            &--desktop {
-                display: block;
-            }
-
-            &--mobile {
-                margin-top: 5px;
-                display: none;
-            }
-        }
+        flex-shrink: 1;
     }
 }

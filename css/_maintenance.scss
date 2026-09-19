@@ -1,9 +1,17 @@
 .maintenance {
-    margin-bottom: 125px;
+    margin-bottom: 145px;
+    @media (max-width: 830px) {
+        margin-bottom: 115px;
+    }
     &__container {
         display: flex;
-        justify-content: space-between;
-        gap: 35px;
+        gap: 80px;
+        align-items: center;
+        @media (max-width: 830px) {
+            flex-direction: column;
+            gap: 0;
+            justify-content: center;
+        }
     }
 
     &__body {
@@ -11,26 +19,65 @@
         flex: 1 1 50%;
         display: flex;
         flex-direction: column;
+        @media (max-width: 830px) {
+            max-width: 100%;
+            flex: 1 1 auto;
+
+            // [ГЛАВНЫЙ ТРЮК] Делаем так, чтобы элементы внутри .maintenance__body
+            // могли менять свой порядок, а картинка «вклинилась» между ними
+            display: contents;
+        }
     }
 
     &__title {
-        margin-top: 40px;
         text-align: left;
         margin-bottom: 50px;
+
+        @media (max-width: 830px) {
+            order: 1;
+            justify-content: center;
+        }
     }
 
     &__text {
         margin-bottom: 20px;
+        @media (max-width: 1060px) {
+            font-size: 16px;
+        }
         &:last-of-type {
             margin-bottom: 53px;
+        }
+        @media (max-width: 830px) {
+            order: 3;
+
+            text-align: center;
+        }
+        @media (max-width: 530px) {
+            order: 3;
+            margin: 0;
+            text-align: left;
         }
     }
 
     &__btn {
         padding: 15px 58px;
+        @media (max-width: 830px) {
+            order: 4;
+            align-self: center;
+        }
     }
 
     &__image {
-        flex: 1 1 auto;
+        @media (max-width: 1140px) {
+            max-width: 428px;
+            height: 362px;
+        }
+        @media (max-width: 830px) {
+            order: 2;
+        }
+        @media (max-width: 530px) {
+            max-width: 252px;
+            margin-bottom: -85px;
+        }
     }
 }

@@ -1,4 +1,8 @@
 .team {
+    padding-top: 85px;
+    @media (max-width: 767px) {
+        padding-top: 0;
+    }
     &__slider {
         margin-right: 20px; /* Автоматический отступ справа */
         margin-left: 20px; /* Автоматический отступ слева */
@@ -8,7 +12,6 @@
         }
     }
     &__title {
-        margin-top: 85px;
         margin-bottom: 20px;
         @media (max-width: 1100px) {
             margin-top: 146px;
@@ -26,16 +29,19 @@
             font-size: 16px;
             margin-bottom: 55px;
         }
+        @media (max-width: 700px) {
+            margin-bottom: 25px;
+        }
     }
 
     &__swiper-wrapper {
-        margin-bottom: 78px;
+        margin-bottom: 74px;
         @media (max-width: 830px) {
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
 
-            gap: 25px;
+            gap: 20px;
             &::-webkit-scrollbar {
                 display: none;
             }
@@ -45,8 +51,9 @@
     }
 
     &__slide {
-        padding: 40px 50px 60px 50px;
-        max-width: 565px;
+        width: 100%;
+        padding: 41px 50px 60px 50px;
+        max-width: 569px;
         border-radius: 20px;
         background: linear-gradient(262.53deg, #eaeaea 17.34%, #f9f8f8 50.55%, #f9f8f8 83.76%);
         display: flex;
@@ -59,6 +66,8 @@
     }
 
     &__icon {
+        width: 51px;
+        height: 48px;
         margin-bottom: 45px;
         @media (max-width: 830px) {
             width: 28px;
@@ -112,6 +121,7 @@
     .slick-track {
         display: flex;
         gap: 20px;
+        justify-content: flex-start;
     }
 
     /* Стрелка */
@@ -125,7 +135,7 @@
     /* Стрелка влево */
     .slick-arrow.slick-prev {
         left: -40px;
-        background-image: url(/img/services/left.png);
+        background-image: url(../img/services/left.png);
         width: 16px;
         height: 32px;
         @media (max-width: 1100px) {
@@ -136,7 +146,7 @@
     /* Стрелка вправо */
     .slick-arrow.slick-next {
         right: -40px;
-        background-image: url(/img/services/right.png);
+        background-image: url(../img/services/right.png);
         width: 16px;
         height: 32px;
         @media (max-width: 1100px) {

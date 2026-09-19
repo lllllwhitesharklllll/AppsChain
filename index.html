@@ -90,10 +90,17 @@
                         <span class="hero__btn-text hero__btn-text--mobile">Заказать</span>
                     </a>
                 </div>
-                <img class="hero__img hero__img--desktop" src="img/hero/nootbool.png" alt="Интерфейс онлайн-платформы"
-                    width="586" height="400">
-                <img class="hero__img hero__img--mobile" src="img/hero/netphone.png" alt="Интерфейс онлайн-платформы"
-                    width="470" height="360">
+
+                <!-- Настройка строгого диапазона для смены картинок -->
+                <picture class="hero__picture">
+                    <!-- Телефон покажется ТОЛЬКО в промежутке от 757px до 1245px включительно -->
+                    <source media="(min-width: 757px) and (max-width: 1247px)" srcset="img/hero/netphone.png"
+                        width="470" height="360">
+
+                    <!-- Ноутбук покажется на ПК (выше 1245px) И на мобильных (ниже 757px) -->
+                    <img class="hero__img" src="img/hero/nootbook.png" alt="Интерфейс онлайн-платформы" width="586"
+                        height="400">
+                </picture>
             </div>
         </section>
         <section class="services">
@@ -343,21 +350,31 @@
         <div class="founder">
             <div class="founder__container container">
                 <article class="founder__card">
-                    <img src="img/founder/founder.png" width="313" height="410" alt="Дмитрий Жуков"
-                        class="founder__image founder__image--desktop">
-                    <img src="img/founder/foundermobile.png" width="271" height="355" alt="Дмитрий Жуков"
-                        class="founder__image founder__image--mobile">
+
+                    <picture class="founder__picture">
+                        <!-- В диапазоне от 767px до 1245px включительно показываем мобильного основателя -->
+                        <source media="(min-width: 767px) and (max-width: 1245px)"
+                            srcset="img/founder/foundermobile.png" width="271" height="355">
+
+                        <!-- На ПК (>1245px) и на мобильных (<767px) показывается десктопная картинка -->
+                        <img src="img/founder/founder.png" width="313" height="410" alt="Дмитрий Жуков"
+                            class="founder__image">
+                    </picture>
+
                     <div class="founder__body">
-                        <img src="img/founder/quote.png" width="80" height="87" alt="ковычки" class="founder__quote">
                         <blockquote class="founder__text">
+                            <img src="img/founder/quote.png" width="80" height="87" alt="ковычки"
+                                class="founder__quote">
+
                             От&nbsp;вас требуется только желание и&nbsp;понимание значимости своего проекта, остальное
-                            мы&nbsp;сделаем
-                            сами. Наблюдайте, как воплощаются ваши смелые идеи.
+                            мы&nbsp;сделаем сами. Наблюдайте, как воплощаются ваши смелые идеи.
                         </blockquote>
-                        <h3 class="founder__title">Дмитрий Жуков</h3>
-                        <p class="founder__copy">
-                            Основатель &laquo;AppsChain&raquo;
-                        </p>
+                        <div class="founder__info">
+                            <h3 class="founder__title">Дмитрий Жуков</h3>
+                            <p class="founder__copy">
+                                Основатель &laquo;AppsChain&raquo;
+                            </p>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -441,7 +458,6 @@
                 <a href="#" class="team__btn btn">заказать</a>
             </div>
         </section>
-
         <section class="payment">
             <div class="payment__container container">
                 <h2 class="payment__title title">

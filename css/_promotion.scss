@@ -54,7 +54,8 @@
     }
 
     &__item {
-        padding: 23px 40px 50px 50px;
+        justify-content: center;
+        padding: 23px 30px 50px 50px;
         border-radius: 10px;
         background: #fff;
         display: flex;
@@ -80,8 +81,7 @@
 
     &__item-icon {
         margin-bottom: 3px;
-        max-width: 100%;
-        height: auto;
+
         @media (max-width: 1050px) {
             max-width: 200px;
         }
