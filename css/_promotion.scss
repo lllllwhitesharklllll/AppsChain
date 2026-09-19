@@ -1,0 +1,132 @@
+.promotion {
+    background: linear-gradient(262.53deg, #eaeaea 17.85%, #f9f8f8 51.42%, #f9f8f8 84.99%);
+    padding: 116px 0 113px 0;
+
+    // Дублирующийся медиа-запрос удален, оставлен один корректный
+    @media (max-width: 1245px) {
+        padding: 125px 0;
+    }
+
+    &__title {
+        margin-bottom: 25px;
+    }
+
+    &__sublabel {
+        text-align: center;
+        padding: 0 61px;
+        margin-bottom: 85px;
+        @media (max-width: 1245px) {
+            margin-bottom: 70px;
+        }
+        @media (max-width: 650px) {
+            font-size: 14px;
+            padding: 0;
+        }
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+
+        @media (max-width: 1245px) {
+            gap: 20px;
+        }
+
+        /* --- ВКЛЮЧАЕМ СКРОЛЛ НА МОБИЛЬНЫХ --- */
+        @media (max-width: 970px) {
+            grid-template-columns: repeat(3, max-content);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 20px;
+
+            /* СМЕЩАЕМ ПЕРВЫЙ СЛАЙД ВЛЕВО НА 30px */
+            padding-left: 30px;
+            /* ДОБАВЛЯЕМ ОТСТУП СПРАВА, ЧТОБЫ ПОСЛЕДНИЙ СЛАЙД ТОЖЕ НЕ ЛИП К КРАЮ */
+            padding-right: 30px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    }
+
+    &__item {
+        padding: 23px 40px 50px 50px;
+        border-radius: 10px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+
+        &:hover {
+            box-shadow: 0 0 50px 0 rgba(0, 255, 133, 0.15);
+        }
+
+        /* --- НАСТРОЙКА КАРТОЧКИ ДЛЯ СКРОЛЛА --- */
+        @media (max-width: 970px) {
+            padding: 12px 25px 30px 25px;
+            width: 280px; /* Фиксированная ширина для планшетов */
+            scroll-snap-align: start;
+            flex-shrink: 0;
+        }
+
+        /* ИСПРАВЛЕНО: Вместо max-width используем width, чтобы карточки не сжимались */
+        @media (max-width: 650px) {
+            width: 240px; /* Оптимальная ширина карточки на смартфонах */
+        }
+    }
+
+    &__item-icon {
+        margin-bottom: 3px;
+        max-width: 100%;
+        height: auto;
+        @media (max-width: 1050px) {
+            max-width: 200px;
+        }
+        @media (max-width: 650px) {
+            width: auto;
+            max-height: 105px;
+        }
+    }
+
+    &__item-title {
+        margin-bottom: 15px;
+        font-size: 24px;
+        color: #343434;
+        font-weight: 600;
+
+        @media (max-width: 1245px) {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            min-height: 44px;
+        }
+        @media (max-width: 850px) {
+            font-size: 18px;
+        }
+    }
+
+    &__item-text {
+        margin-bottom: 36px;
+        color: #343434;
+        flex: 1 1 auto;
+        @media (max-width: 1245px) {
+            font-size: 14px;
+        }
+        @media (max-width: 850px) {
+            font-size: 13px;
+        }
+    }
+
+    &__btn {
+        padding: 15px 58px;
+        @media (max-width: 1050px) {
+            padding: 15px 50px;
+        }
+        @media (max-width: 650px) {
+            padding: 15px 45px;
+        }
+    }
+}

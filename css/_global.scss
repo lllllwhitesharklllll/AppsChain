@@ -1,0 +1,106 @@
+body {
+    font-family: "Raleway";
+    font-weight: 400;
+    font-size: 18px;
+    color: #343434;
+    height: 100%;
+}
+.wrapper {
+    overflow: hidden;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    flex: 1 1 auto;
+}
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 40px;
+    @media (max-width: 757px) {
+        padding: 0 20px;
+    }
+}
+.btn {
+    position: relative; /* Чтобы внутренний слой не вылетал за пределы кнопки */
+    z-index: 1; /* Поднимает текст кнопки над ховер-градиентом */
+    display: inline-flex;
+    align-self: flex-start;
+    border-radius: 15px;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 16px 42px;
+    color: #343434;
+    overflow: hidden; /* Скругляет углы нового градиента по границам кнопки */
+
+    /* Ваш начальный градиент и тень */
+    background: linear-gradient(92.92deg, #10e17d 1.51%, #73ffdd 97.77%);
+    box-shadow: 5px 5px 20px 0 rgba(0, 255, 133, 0.4);
+}
+.btn {
+    position: relative; /* Чтобы внутренний слой не вылетал за пределы кнопки */
+    z-index: 1; /* Поднимает текст кнопки над ховер-градиентом */
+    display: inline-flex;
+    align-self: flex-start;
+    border-radius: 15px;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 16px 42px;
+    color: #343434;
+    overflow: hidden; /* Скругляет углы нового градиента по границам кнопки */
+
+    /* Ваш начальный градиент и тень */
+    background: linear-gradient(92.92deg, #10e17d 1.51%, #73ffdd 97.77%);
+    box-shadow: 5px 5px 20px 0 rgba(0, 255, 133, 0.4);
+}
+
+/* Создаем скрытый слой с новым ховер-градиентом */
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Прячет слой под текст, но оставляет над старым фоном */
+
+    /* Новый градиент при наведении */
+    background: linear-gradient(360deg, #3fffdd 25.63%, #3cdabe 87.49%);
+
+    /* Делаем слой изначально невидимым и настраиваем плавность */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* При наведении делаем ховер-градиент видимым */
+.btn:hover::before {
+    opacity: 1;
+}
+.arrow {
+    display: inline-block;
+    width: 12px;
+    height: 8px;
+    background-color: #343434;
+    clip-path: polygon(0 0, 50% 100%, 100% 0, 80% 0, 50% 60%, 20% 0);
+
+    // Плавный поворот стрелочки изменен на 0.5s
+    transition:
+        transform 0.5s ease,
+        background-color 0.5s ease;
+}
+.title {
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+    color: #343434;
+    @media (max-width: 1245px) {
+        font-size: 32px;
+    }
+    @media (max-width: 645px) {
+        font-size: 24px;
+    }
+}
+.accent {
+    color: #10e17d;
+}

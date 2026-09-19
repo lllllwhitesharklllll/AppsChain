@@ -1,0 +1,76 @@
+.keyteam {
+    &__container {
+        margin-bottom: 140px;
+    }
+    &__title {
+        margin-top: 140px;
+        margin-bottom: 105px;
+    }
+    &__wrapper {
+        display: grid;
+        gap: 20px;
+        grid-template: 1fr/1fr 1fr 1fr;
+        @media (max-width: 1210px) {
+            grid-template: 1fr/1fr 1fr;
+            row-gap: 35px;
+        }
+    }
+
+    &__header {
+        align-items: center;
+        overflow: hidden;
+        border-radius: 20px;
+        background: linear-gradient(262.53deg, #eaeaea 18.27%, #f9f8f8 52.13%, #f9f8f8 85.98%);
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-left: -60px;
+        padding-right: 40px;
+    }
+
+    &__name {
+        text-align: right;
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    &__text {
+        text-align: right;
+        font-weight: 500;
+        font-size: 16px;
+    }
+    &__list {
+        padding-left: 40px;
+        @media (max-width: 1210px) {
+            padding-left: 70px;
+        }
+        li {
+            font-size: 14px;
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 11px;
+            padding-right: 30px;
+            @media (max-width: 1210px) {
+                margin-bottom: 16px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%); /* Центрируем кружок по вертикали */
+                width: 6px; /* Ширина кружка */
+                height: 6px; /* Высота кружка */
+                background-color: #10e17d; /* Зеленый цвет (замените на нужный оттенок) */
+                border-radius: 50%; /* Делаем элемент круглым */
+            }
+        }
+    }
+}

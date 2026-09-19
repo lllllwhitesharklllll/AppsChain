@@ -1,0 +1,125 @@
+.work {
+    padding: 110px 0 135px 0;
+    @media (max-width: 1245px) {
+        padding: 90px 0 122px 0;
+    }
+    @media (max-width: 645px) {
+        padding: 18px 0 70px 0;
+    }
+
+    &__title {
+        margin-bottom: 70px;
+        @media (max-width: 1245px) {
+            margin-bottom: 55px;
+        }
+        @media (max-width: 645px) {
+            margin-bottom: 35px;
+        }
+    }
+
+    &__body {
+        cursor:
+            url("../img/services/cursor.png") 0 0,
+            pointer;
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+        row-gap: 80px;
+        column-gap: 93px;
+        @media (max-width: 1245px) {
+            row-gap: 90px;
+            column-gap: 40px;
+        }
+        @media (max-width: 1105px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media (max-width: 720px) {
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 40px;
+            column-gap: 20px;
+        }
+    }
+
+    &__item {
+        font-variant-numeric: lining-nums;
+        max-width: 333px;
+        width: 100%;
+    }
+}
+
+.work-step {
+    display: flex;
+    flex-direction: column;
+
+    &__number {
+        position: relative;
+        z-index: 1;
+
+        // Возвращаем точные размеры плашки из вашего макета
+        width: 200px;
+        height: 85px;
+        margin-bottom: 58px;
+
+        // Базовый фон
+        background: linear-gradient(262.53deg, #eaeaea 18.03%, #f9f8f8 51.72%, #f9f8f8 85.41%);
+        border-radius: 20px;
+        @media (max-width: 500px) {
+            width: 110px;
+            height: 55px;
+            margin-bottom: 30px;
+        }
+
+        span {
+            position: absolute;
+            z-index: 2;
+
+            top: 34px;
+            left: 10px;
+
+            font-weight: 500;
+            font-size: 96px; // Точный размер шрифта
+            line-height: 0.72;
+            color: #343434;
+
+            // Полная свобода для шрифта — родитель его больше не режет
+            overflow: visible;
+            white-space: nowrap;
+            @media (max-width: 500px) {
+                font-size: 48px;
+            }
+        }
+
+        // Зеленый градиент при наведении
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(92.92deg, #10e17d 3.36%, #73ffdd 97.92%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: -1;
+
+            // Скругление углов только для градиента
+            border-radius: 20px;
+        }
+
+        &:hover {
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__text {
+        font-weight: 500;
+        color: #343434;
+        @media (max-width: 1245px) {
+            font-size: 16px;
+        }
+        @media (max-width: 645px) {
+            font-size: 12px;
+        }
+    }
+}

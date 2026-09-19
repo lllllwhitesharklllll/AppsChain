@@ -1,0 +1,27 @@
+.footer {
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(262.53deg, #eaeaea 18.66%, #f9f8f8 52.78%, #f9f8f8 86.91%);
+    &__logo {
+        display: block;
+        margin-top: 42px;
+    }
+    &__link {
+        display: block;
+        text-align: right;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__copy {
+        margin-bottom: 30px;
+    }
+
+    &__text {
+        font-size: 14px;
+    }
+}

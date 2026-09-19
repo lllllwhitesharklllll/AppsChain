@@ -1,0 +1,152 @@
+.hero {
+    margin-bottom: 92px;
+    @media (max-width: 1245px) {
+        margin-bottom: 125px;
+    }
+    @media (max-width: 567px) {
+        margin-bottom: 45px;
+    }
+
+    &__container {
+        gap: 20px;
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: 757px) {
+            flex-wrap: wrap-reverse;
+        }
+    }
+
+    &__body {
+        color: #343434;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        margin-top: 79px;
+        margin-bottom: 35px;
+        font-weight: 700;
+        font-size: 48px;
+
+        @media (max-width: 1245px) {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 757px) {
+            margin-top: 52px;
+            margin-bottom: 23px;
+        }
+        @media (max-width: 464px) {
+            line-height: 70%;
+        }
+    }
+
+    &__title-text {
+        &--desktop {
+            display: inline;
+        }
+
+        &--mobile {
+            display: none;
+        }
+
+        // --- МЕДИА-ЗАПРОС НА 1245px ДЛЯ ПЕРЕКЛЮЧЕНИЯ ТЕКСТА ---
+        @media (max-width: 1245px) {
+            &--desktop {
+                display: none;
+            }
+
+            &--mobile {
+                display: inline;
+                @media (max-width: 500px) {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+    &__text {
+        font-size: 24px;
+        margin-bottom: 60px;
+        @media (max-width: 1245px) {
+            font-size: 20px;
+            margin-right: -40px;
+            margin-bottom: 65px;
+        }
+        @media (max-width: 500px) {
+            font-size: 14px;
+            margin-right: -40px;
+            margin-bottom: 45px;
+        }
+    }
+
+    &__btn {
+        align-self: flex-start; /* Позиционирование кнопки в hero */
+    }
+
+    /* Логика переключения текста работает ТОЛЬКО внутри hero */
+    &__btn-text {
+        &--desktop {
+            display: inline; /* По умолчанию длинный текст виден */
+        }
+
+        &--mobile {
+            padding: 0 16px;
+            display: none; /* По умолчанию ЗАКАЗАТЬ скрыто */
+        }
+
+        // --- МЕДИА-ЗАПРОС НА 1245px ---
+        @media (max-width: 1245px) {
+            &--desktop {
+                display: none; /* Скрываем на 1245px */
+            }
+
+            &--mobile {
+                display: inline; /* Показываем ЗАКАЗАТЬ на 1245px */
+            }
+        }
+    }
+
+    &__img {
+        object-fit: cover;
+        flex-shrink: 1; /* Запрещает искажать пропорции картинок */
+
+        /* По умолчанию на дескрипторах */
+        &--desktop {
+            display: block; /* Показываем ноутбук */
+            width: 100%;
+            max-width: 586px;
+            height: auto;
+        }
+
+        &--mobile {
+            display: none; /* Прячем новую объединенную картинку */
+        }
+    }
+
+    // --- МЕДИА-ЗАПРОС НА 1245px ---
+    @media (max-width: 1245px) {
+        &__img {
+            &--desktop {
+                display: none; /* Прячем ноутбук */
+            }
+
+            &--mobile {
+                margin-top: 5px;
+                display: block; /* Показываем объединенную картинку */
+            }
+        }
+    }
+    @media (max-width: 757px) {
+        &__img {
+            &--desktop {
+                display: block;
+            }
+
+            &--mobile {
+                margin-top: 5px;
+                display: none;
+            }
+        }
+    }
+}

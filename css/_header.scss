@@ -1,0 +1,237 @@
+.header {
+    padding: 21px 0;
+    &__container {
+        gap: 10px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        min-width: 150px;
+        margin-right: 38px;
+        @media (max-width: 1245px) {
+            margin-right: 25px;
+            width: 150px;
+            height: 25px;
+        }
+    }
+
+    &__logo-img {
+        margin-left: 3px;
+    }
+
+    &__menu {
+        display: flex;
+    }
+}
+
+.menu {
+    &__list {
+        display: flex;
+        gap: 27px;
+    }
+
+    &__item {
+        @media (max-width: 1245px) {
+            font-size: 14px;
+        }
+        transition: color 0.5s ease; // Плавная смена цвета ссылок при наведении
+        @media (max-width: 1245px) {
+            font-size: 14px;
+        }
+        &:hover {
+            color: #10e17d;
+        }
+    }
+
+    &__item--dropdown {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        position: relative;
+
+        // --- ДЛЯ ПК (HOVER ЭФФЕКТЫ) ---
+        &:hover {
+            .sub-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0); // Возвращаем меню на место при наведении
+            }
+            .arrow {
+                background-color: #10e17d;
+                transform: rotate(-180deg);
+            }
+        }
+
+        // --- ДЛЯ МОБИЛЬНЫХ (ПЛЮС ИСПРАВЛЕНИЕ ОШИБКИ ЗАКРЫТИЯ) ---
+        // Использован знак &, чтобы правильно привязать класс .is-open
+        @media (max-width: 1024px) {
+            &.is-open {
+                .sub-menu {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0); // Показываем меню на мобилках
+                }
+                .arrow {
+                    background-color: #10e17d;
+                    transform: rotate(-180deg); // Поворачиваем стрелочку по клику
+                }
+            }
+        }
+    }
+
+    &__link-text {
+        &--desktop {
+            display: inline;
+        }
+        &--mobile {
+            display: none;
+        }
+        @media (max-width: 1245px) {
+            &--desktop {
+                display: none;
+            }
+            &--mobile {
+                display: inline;
+            }
+        }
+    }
+}
+
+.sub-menu {
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    justify-content: center;
+    position: absolute;
+    left: -80px;
+    top: 50px;
+    border-radius: 24px;
+    width: 222px;
+    height: 221px;
+    color: #343434;
+    box-shadow: 10px 5px 20px 0 rgba(15, 136, 78, 0.2);
+    background: linear-gradient(262.53deg, #eaeaea 16.01%, #f9f8f8 48.3%, #f9f8f8 80.59%);
+
+    // ЭФФЕКТ ПОЯВЛЕНИЯ: изначально меню смещено чуть вниз на 15px
+    transform: translateY(15px);
+    // Добавлен transition 0.5s на прозрачность, видимость и движение (transform)
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease,
+        transform 0.5s ease;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        background: transparent;
+    }
+
+    &__link {
+        transition: color 0.5s ease;
+        &:hover {
+            color: #10e17d;
+        }
+    }
+}
+
+.phone {
+    font-weight: 700;
+    font-size: 18px;
+    color: #343434;
+    text-decoration: none;
+    white-space: nowrap;
+    font-variant-numeric: lining-nums;
+    @media (max-width: 1245px) {
+        font-size: 14px;
+    }
+}
+
+.lang {
+    position: relative;
+
+    // Эффект поворота стрелочки для ПК
+    &:hover {
+        .arrow {
+            transform: rotate(-180deg);
+        }
+    }
+
+    &__current {
+        padding: 10px;
+        width: 130px;
+        border-radius: 15px;
+        background: #eaeaea;
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+
+        &:hover ~ .lang__dropdown-link,
+        &:hover + .lang__dropdown-link {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0); // Возвращаем меню языков на место на ПК
+        }
+    }
+
+    // --- ДЛЯ МОБИЛЬНЫХ ЯЗЫКОВ ---
+    @media (max-width: 1024px) {
+        &.is-open {
+            .lang__dropdown-link {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0); // Открываем меню языков по клику
+            }
+            .arrow {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    &__flag {
+        margin-right: 13px;
+        width: 18px;
+        height: 12px;
+    }
+
+    &__text {
+        margin-right: 28px;
+    }
+
+    &__dropdown-link {
+        position: absolute;
+        left: 0px;
+        top: 50px;
+        padding: 10px;
+        width: 130px;
+        border-radius: 15px;
+        opacity: 0;
+        visibility: hidden;
+        background: #eaeaea;
+        align-items: center;
+        display: flex;
+
+        // ЭФФЕКТ ПОЯВЛЕНИЯ ЯЗЫКОВ: изначально смещено вниз
+        transform: translateY(15px);
+        // Добавлен transition 0.5s на все состояния
+        transition:
+            opacity 0.5s ease,
+            visibility 0.5s ease,
+            transform 0.5s ease;
+
+        &:hover {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+}

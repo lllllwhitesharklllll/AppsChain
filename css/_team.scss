@@ -1,0 +1,155 @@
+.team {
+    &__slider {
+        margin-right: 20px; /* Автоматический отступ справа */
+        margin-left: 20px; /* Автоматический отступ слева */
+        @media (max-width: 830px) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    &__title {
+        margin-top: 85px;
+        margin-bottom: 20px;
+        @media (max-width: 1100px) {
+            margin-top: 146px;
+            margin-bottom: 25px;
+        }
+        @media (max-width: 1100px) {
+            margin-top: 80px;
+        }
+    }
+
+    &__sub-title {
+        text-align: center;
+        margin-bottom: 80px;
+        @media (max-width: 1100px) {
+            font-size: 16px;
+            margin-bottom: 55px;
+        }
+    }
+
+    &__swiper-wrapper {
+        margin-bottom: 78px;
+        @media (max-width: 830px) {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+
+            gap: 25px;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            -ms-overflow-style: none; /* для IE/Edge */
+            scrollbar-width: none; /* для Firefox */
+        }
+    }
+
+    &__slide {
+        padding: 40px 50px 60px 50px;
+        max-width: 565px;
+        border-radius: 20px;
+        background: linear-gradient(262.53deg, #eaeaea 17.34%, #f9f8f8 50.55%, #f9f8f8 83.76%);
+        display: flex;
+        flex-direction: column;
+        @media (max-width: 830px) {
+            padding: 30px;
+            min-width: 275px;
+            scroll-snap-align: start;
+        }
+    }
+
+    &__icon {
+        margin-bottom: 45px;
+        @media (max-width: 830px) {
+            width: 28px;
+            height: 28px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__label {
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 25px;
+        @media (max-width: 830px) {
+            font-size: 18px;
+            flex: 1 1 auto;
+            margin-bottom: 20px;
+        }
+    }
+    &__text {
+        @media (max-width: 830px) {
+            font-size: 12px;
+        }
+    }
+
+    &__btn {
+        padding: 15px 60px;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        width: max-content;
+    }
+}
+
+.team__swiper-wrapper {
+    @media (max-width: 1240px) {
+        margin-right: 40px;
+        margin-left: 40px;
+    }
+
+    max-width: 1160px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Ограничительная оболочка */
+    .slick-list {
+        overflow: hidden;
+    }
+
+    /* Лента слайдов */
+    .slick-track {
+        display: flex;
+        gap: 20px;
+    }
+
+    /* Стрелка */
+    .slick-arrow {
+        font-size: 0;
+        position: absolute;
+        top: 45%;
+        z-index: 10;
+    }
+
+    /* Стрелка влево */
+    .slick-arrow.slick-prev {
+        left: -40px;
+        background-image: url(/img/services/left.png);
+        width: 16px;
+        height: 32px;
+        @media (max-width: 1100px) {
+            left: -20px;
+        }
+    }
+
+    /* Стрелка вправо */
+    .slick-arrow.slick-next {
+        right: -40px;
+        background-image: url(/img/services/right.png);
+        width: 16px;
+        height: 32px;
+        @media (max-width: 1100px) {
+            right: -20px;
+        }
+    }
+
+    .slick-dots li {
+        display: none;
+    }
+
+    /* элемент точки */
+    .slick-dots li button {
+        font-size: 0;
+    }
+}

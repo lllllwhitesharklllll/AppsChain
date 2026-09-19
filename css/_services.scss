@@ -1,0 +1,182 @@
+.services {
+    &__slider {
+        margin-right: 40px; /* Автоматический отступ справа */
+        margin-left: 40px; /* Автоматический отступ слева */
+
+        @media (max-width: 580px) {
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+    &__swiper-wrapper {
+        @media (max-width: 830px) {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            column-gap: 11px;
+            /* Скрываем системный скроллбар */
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        @media (max-width: 530px) {
+            min-height: 222px;
+        }
+    }
+    &__slide {
+        overflow: hidden;
+        border-radius: 20px;
+        background: linear-gradient(262.53deg, #eaeaea 18.26%, #f9f8f8 52.11%, #f9f8f8 85.96%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: 830px) {
+            column-gap: 15px;
+
+            /* ПЛАВНОЕ СЖАТИЕ: Карточка всегда занимает 80% от ширины любого экрана смартфона */
+            width: 80vw;
+            min-width: 80vw; /* Удерживаем эту пропорцию принудительно */
+
+            scroll-snap-align: start; /* Карточка по-прежнему четко прилипает к левому краю */
+        }
+        @media (max-width: 530px) {
+            max-height: 202px;
+        }
+    }
+
+    &__body {
+        margin-left: 60px;
+        display: flex;
+        flex-direction: column;
+        max-width: 560px;
+        @media (max-width: 700px) {
+            margin-left: 20px;
+        }
+    }
+
+    &__title {
+        margin-top: 70px;
+        font-weight: 600;
+        font-size: 32px;
+        color: #343434;
+        margin-bottom: 40px;
+        @media (max-width: 900px) {
+            align-self: flex-start;
+            justify-self: start;
+            margin-top: 15px;
+        }
+        @media (max-width: 700px) {
+            font-size: 24px;
+        }
+    }
+
+    &__text {
+        color: #343434;
+        margin-bottom: 90px;
+        @media (max-width: 1245px) {
+            margin-bottom: 35px;
+        }
+        @media (max-width: 900px) {
+            display: none;
+        }
+    }
+
+    &__btn {
+        padding: 15px 46px;
+        margin-bottom: 25px;
+        @media (max-width: 580px) {
+            padding: 15px 30px;
+        }
+    }
+
+    &__img-wrapper {
+        flex-shrink: 0;
+        img {
+            display: block;
+            max-width: 100%; /* Картинка не станет шире своего контейнера */
+            height: auto; /* Высота уменьшается строго пропорционально ширине */
+            object-fit: cover;
+
+            @media (max-width: 1000px) {
+                flex-shrink: 0;
+                width: 100%;
+                max-width: 400px; /* Ограничиваем максимальную ширину на мобильных, чтобы картинка не была огромной */
+                margin-bottom: 20px; /* Отступ снизу слайда */
+            }
+            @media (max-width: 757px) {
+                max-width: 300px; /* Ограничиваем максимальную ширину на мобильных, чтобы картинка не была огромной */
+            }
+            @media (max-width: 557px) {
+                width: 200px;
+                margin-left: -20px;
+                /* Ограничиваем максимальную ширину на мобильных, чтобы картинка не была огромной */
+            }
+        }
+    }
+}
+
+.swiper {
+    position: relative;
+    .slick-arrow {
+        font-size: 0;
+        position: absolute;
+        top: 42%;
+        z-index: 10;
+    }
+    .slick-arrow.slick-prev {
+        left: -40px;
+        background-image: url(/img/services/left.png);
+        width: 16px;
+        height: 32px;
+        @media (max-width: 580px) {
+            left: -20px;
+        }
+    }
+    .slick-arrow.slick-next {
+        right: -40px;
+        background-image: url(/img/services/right.png);
+        width: 16px;
+        height: 32px;
+        @media (max-width: 580px) {
+            right: -20px;
+        }
+    }
+    .slick-dots {
+        margin-top: 20px;
+        gap: 15px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* элемент точки */
+    .slick-dots li button {
+        font-size: 0;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #e9e9e9;
+    }
+    /* Активная точка */
+    .slick-dots li.slick-active button {
+        background-color: #10e17d;
+    }
+}
+
+/* Слайдер */
+.slick-slider {
+    justify-content: center;
+}
+
+/* Ограничительная оболочка */
+.slick-list {
+    overflow: hidden;
+}
+
+/* Лента слайдов */
+.slick-track {
+    display: flex;
+}
