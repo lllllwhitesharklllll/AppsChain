@@ -3,6 +3,11 @@
     @media (max-width: 767px) {
         padding-top: 0;
     }
+    &__container {
+        @media (max-width: 580px) {
+            padding-right: 0;
+        }
+    }
     &__slider {
         margin-right: 20px; /* Автоматический отступ справа */
         margin-left: 20px; /* Автоматический отступ слева */

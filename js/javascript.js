@@ -1,104 +1,149 @@
-//Стрелки (блок Header)
+// ==================== 1. МОБИЛЬНОЕ МЕНЮ И ЯЗЫКИ (ТАЧ-УСТРОЙСТВА И АДАПТИВ) ====================
 document.addEventListener('DOMContentLoaded', function () {
+  const burgerIcon = document.querySelector('.header__burger-icon');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const container = document.querySelector('.header__container');
 
-    // Находим пункты меню, у которых есть выпадашка
-    const menuItems = document.querySelectorAll('.menu__item--dropdown');
+  // Элементы для переноса
+  const menu = document.querySelector('.header__menu');
+  const langBlock = document.querySelectorAll('.lang');
+  const phone = document.querySelector('.header__phone'); // ДОБАВЛЕНО: находим телефон, чтобы использовать как ориентир
+
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+  // Функция адаптивного переноса элементов шапки
+  function checkWindowWidth() {
+    if (window.innerWidth <= 1000) {
+      // Переносим только языки и меню
+      if (mobileMenu && !mobileMenu.contains(menu)) {
+        langBlock.forEach(l => mobileMenu.appendChild(l)); 
+        if (menu) mobileMenu.appendChild(menu);           
+      }
+    } else {
+      // ИСПРАВЛЕНО: Возвращаем языки и меню обратно на ПК в строго правильной последовательности
+      if (mobileMenu && mobileMenu.contains(menu)) {
+        
+        // 1. Возвращаем меню на законное десктопное место — строго ПЕРЕД телефоном
+        if (menu && phone) container.insertBefore(menu, phone);
+        
+        // 2. Возвращаем блок языков на место — после телефона, но ПЕРЕД бургером
+        langBlock.forEach(l => container.insertBefore(l, burgerIcon)); 
+        
+        // Сбрасываем активные мобильные классы
+        if (burgerIcon) burgerIcon.classList.remove('is-active');
+        mobileMenu.classList.remove('is-open');
+        document.body.classList.remove('no-scroll');
+      }
+    }
+  }
+
+  window.addEventListener('resize', checkWindowWidth);
+  checkWindowWidth(); 
+
+  if (burgerIcon && mobileMenu) {
+    burgerIcon.addEventListener('click', function (event) {
+      event.stopPropagation();
+      burgerIcon.classList.toggle('is-active');
+      mobileMenu.classList.toggle('is-open');
+      document.body.classList.toggle('no-scroll');
+    });
+  }
+
+  const menuItems = document.querySelectorAll('.menu__item--dropdown');
+  menuItems.forEach(function (item) {
+    item.addEventListener('click', function (event) {
+      if (isTouchDevice || window.innerWidth <= 1000) {
+        if (event.target.classList.contains('arrow') || event.target.closest('.menu__link')) {
+          event.preventDefault();
+          event.stopPropagation();
+          
+          langBlock.forEach(l => l.classList.remove('is-open'));
+          item.classList.toggle('is-open');
+        }
+      }
+    });
+  });
+
+  langBlock.forEach(function (lang) {
+    lang.addEventListener('click', function (event) {
+      if (isTouchDevice || window.innerWidth <= 1000) {
+        if (event.target.closest('.lang__current') || event.target.classList.contains('arrow')) {
+          event.preventDefault();
+          event.stopPropagation();
+
+          menuItems.forEach(i => i.classList.remove('is-open'));
+          lang.classList.toggle('is-open');
+        }
+      }
+    });
+  });
+
+  document.addEventListener('click', function (event) {
+    const target = event.target;
 
     menuItems.forEach(function (item) {
-
-        // Вешаем клик на весь пункт меню
-        item.addEventListener('click', function (event) {
-
-            // Проверяем: если ширина экрана мобильная (меньше или равна 1024px)
-            if (window.innerWidth <= 1024) {
-
-                // Проверяем, куда именно нажал пользователь
-                if (event.target.classList.contains('arrow') || event.target.closest('.menu__link')) {
-
-                    // Отменяем стандартный переход по ссылке
-                    event.preventDefault();
-
-                    // Запрещаем клику "лететь" дальше
-                    event.stopPropagation();
-
-                    // Переключаем класс открытия меню
-                    item.classList.toggle('is-open');
-                }
-            }
-        });
+      if (!item.contains(target) && !target.classList.contains('arrow') && !target.closest('.menu__link')) {
+        item.classList.remove('is-open');
+      }
     });
 
-    // Если меню открыто, и кликнули в любое другое пустое место — закрываем его
-    document.addEventListener('click', function () {
-        menuItems.forEach(function (item) {
-            item.classList.remove('is-open');
-        });
+    langBlock.forEach(function (lang) {
+      if (!lang.contains(target) && !target.closest('.lang__current') && !target.classList.contains('arrow')) {
+        lang.classList.remove('is-open');
+      }
     });
+  });
 });
 
-//Слайдеры (блоки services и Team)
+
+// ==================== 2. СЛАЙДЕРЫ (БЛОКИ SERVICES И TEAM) ====================
 $(document).ready(function(){
     
-    // 1. Контроль первого слайдера (блок services)
     function initServicesSlider() {
-        // ИСПРАВЛЕНО: Теперь класс точно соответствует вашему HTML (.services__swiper-wrapper)
         const $servicesSlider = $('.services__swiper-wrapper'); 
-
-        // Проверяем, существует ли элемент на странице
         if ($servicesSlider.length === 0) return;
 
         if (window.innerWidth > 830) {
-            // Если экран большой и слайдер ЕЩЕ НЕ запущен — запускаем
             if (!$servicesSlider.hasClass('slick-initialized')) {
-                $servicesSlider.slick({
-                    dots: true
-                });
+                $servicesSlider.slick({ dots: true });
             }
         } else {
-            // Если экран маленький и слайдер БЫЛ запущен — принудительно его уничтожаем
             if ($servicesSlider.hasClass('slick-initialized')) {
                 $servicesSlider.slick('unslick');
             }
         }
     }
 
-    // 2. Контроль второго слайдера (блок Team)
     function initTeamSlider() {
         const $teamSlider = $('.team__swiper-wrapper');
-
-        // Проверяем, существует ли элемент на странице
         if ($teamSlider.length === 0) return;
 
         if (window.innerWidth > 830) {
-            // Если экран большой и слайдер ЕЩЕ НЕ запущен — запускаем
             if (!$teamSlider.hasClass('slick-initialized')) {
                 $teamSlider.slick({
                     dots: true,
-                    slidesToShow: 2,     // Показываем 2 карточки одновременно
-                    slidesToScroll: 1,   // Перелистываем строго по 1 карточке
-                    swipeToSlide: false, // Запрещаем свободную остановку посередине
-                    infinite: true       // Бесконечная прокрутка
+                    slidesToShow: 2,     
+                    slidesToScroll: 1,   
+                    swipeToSlide: false, 
+                    infinite: true       
                 });
             }
         } else {
-            // Если экран маленький и слайдер БЫЛ запущен — принудительно его уничтожаем
             if ($teamSlider.hasClass('slick-initialized')) {
                 $teamSlider.slick('unslick');
             }
         }
     }
 
-    // Запускаем оба слайдера при первой загрузке страницы
     initServicesSlider();
     initTeamSlider();
 
-    // Отслеживаем изменение размеров экрана с небольшой задержкой
     let resizeId;
     $(window).on('resize', function() {
         clearTimeout(resizeId);
         resizeId = setTimeout(function() {
             initServicesSlider();
             initTeamSlider();
-        }, 100); // Проверка экрана через 100мс после окончания ресайза
+        }, 100); 
     });
 });

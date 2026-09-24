@@ -1,25 +1,99 @@
 .header {
     padding: 21px 0;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; // Достаточно высокий z-index, чтобы быть поверх слайдеров и картинок
+    background-color: #ffffff; // Белый фон, чтобы контент под шапкой не просвечивал
+
     &__container {
-        gap: 10px;
-        align-items: center;
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        gap: 10px;
     }
 
     &__logo {
         min-width: 150px;
         margin-right: 40px;
+
         @media (max-width: 1245px) {
             margin-right: 25px;
             width: 150px;
             height: 25px;
         }
+        @media (max-width: 1000px) {
+            margin-right: auto;
+        }
     }
 
     &__menu {
         display: flex;
+        @media (max-width: 1245px) {
+            margin-left: auto;
+        }
+        @media (max-width: 1000px) {
+            display: none;
+        }
     }
+
+    &__burger-icon {
+        display: none;
+        @media (max-width: 1000px) {
+            display: block;
+            position: relative;
+            width: 25px;
+            height: 17px;
+            cursor: pointer;
+            z-index: 5;
+
+            // ИСПРАВЛЕНО: Задан видимый цвет (например, черный #000) вместо #0000
+            // ИСПРАВЛЕНО: Добавлен transition для плавной анимации (если нужно)
+            span,
+            &::before,
+            &::after {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 2px; // Лучше задать в пикселях для четкости, вместо 10%
+                background-color: #000000;
+                transition: all 0.3s ease 0s;
+            }
+
+            &::before {
+                content: "";
+                top: 0;
+            }
+
+            // ИСПРАВЛЕНО: Центрирование средней линии (span)
+            span {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &::after {
+                content: "";
+                bottom: 0;
+            }
+            &.is-active {
+                span,
+                &::before,
+                &::after {
+                    background-color: #10e17d;
+                }
+            }
+        }
+    }
+}
+
+// Базовые стили для анимации стрелки (если у вас класс .arrow)
+.arrow {
+    display: inline-block;
+    transition:
+        transform 0.5s ease,
+        background-color 0.5s ease;
 }
 
 .menu {
@@ -32,47 +106,45 @@
         @media (max-width: 1245px) {
             font-size: 14px;
         }
-        transition: color 0.5s ease; // Плавная смена цвета ссылок при наведении
-        @media (max-width: 1245px) {
-            font-size: 14px;
-        }
+        transition: color 0.5s ease;
         &:hover {
             color: #10e17d;
         }
     }
+
     &__item--dropdown {
         display: flex;
         align-items: center;
         gap: 12px;
         position: relative;
 
-        // --- ДЛЯ ПК (HOVER ЭФФЕКТЫ) ---
-        &:hover {
-            .sub-menu {
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0);
-                pointer-events: auto; // [ИЗМЕНЕНИЕ] Разрешаем клики при наведении
-            }
-            .arrow {
-                background-color: #10e17d;
-                transform: rotate(-180deg);
-            }
-        }
-
-        // --- ДЛЯ МОБИЛЬНЫХ ---
-        @media (max-width: 1024px) {
-            &.is-open {
+        // --- ДЛЯ ПК (РАБОТАЕТ ПО НАВЕДЕНИЮ МЫШИ) ---
+        @media (hover: hover) {
+            &:hover {
                 .sub-menu {
                     opacity: 1;
                     visibility: visible;
                     transform: translateY(0);
-                    pointer-events: auto; // [ИЗМЕНЕНИЕ] Разрешаем клики при тапе
+                    pointer-events: auto;
                 }
                 .arrow {
                     background-color: #10e17d;
                     transform: rotate(-180deg);
                 }
+            }
+        }
+
+        // --- ДЛЯ ТАЧ-УСТРОЙСТВ И ЛЮБЫХ ПЛАНШЕТОВ (РАБОТАЕТ ПО JS КЛАССУ БЕЗ ОГРАНИЧЕНИЯ В 1024px) ---
+        &.is-open {
+            .sub-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            .arrow {
+                background-color: #10e17d;
+                transform: rotate(-180deg);
             }
         }
     }
@@ -100,7 +172,7 @@
     text-align: center;
     opacity: 0;
     visibility: hidden;
-    pointer-events: none; // [ИЗМЕНЕНИЕ] Запрещаем взаимодействие, пока скрыто
+    pointer-events: none;
     font-size: 14px;
     display: flex;
     flex-direction: column;
@@ -117,7 +189,6 @@
     background: linear-gradient(262.53deg, #eaeaea 16.01%, #f9f8f8 48.3%, #f9f8f8 80.59%);
 
     transform: translateY(15px);
-    // [ИЗМЕНЕНИЕ] Добавили pointer-events в плавный переход
     transition:
         opacity 0.5s ease,
         visibility 0.5s ease,
@@ -156,17 +227,34 @@
 
 .lang {
     position: relative;
-    padding-bottom: 15px; // [ИСПРАВЛЕНО] Создаем непрерывную зону hover для языка
-    margin-bottom: -15px; // Компенсируем паддинг
-    &:hover {
-        .arrow {
-            transform: rotate(-180deg);
+    padding-bottom: 15px;
+    margin-bottom: -15px;
+
+    // --- ДЛЯ ПК (РАБОТАЕТ ПО НАВЕДЕНИЮ МЫШИ) ---
+    @media (hover: hover) {
+        &:hover {
+            .arrow {
+                transform: rotate(-180deg);
+            }
+            .lang__dropdown-link {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
         }
+    }
+
+    // --- ДЛЯ ТАЧ-УСТРОЙСТВ И ЛЮБЫХ ПЛАНШЕТОВ (РАБОТАЕТ ПО JS КЛАССУ БЕЗ ОГРАНИЧЕНИЯ В 1024px) ---
+    &.is-open {
         .lang__dropdown-link {
             opacity: 1;
             visibility: visible;
-            transform: translateY(0); // Возвращаем меню языков на место на ПК
-            pointer-events: auto; // [ДОБАВЛЕНО] Разрешаем клики при наведении
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .arrow {
+            transform: rotate(-180deg);
         }
     }
 
@@ -178,21 +266,6 @@
         align-items: center;
         display: flex;
         cursor: pointer;
-    }
-
-    // --- ДЛЯ МОБИЛЬНЫХ ЯЗЫКОВ ---
-    @media (max-width: 1024px) {
-        &.is-open {
-            .lang__dropdown-link {
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0); // Открываем меню языков по клику
-                pointer-events: auto; // [ДОБАВЛЕНО] Разрешаем клики при тапе
-            }
-            .arrow {
-                transform: rotate(-180deg);
-            }
-        }
     }
 
     &__flag {
@@ -219,22 +292,121 @@
         align-items: center;
         display: flex;
 
-        // ЭФФЕКТ ПОЯВЛЕНИЯ ЯЗЫКОВ: изначально смещено вниз
         transform: translateY(15px);
-
-        // [ИЗМЕНЕНИЕ] Добавлен pointer-events в список плавного перехода
         transition:
             opacity 0.5s ease,
             visibility 0.5s ease,
             transform 0.5s ease,
             pointer-events 0.5s ease;
 
-        // Этот hover дублирует поведение родителя, гарантируя стабильность
-        &:hover {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-            pointer-events: auto;
+        @media (hover: hover) {
+            &:hover {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+        }
+    }
+}
+@media (max-width: 1000px) {
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%; // Изначально прячем блок за правый край экрана
+        width: 100%;
+        max-width: 256px;
+        height: 100vh;
+        padding: 15px 24px 40px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        z-index: 4;
+        transition: right 0.4s ease;
+        overflow-y: auto;
+        background: linear-gradient(262.53deg, #eaeaea 13.23%, #f9f8f8 43.6%, #f9f8f8 73.96%);
+
+        &.is-open {
+            right: 0; // Меню выезжает при добавлении класса через JS
+        }
+
+        // Правим стили элементов, когда они переместятся внутрь .mobile-menu
+        .lang {
+            order: 1;
+            align-self: flex-start;
+            margin-bottom: 100px;
+
+            // На мобилках выпадающие языки должны открываться вниз, раздвигая контент, а не перекрывать его
+            &.is-open .lang__dropdown-link {
+                position: relative;
+                top: -10px;
+            }
+        }
+
+        .header__menu {
+            display: block; // Отменяем display: none, чтобы показать меню в мобилке
+            order: 2;
+
+            .menu__list {
+                padding-left: 60px;
+                flex-direction: column; // Делаем ссылки вертикальным списком
+                gap: 25px;
+            }
+
+            .menu__item--dropdown {
+                display: flex;
+                flex-direction: row; // Возвращаем горизонтальный ряд для ссылки и стрелки
+                flex-wrap: wrap; // Разрешаем элементам переноситься на новую строку
+                align-items: center;
+                gap: 12px;
+                width: 100%;
+            }
+
+            // Переделываем выпадающее окно ПК-версии в мобильный спойлер
+            .sub-menu {
+                margin-left: -10px;
+                flex-basis: 100%;
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                transform: none;
+                box-shadow: none;
+                background: transparent;
+                width: 100%;
+                height: auto;
+                text-align: left;
+                gap: 15px;
+                // Плавное открытие спойлера через высоту
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+
+                &::before {
+                    display: none; // Убираем невидимую плашку для ховера
+                }
+
+                .sub-menu__link {
+                    font-size: 14px;
+                    color: #666;
+
+                    // Зеленый цвет для «Биржи и Обменники», как в вашем макете
+                    &:hover,
+                    &.active {
+                        color: #10e17d;
+                    }
+                }
+            }
+
+            // Когда на спойлер кликнули, раскрываем его высоту
+            .menu__item--dropdown.is-open {
+                .sub-menu {
+                    max-height: 300px;
+                }
+                .arrow {
+                    transform: rotate(-180deg);
+                }
+            }
         }
     }
 }
