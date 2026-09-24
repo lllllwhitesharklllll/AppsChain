@@ -334,12 +334,18 @@
         .lang {
             order: 1;
             align-self: flex-start;
-            margin-bottom: 100px;
+            margin-bottom: 20px; // Уменьшили отступ, так как absolute больше не давит на меню сверху
 
-            // На мобилках выпадающие языки должны открываться вниз, раздвигая контент, а не перекрывать его
+            // Исправляем поведение при открытии
             &.is-open .lang__dropdown-link {
-                position: relative;
-                top: -10px;
+                position: absolute; // Заставляем блок парить поверх контента
+                top: 45px; // Смещаем строго под главную кнопку выбора языка
+                left: 0;
+                z-index: 10; // Гарантируем, что языки будут поверх ссылок меню
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                transform: translateY(0);
             }
         }
 
@@ -355,13 +361,27 @@
 
             .menu__item--dropdown {
                 display: flex;
-                flex-direction: row; // Возвращаем горизонтальный ряд для ссылки и стрелки
-                flex-wrap: wrap; // Разрешаем элементам переноситься на новую строку
+                flex-direction: row;
+                flex-wrap: wrap;
                 align-items: center;
                 gap: 12px;
                 width: 100%;
-            }
 
+                // ШАГ 1: Отключаем залипающий ПК-ховер на мобилках
+                &:hover {
+                    color: inherit; // Возвращает исходный цвет, не давая ему стать зеленым просто от наведения
+                }
+
+                // ШАГ 2: Красим ссылку в зеленый цвет ТОЛЬКО тогда, когда меню действительно ОТКРЫТО
+                &.is-open {
+                    .menu__link {
+                        color: #10e17d;
+                    }
+                    .arrow {
+                        background-color: #10e17d; // Стрелочка тоже останется зеленой, пока открыто
+                    }
+                }
+            }
             // Переделываем выпадающее окно ПК-версии в мобильный спойлер
             .sub-menu {
                 margin-left: -10px;

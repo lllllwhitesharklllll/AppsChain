@@ -511,11 +511,17 @@ body {
   .mobile-menu .lang {
     order: 1;
     align-self: flex-start;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
   }
   .mobile-menu .lang.is-open .lang__dropdown-link {
-    position: relative;
-    top: -10px;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
   }
   .mobile-menu .header__menu {
     display: block;
@@ -533,6 +539,15 @@ body {
     align-items: center;
     gap: 12px;
     width: 100%;
+  }
+  .mobile-menu .header__menu .menu__item--dropdown:hover {
+    color: inherit;
+  }
+  .mobile-menu .header__menu .menu__item--dropdown.is-open .menu__link {
+    color: #10e17d;
+  }
+  .mobile-menu .header__menu .menu__item--dropdown.is-open .arrow {
+    background-color: #10e17d;
   }
   .mobile-menu .header__menu .sub-menu {
     margin-left: -10px;
