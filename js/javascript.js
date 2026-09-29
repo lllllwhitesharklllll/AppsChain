@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // ==================== 2. СЛАЙДЕРЫ (БЛОКИ SERVICES И TEAM) ====================
-$(document).ready(function(){
+document.addEventListener("DOMContentLoaded", function() {
     
     function initServicesSlider() {
         const $servicesSlider = $('.services__swiper-wrapper'); 

@@ -1,0 +1,70 @@
+.key-hero {
+    padding-top: 93px;
+    padding-bottom: 20px;
+    @media (max-width: 870px) {
+        padding-top: 95px;
+        padding-bottom: 75px;
+    }
+    @media (max-width: 600px) {
+        padding-bottom: 40px;
+    }
+    &__container {
+        display: flex;
+        justify-content: space-between; // Разносит текст влево, а картинку вправо до упора контейнера
+
+        @media (max-width: 958px) {
+            flex-direction: column-reverse;
+            gap: 40px;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 576px;
+        flex-shrink: 0;
+        @media (max-width: 1024px) {
+            flex-basis: 50%;
+            flex-shrink: 1;
+        }
+    }
+
+    &__title {
+        padding-top: 61px;
+        text-align: left;
+        margin-bottom: 47px;
+        @media (max-width: 870px) {
+            padding-top: 0;
+
+            margin-bottom: 30px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 60px;
+        @media (max-width: 870px) {
+            padding-top: 0;
+
+            margin-bottom: 30px;
+        }
+    }
+
+    &__btn {
+        padding: 16px 60px;
+    }
+
+    &__img {
+        margin-right: 60px;
+        min-width: 300px;
+        flex-shrink: 1;
+        flex: 0 0 auto;
+
+        @media (max-width: 1024px) {
+            align-self: center;
+        }
+    }
+}
+.container {
+}
+.btn {
+}

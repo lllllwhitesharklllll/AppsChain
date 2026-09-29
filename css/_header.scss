@@ -12,7 +12,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 10px;
     }
 
     &__logo {
@@ -97,6 +96,8 @@
 }
 
 .menu {
+    margin-right: 38px;
+    margin-left: auto;
     &__list {
         display: flex;
         gap: 27px;
@@ -214,6 +215,7 @@
 }
 
 .phone {
+    margin-right: 35px;
     font-weight: 700;
     font-size: 18px;
     color: #343434;
@@ -226,6 +228,8 @@
 }
 
 .lang {
+    max-width: 130px;
+
     position: relative;
     padding-bottom: 15px;
     margin-bottom: -15px;
