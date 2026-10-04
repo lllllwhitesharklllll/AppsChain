@@ -1,4 +1,4 @@
-.key-hero {
+.intro {
     padding-top: 93px;
     padding-bottom: 20px;
     @media (max-width: 870px) {
@@ -52,15 +52,22 @@
     &__btn {
         padding: 16px 60px;
     }
-
+    &__media {
+        @media (max-width: 600px) {
+            margin: 0 auto;
+        }
+    }
     &__img {
-        margin-right: 60px;
         min-width: 300px;
         flex-shrink: 1;
+
         flex: 0 0 auto;
 
         @media (max-width: 1024px) {
-            align-self: center;
+            justify-self: center;
+        }
+        @media (max-width: 600px) {
+            max-width: 374px;
         }
     }
 }

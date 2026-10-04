@@ -1,0 +1,142 @@
+.intro--outsourced {
+    padding-top: 83px;
+
+    .intro__title {
+        margin-bottom: 12px;
+    }
+
+    .intro__text {
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 43px;
+        &:nth-last-of-type(1) {
+            font-weight: 400;
+            font-size: 18px;
+            margin-bottom: 60px;
+        }
+        @media (max-width: 500px) {
+            font-size: 20px;
+        }
+    }
+    .intro__media {
+        padding-top: 32px;
+    }
+}
+
+.outsourced {
+    padding: 62px 0 140px 0;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 27px;
+    }
+
+    &__row {
+        display: flex;
+        gap: 30px;
+        @media (max-width: 1020px) {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.outsourced-card {
+    padding: 53px 0 47px 60px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    background: linear-gradient(262.53deg, #eaeaea 17.89%, #f9f8f8 51.49%, #f9f8f8 85.08%);
+    @media (max-width: 1020px) {
+        padding: 40px 0 40px 40px;
+    }
+    &__body {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        max-width: 80%;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 24px;
+        margin-bottom: 20px;
+        @media (max-width: 1100px) {
+            font-size: 20px;
+        }
+        @media (max-width: 520px) {
+            font-size: 16px;
+        }
+    }
+
+    &__text {
+        line-height: 1.299;
+        font-size: 14px;
+        line-height: 18px;
+        @media (max-width: 520px) {
+            font-size: 12px;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        pointer-events: none; // Картинка не мешает выделять текст мышкой
+        user-select: none;
+        max-width: none; // Запрещаем браузеру уменьшать картинку
+        height: auto;
+    }
+
+    &--lead {
+        flex: 185%;
+        .outsourced-card__img {
+            @media (max-width: 1100px) {
+                transform: scale(0.75);
+                transform-origin: right top;
+            }
+            @media (max-width: 500px) {
+                transform: scale(0.65);
+                transform-origin: right top;
+            }
+        }
+    }
+    &--development {
+        .outsourced-card__img {
+            @media (max-width: 1100px) {
+                transform: scale(0.75);
+                transform-origin: right top;
+            }
+            @media (max-width: 500px) {
+                transform: scale(0.65);
+                transform-origin: right top;
+            }
+        }
+    }
+    &--marketing {
+        flex: 185%;
+        .outsourced-card__img {
+            @media (max-width: 1100px) {
+                transform: scale(0.75);
+                transform-origin: right top;
+            }
+            @media (max-width: 500px) {
+                transform: scale(0.65);
+                transform-origin: right top;
+            }
+        }
+    }
+    &--design {
+        .outsourced-card__img {
+            @media (max-width: 1100px) {
+                transform: scale(0.75);
+                transform-origin: right top;
+            }
+            @media (max-width: 500px) {
+                transform: scale(0.65);
+                transform-origin: right top;
+            }
+        }
+    }
+}

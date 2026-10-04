@@ -147,3 +147,24 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 100); 
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.wallets__card');
+
+  cards.forEach(card => {
+    const header = card.querySelector('.wallets__header');
+
+    header.addEventListener('click', () => {
+      // Работает только на экранах <= 950px
+      if (window.innerWidth > 950) return;
+
+      const isOpen = card.classList.contains('wallets__card--open');
+
+      // Закрываем другие карточки (если нужен режим одиночного раскрытия)
+      cards.forEach(c => c.classList.remove('wallets__card--open'));
+
+      if (!isOpen) {
+        card.classList.add('wallets__card--open');
+      }
+    });
+  });
+});

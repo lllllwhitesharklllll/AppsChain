@@ -14,11 +14,11 @@
     }
 
     &__logo {
-        order: 1; // 1. Логотип на самом верху
         display: block;
 
         @media (max-width: 757px) {
             margin-bottom: 20px;
+            order: 1; // 1. Логотип на самом верху
         }
         @media (max-width: 757px) {
             margin-bottom: 30px;
@@ -26,10 +26,10 @@
     }
 
     &__copy {
-        order: 2; // 2. Копирайт идет вторым
         margin-bottom: 30px;
 
         @media (max-width: 757px) {
+            order: 2; // 2. Копирайт идет вторым
             margin-bottom: 15px;
         }
         @media (max-width: 557px) {
@@ -38,8 +38,11 @@
     }
 
     &__text {
-        order: 3; // 3. Основной текст идет третьим
         font-size: 14px;
+
+        @media (max-width: 757px) {
+            order: 3; // 3. Основной текст идет третьим
+        }
 
         @media (max-width: 557px) {
             font-size: 12px;
@@ -48,9 +51,8 @@
     }
 
     &__link {
-        order: 4; // 4. [ИСПРАВЛЕНО] Ссылка ЖЕСТКО уходит в самый низ под весь контент
         display: block;
-
+        text-align: right;
         text-decoration: underline;
         text-decoration-skip-ink: none;
 
@@ -59,7 +61,9 @@
         }
 
         @media (max-width: 757px) {
-            margin-top: 10px; // Небольшой зазор сверху от текста
+            order: 4; // 4. [ИСПРАВЛЕНО] Ссылка ЖЕСТКО уходит в самый низ под весь контент
+            margin-top: 15px; // Небольшой зазор сверху от текста
+            text-align: left;
         }
     }
 }
