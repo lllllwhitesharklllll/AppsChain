@@ -1,73 +1,85 @@
 .intro {
-    padding-top: 93px;
-    padding-bottom: 20px;
+    padding-top: 95px;
+    padding-bottom: 40px;
+
     @media (max-width: 870px) {
-        padding-top: 95px;
-        padding-bottom: 75px;
-    }
-    @media (max-width: 600px) {
+        padding-top: 90px;
         padding-bottom: 40px;
     }
+
     &__container {
         display: flex;
-        justify-content: space-between; // Разносит текст влево, а картинку вправо до упора контейнера
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
 
         @media (max-width: 958px) {
             flex-direction: column-reverse;
-            gap: 40px;
+            align-items: center;
+            gap: 30px;
         }
     }
 
     &__body {
         display: flex;
         flex-direction: column;
-        flex-basis: 576px;
-        flex-shrink: 0;
-        @media (max-width: 1024px) {
-            flex-basis: 50%;
-            flex-shrink: 1;
+        flex: 1 1 560px;
+        max-width: 600px;
+
+        @media (max-width: 958px) {
+            flex: 1 1 auto;
+            width: 100%;
         }
     }
 
     &__title {
-        padding-top: 61px;
         text-align: left;
-        margin-bottom: 47px;
-        @media (max-width: 870px) {
-            padding-top: 0;
+        margin-bottom: 24px;
 
-            margin-bottom: 30px;
+        @media (max-width: 870px) {
+            margin-bottom: 20px;
         }
     }
 
     &__text {
-        margin-bottom: 60px;
-        @media (max-width: 870px) {
-            padding-top: 0;
+        font-size: 18px;
+        line-height: 1.4;
+        margin-bottom: 20px;
 
-            margin-bottom: 30px;
+        &:last-of-type {
+            margin-bottom: 35px;
+        }
+
+        @media (max-width: 870px) {
+            margin-bottom: 16px;
+
+            &:last-of-type {
+                margin-bottom: 30px;
+            }
         }
     }
 
     &__btn {
-        padding: 16px 60px;
+        align-self: flex-start;
+        padding: 16px 40px;
     }
+
     &__media {
-        @media (max-width: 600px) {
-            margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1 1 480px;
+        max-width: 540px;
+
+        @media (max-width: 958px) {
+            flex: 1 1 auto;
+            max-width: 100%;
         }
     }
+
     &__img {
-        min-width: 300px;
-        flex-shrink: 1;
-
-        flex: 0 0 auto;
-
-        @media (max-width: 1024px) {
-            justify-self: center;
-        }
-        @media (max-width: 600px) {
-            max-width: 374px;
-        }
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 }
