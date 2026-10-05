@@ -3072,11 +3072,12 @@ body {
 
 .wallets {
   padding-top: 85px;
+  padding-bottom: 100px;
 }
 .wallets__list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 30px;
 }
 .wallets__card {
   position: relative;
@@ -3221,7 +3222,7 @@ body {
   line-height: 1.5;
 }
 .wallets__text:nth-last-of-type(1) {
-  margin-bottom: 100px;
+  margin-bottom: 65px;
 }
 @media (max-width: 1100px) {
   .wallets__text {
@@ -3249,6 +3250,10 @@ body {
   }
 }
 
+.wallets__card--wallets {
+  padding-top: 30px;
+  padding-bottom: 32px;
+}
 .wallets__card--wallets .wallets__img {
   top: 50%;
   transform: translateY(-50%);
@@ -3262,9 +3267,209 @@ body {
   }
 }
 .wallets__card--wallets .wallets__text {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .wallets__card--applications .wallets__text {
-  margin-bottom: 32px;
+  margin-bottom: 15px;
+}
+
+.wallets-steps {
+  padding-bottom: 140px;
+}
+.wallets-steps__title {
+  margin-bottom: 90px;
+}
+.wallets-steps__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 45px;
+  /* Планшет: перестраиваем в 2 колонки */
+}
+@media (max-width: 992px) {
+  .wallets-steps__list {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+}
+.wallets-steps__list {
+  /* Мобильные: карточки идут по центру в 1 колонку */
+}
+@media (max-width: 640px) {
+  .wallets-steps__list {
+    grid-template-columns: 1fr;
+    justify-items: center; /* Центрирует карточки */
+  }
+}
+.wallets-steps__card {
+  position: relative;
+  width: 100%;
+  max-width: 401px; /* Чтобы карточка не растягивалась шире оригинала */
+  min-height: 171px;
+  box-sizing: border-box;
+  /* Отступы: слева запас под выемку стрелки, справа — под остриё */
+  padding: 40px 45px 30px 35px;
+  /* Стрелка тянется ровно по размеру карточки и не обрезается */
+  background: url("../img/_wallets/arrow.png") no-repeat center/100% 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+.wallets-steps__card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Путь точно такой же к папке со стрелкой hover */
+  background: url("../img/_wallets/arrowhover.png") no-repeat center/100% 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+.wallets-steps__card {
+  /* ИСПРАВЛЕНО: добавлено двоеточие перед hover */
+}
+.wallets-steps__card:hover {
+  transform: translateY(-2px);
+}
+.wallets-steps__card:hover:before {
+  opacity: 1;
+}
+.wallets-steps__card:hover .wallets-steps__num,
+.wallets-steps__card:hover .wallets-steps__text {
+  color: #123d2b; /* Цвет текста при наведении */
+}
+.wallets-steps {
+  /* Поднимаем контент над зеленым ховером (z-index: 2) */
+}
+.wallets-steps__num {
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+  margin-top: -70px; /* Скорректировано, чтобы не выбивалось за пределы контейнера */
+  font-weight: 500;
+  font-size: 64px;
+  font-variant-numeric: lining-nums;
+  transition: color 0.3s ease;
+}
+.wallets-steps__text {
+  position: relative;
+  z-index: 2;
+  font-size: 16px;
+  line-height: 1.35;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.development {
+  padding-bottom: 90px;
+}
+.development__nav {
+  margin-bottom: 45px;
+  display: inline-flex;
+  font-size: 24px;
+  text-align: center;
+  border-bottom: 3px solid #eaeaea;
+}
+.development__tab {
+  position: relative;
+  padding: 0 40px 16px 40px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  font-weight: 500;
+  color: #cfd3d8; /* Бледный серый цвет неактивной вкладки */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.development__tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  /* Опускаем ровно на толщину серой линии (-2px), чтобы лечь ПОВЕРХ неё */
+  bottom: -3px;
+  width: 100%;
+  height: 3px; /* Чуть толще или вровень */
+  border-radius: 2px;
+  background-color: #10e17d;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.development__tab:hover {
+  color: #7d8590;
+}
+.development__tab {
+  /* Когда вкладка активна */
+}
+.development__tab.is-active {
+  color: #10e17d;
+  animation: fadeIn 0.35s ease forwards;
+}
+.development__tab.is-active::after {
+  opacity: 1; /* Зеленая полоса показывается и перекрывает серую */
+}
+.development__row {
+  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  display: none;
+}
+@media (max-width: 820px) {
+  .development__row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.development__row.is-active {
+  display: grid;
+}
+.development__card {
+  padding: 45px;
+  border-radius: 15px;
+  background: linear-gradient(262.53deg, #eaeaea 16.81%, #f9f8f8 49.66%, #f9f8f8 82.51%);
+}
+@media (max-width: 820px) {
+  .development__card {
+    padding: 30px;
+  }
+}
+.development__subtitle {
+  min-height: 70.2px;
+  font-weight: 700;
+  font-size: 32px;
+}
+@media (max-width: 1220px) {
+  .development__subtitle {
+    font-size: 26px;
+  }
+}
+@media (max-width: 520px) {
+  .development__subtitle {
+    font-size: 20px;
+  }
+}
+.development__text {
+  margin-bottom: 20px;
+}
+.development__text:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+@media (max-width: 1220px) {
+  .development__text {
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }/*# sourceMappingURL=styles.css.map */

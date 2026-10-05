@@ -168,3 +168,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+const tabs = document.querySelectorAll('.development__tab');
+const rows = document.querySelectorAll('.development__row');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.tab; // exchanges или platforms
+
+    // Снимаем активность со всех
+    tabs.forEach(t => t.classList.remove('is-active'));
+    rows.forEach(r => r.classList.remove('is-active'));
+
+    // Активируем нужные
+    tab.classList.add('is-active');
+    document.getElementById(`tab-${target}`).classList.add('is-active');
+  });
+});

@@ -26,11 +26,11 @@
 }
 .wallets {
     padding-top: 85px;
-
+    padding-bottom: 100px;
     &__list {
         display: flex;
         flex-direction: column;
-        gap: 16px; // Отступ между карточками на мобилке
+        gap: 30px; // Отступ между карточками на мобилке
     }
 
     &__card {
@@ -175,7 +175,7 @@
         line-height: 1.5;
 
         &:nth-last-of-type(1) {
-            margin-bottom: 100px;
+            margin-bottom: 65px;
         }
 
         @media (max-width: 1100px) {
@@ -205,6 +205,9 @@
     }
 }
 .wallets__card--wallets {
+    padding-top: 30px;
+    padding-bottom: 32px;
+
     .wallets__img {
         top: 50%;
         transform: translateY(-50%); // Центрирование по вертикали на десктопе
@@ -217,11 +220,112 @@
         }
     }
     .wallets__text {
-        margin-bottom: 40px;
+        margin-bottom: 25px;
     }
 }
 .wallets__card--applications {
     .wallets__text {
-        margin-bottom: 32px;
+        margin-bottom: 15px;
     }
+}
+.wallets-steps {
+    padding-bottom: 140px;
+    &__container {
+    }
+
+    &__title {
+        margin-bottom: 90px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 10px;
+        row-gap: 45px;
+
+        /* Планшет: перестраиваем в 2 колонки */
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
+        }
+
+        /* Мобильные: карточки идут по центру в 1 колонку */
+        @media (max-width: 640px) {
+            grid-template-columns: 1fr;
+            justify-items: center; /* Центрирует карточки */
+        }
+    }
+
+    &__card {
+        position: relative;
+        width: 100%;
+        max-width: 401px; /* Чтобы карточка не растягивалась шире оригинала */
+        min-height: 171px;
+        box-sizing: border-box;
+
+        /* Отступы: слева запас под выемку стрелки, справа — под остриё */
+        padding: 40px 45px 30px 35px;
+
+        /* Стрелка тянется ровно по размеру карточки и не обрезается */
+        background: url("../img/_wallets/arrow.png") no-repeat center / 100% 100%;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        transition: transform 0.25s ease;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Путь точно такой же к папке со стрелкой hover */
+            background: url("../img/_wallets/arrowhover.png") no-repeat center / 100% 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        /* ИСПРАВЛЕНО: добавлено двоеточие перед hover */
+        &:hover {
+            transform: translateY(-2px);
+
+            &:before {
+                opacity: 1;
+            }
+
+            .wallets-steps__num,
+            .wallets-steps__text {
+                color: #123d2b; /* Цвет текста при наведении */
+            }
+        }
+    }
+
+    /* Поднимаем контент над зеленым ховером (z-index: 2) */
+    &__num {
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 2;
+        margin-top: -70px; /* Скорректировано, чтобы не выбивалось за пределы контейнера */
+        font-weight: 500;
+        font-size: 64px;
+        font-variant-numeric: lining-nums;
+        transition: color 0.3s ease;
+    }
+
+    &__text {
+        position: relative;
+        z-index: 2;
+        font-size: 16px;
+        line-height: 1.35;
+        margin: 0;
+        transition: color 0.3s ease;
+    }
+}
+.container {
+}
+.title {
+}
+.accent {
 }
