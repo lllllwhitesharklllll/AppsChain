@@ -3829,20 +3829,22 @@ body {
   gap: 18px;
 }
 .nft-team-card__num {
+  z-index: 2;
+  position: relative;
   font-weight: 500;
   font-size: 96px;
   line-height: 1;
   color: #232323;
 }
-@media (max-width: 768px) {
-  .nft-team-card__num {
-    font-size: 64px;
-  }
-}
-.nft-team-card__icon {
-  width: 124px;
-  height: 80px;
-  background: #eaeaea;
+.nft-team-card__num::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 200px;
+  height: 85px;
+  background: linear-gradient(262.53deg, #eaeaea 18.03%, #f9f8f8 51.72%, #f9f8f8 85.41%);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -3850,20 +3852,36 @@ body {
   flex-shrink: 0;
 }
 @media (max-width: 768px) {
-  .nft-team-card__icon {
-    width: 88px;
-    height: 60px;
-    border-radius: 16px;
+  .nft-team-card__num {
+    font-size: 64px;
   }
 }
-.nft-team-card__icon img {
-  max-width: 60%;
-  max-height: 60%;
-  width: auto;
-  height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
-  display: block;
+.nft-team-card {
+  /*    &__icon {
+      width: 124px;
+      height: 80px;
+      background: #eaeaea;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+
+      @media (max-width: 768px) {
+          width: 88px;
+          height: 60px;
+          border-radius: 16px;
+      }
+
+      img {
+          max-width: 60%;
+          max-height: 60%;
+          width: auto;
+          height: auto;
+          object-fit: contain;
+          display: block;
+      }
+  } */
 }
 .nft-team-card__role {
   font-size: 15px;

@@ -237,17 +237,34 @@
     }
 
     &__num {
+        z-index: 2;
+        position: relative;
         font-weight: 500;
         font-size: 96px;
         line-height: 1;
         color: #232323;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 200px;
+            height: 85px;
+            background: linear-gradient(262.53deg, #eaeaea 18.03%, #f9f8f8 51.72%, #f9f8f8 85.41%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
 
         @media (max-width: 768px) {
             font-size: 64px;
         }
     }
 
-    &__icon {
+    /*    &__icon {
         width: 124px;
         height: 80px;
         background: #eaeaea;
@@ -271,7 +288,7 @@
             object-fit: contain;
             display: block;
         }
-    }
+    } */
 
     &__role {
         font-size: 15px;
