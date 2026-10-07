@@ -1,0 +1,92 @@
+// Глобальный сброс отступов и размеров
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+// Базовые настройки документа
+html {
+    height: 100%;
+    font-size: 14px;
+
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+// Базовые настройки тела страницы
+body {
+    min-height: 100%;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Списки
+ul,
+ol {
+    list-style: none;
+}
+
+// Ссылки
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// Элементы форм
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+// Медиа-контент
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+// Заголовки
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+// Интерактивные элементы: фокус и мобильные тапы
+input,
+textarea,
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+
+    // Доступность: фокус только при навигации с клавиатуры
+    &:focus-visible {
+        outline: 2px solid #007bff;
+        outline-offset: 2px;
+    }
+
+    // Скрытие контура при клике мышью
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+}

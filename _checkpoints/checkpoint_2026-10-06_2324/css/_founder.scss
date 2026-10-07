@@ -1,0 +1,90 @@
+.founder {
+    padding-top: 100px;
+
+    &__card {
+        min-height: 200px;
+        position: relative;
+        overflow: hidden;
+
+        padding: 25px 25px 0 10px;
+        justify-content: space-evenly;
+        display: flex;
+        border-radius: 20px;
+        background: linear-gradient(262.53deg, #eaeaea 18.26%, #f9f8f8 52.11%, #f9f8f8 85.96%);
+    }
+
+    &__picture {
+        flex-shrink: 0;
+        align-self: flex-end;
+        @media (max-width: 767px) {
+            flex: 1 1 50%;
+        }
+    }
+
+    &__image {
+        max-height: inherit;
+        object-fit: contain;
+        @media (max-width: 767px) {
+            max-width: 200px;
+            max-height: 150px;
+        }
+        @media (max-width: 567px) {
+            max-width: 124px;
+            max-height: 135px;
+        }
+    }
+
+    &__body {
+        max-width: 750px;
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        align-items: end;
+        @media (max-width: 767px) {
+            font-size: 12px;
+            flex: 1 1 50%;
+            margin-left: -90%;
+        }
+    }
+
+    &__quote {
+        justify-self: end;
+        margin: 40px 5px 52px 0;
+        @media (max-width: 1200px) {
+            width: 58px;
+            height: 63px;
+        }
+        @media (max-width: 767px) {
+            margin: 0;
+            width: 26px;
+            height: 28px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 50px;
+        @media (max-width: 767px) {
+            display: flex;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__info {
+    }
+
+    &__title {
+        margin-bottom: 15px;
+        font-weight: 700;
+        font-size: 36px;
+        @media (max-width: 767px) {
+            font-size: 20px;
+        }
+    }
+
+    &__copy {
+        margin-bottom: 80px;
+        @media (max-width: 767px) {
+            margin-bottom: 0;
+        }
+    }
+}
