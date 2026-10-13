@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Партнерам — appschain</title>
+    <title>Партнерам&nbsp;&mdash; appschain</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -19,7 +19,7 @@
                 <nav class="header__menu menu">
                     <ul class="menu__list">
                         <li class="menu__item menu__item--dropdown">
-                            <a href="#" class="menu__link">Услуги</a>
+                            <button type="button" class="menu__link">Услуги</button>
                             <span class="menu__arrow arrow"></span>
                             <ul class="sub-menu">
                                 <li class="sub-menu__item">
@@ -52,7 +52,7 @@
                             <a href="partners.html" class="menu__link">Партнерам</a>
                         </li>
                         <li class="menu__item">
-                            <a href="tel:+79778644070" class="menu__link">Контакты</a>
+                            <button type="button" class="menu__link js-contacts-open">Контакты</button>
                         </li>
                     </ul>
                 </nav>
@@ -70,9 +70,9 @@
                         <span class="lang__text">ENG</span>
                     </a>
                 </div>
-                <div class="header__burger-icon">
+                <button type="button" aria-label="меню" class="header__burger-icon">
                     <span></span>
-                </div>
+                </button>
                 <div class="header__mobile-menu mobile-menu"></div>
             </div>
         </header>
@@ -92,13 +92,185 @@
                             Зарабатывайте на&nbsp;привлечении клиентов и&nbsp;совместной разработке Web3-проектов
                             с&nbsp;нашей экспертной командой.
                         </p>
-                        <a href="tel:+79778644070" class="intro__btn btn">
-                            Стать партнером
-                        </a>
+                        <button type="button" class="intro__btn btn">
+                            Получить консультацию
+                        </button>
                     </div>
                     <div class="intro__media">
                         <img class="intro__img" src="img/_partners/partners.png" alt="Партнерам appschain"
                             decoding="async" width="402" height="329">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 1. Секция: Сколько можно зарабатывать? -->
+            <section class="partner-income">
+                <div class="partner-income__container container">
+                    <div class="partner-income__body">
+                        <h2 class="partner-income__subtitle subtitle">
+                            Сколько можно зарабатывать?
+                        </h2>
+                        <p class="partner-income__text">
+                            Когда агент приводит клиента, то&nbsp;получает вознаграждение зависящее
+                            от&nbsp;стоимости купленного решения (2%&nbsp;&mdash; 5%&nbsp;&mdash; 10%) &mdash;
+                            процент зависит от&nbsp;суммы заказа.
+                        </p>
+                        <p class="partner-income__text">
+                            Дополнительно агент получает до&nbsp;2% от&nbsp;стоимости всех заказываемых клиентом
+                            дополнительных работ по&nbsp;проекту.
+                        </p>
+
+                        <button type="button" class="partner-income__btn btn">
+                            Стать партнером
+                        </button>
+                    </div>
+                    <div class="partner-income__example example-card">
+                        <h3 class="example-card__title">Пример:</h3>
+                        <ul class="example-card__list">
+                            <li class="example-card__item">
+                                <div class="example-card__badge">
+                                    <span class="example-card__num">01</span>
+                                    <div class="example-card__icon">
+                                        <img src="img/_partners/01.png" alt="01" width="48" height="48">
+                                    </div>
+                                </div>
+                                <p class="example-card__text">
+                                    Агент привел клиента на&nbsp;разработку мобильного приложения стоимостью 6&nbsp;млн
+                                    рублей с&nbsp;оплатой 1&nbsp;млн в&nbsp;месяц в&nbsp;течение 6&nbsp;месяцев.
+                                </p>
+                            </li>
+                            <li class="example-card__item example-card__item--reverse">
+                                <p class="example-card__text">
+                                    Агент получает вознаграждение каждый месяц в&nbsp;размере 20&nbsp;тыс рублей.
+                                </p>
+                                <div class="example-card__badge">
+                                    <span class="example-card__num">02</span>
+                                    <div class="example-card__icon">
+                                        <img src="img/_partners/02.png" alt="02" width="48" height="48">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="example-card__item">
+                                <div class="example-card__badge">
+                                    <span class="example-card__num">03</span>
+                                    <div class="example-card__icon">
+                                        <img src="img/_partners/03.png" alt="03" width="48" height="48">
+                                    </div>
+                                </div>
+                                <p class="example-card__text">
+                                    Если клиент продолжает сотрудничество&nbsp;&mdash; агент продолжает зарабатывать.
+                                    Больше долгосрочных клиентов&nbsp;&mdash; выше доход агента.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Секция: Что вы получаете от работы с нами? -->
+            <section class="partner-benefits">
+                <div class="partner-benefits__container container">
+                    <h2 class="partner-benefits__subtitle subtitle">
+                        Что вы&nbsp;получаете от&nbsp;работы с&nbsp;нами?
+                    </h2>
+                    <p class="partner-benefits__text">
+                        Участие в&nbsp;нашей партнерской программе&nbsp;&mdash; выгодно.
+                    </p>
+                    <div class="partner-benefits__grid">
+                        <div class="partner-benefits__card">
+                            <div class="partner-benefits__icon">
+                                <img src="img/_partners/benefit01.png" alt="Комиссия с каждой сделки" width="50"
+                                    height="62">
+                            </div>
+                            <h3 class="partner-benefits__card-title">
+                                Комиссия с&nbsp;каждой сделки
+                            </h3>
+                            <p class="partner-benefits__card-text">
+                                Знаете кто хочет реализовать блокчейн-проект? Сообщите нам его контакты, рекомендуйте
+                                сотрудничество с&nbsp;AppsChain&nbsp;&mdash; лидером на&nbsp;рынке разработки
+                                блокчейн-приложений и&nbsp;получите свою комиссию.
+                            </p>
+                        </div>
+                        <div class="partner-benefits__card">
+                            <div class="partner-benefits__icon">
+                                <img src="img/_partners/benefit02.png" alt="Реальная выгода для всех" width="55"
+                                    height="52">
+                            </div>
+                            <h3 class="partner-benefits__card-title">
+                                Реальная выгода для всех
+                            </h3>
+                            <p class="partner-benefits__card-text">
+                                Вы&nbsp;помогаете в&nbsp;решении проблемы реализации блокчейн-проекта для бизнеса
+                                и&nbsp;стартапов. Помимо их&nbsp;благодарности, вы&nbsp;получаете денежное
+                                вознаграждение.
+                            </p>
+                        </div>
+                        <div class="partner-benefits__card">
+                            <div class="partner-benefits__icon">
+                                <img src="img/_partners/benefit03.png" alt="Помощь нашего консультанта" width="56"
+                                    height="57">
+                            </div>
+                            <h3 class="partner-benefits__card-title">
+                                Помощь нашего консультанта
+                            </h3>
+                            <p class="partner-benefits__card-text">
+                                Менеджер по&nbsp;работе с&nbsp;агентами подробно расскажет Вам об&nbsp;особенностях
+                                сотрудничества и&nbsp;окажет помощь по&nbsp;любым вопросам.
+                            </p>
+                        </div>
+                        <div class="partner-benefits__card">
+                            <div class="partner-benefits__icon">
+                                <img src="img/_partners/benefit04.png" alt="Возможность пассивного дохода" width="60"
+                                    height="60">
+                            </div>
+                            <h3 class="partner-benefits__card-title">
+                                Возможность пассивного дохода
+                            </h3>
+                            <p class="partner-benefits__card-text">
+                                Каждый клиент по&nbsp;Вашей рекомендации приносит Вам живые деньги. Чем больше
+                                клиентов&nbsp;&mdash; тем выше ваш доход.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Секция: Схема сотрудничества проста и выгодна -->
+            <section class="partner-scheme">
+                <div class="partner-scheme__container container">
+                    <h2 class="partner-scheme__subtitle subtitle">
+                        Схема сотрудничества проста и&nbsp;выгодна
+                    </h2>
+                    <div class="partner-scheme__steps">
+                        <div class="partner-scheme__item ">
+                            <span class="partner-scheme__num">01</span>
+                            <p class="partner-scheme__text">
+                                Вы&nbsp;становитесь участником нашей партнерской программы
+                            </p>
+                        </div>
+                        <div class="partner-scheme__item">
+                            <span class="partner-scheme__num">02</span>
+                            <p class="partner-scheme__text">
+                                К&nbsp;нам приходит клиент по&nbsp;вашей рекомендации
+                            </p>
+                        </div>
+                        <div class="partner-scheme__item">
+                            <span class="partner-scheme__num">03</span>
+                            <p class="partner-scheme__text">
+                                Клиент, который пришел от&nbsp;вас, оплачивает реализацию проекта
+                            </p>
+                        </div>
+                        <div class="partner-scheme__item">
+                            <span class="partner-scheme__num">04</span>
+                            <p class="partner-scheme__text">
+                                Вы&nbsp;получаете вознаграждение на&nbsp;вашу банковскую карту
+                            </p>
+                        </div>
+                    </div>
+                    <div class="partner-scheme__btn-wrap">
+                        <button type="button" class="partner-scheme__btn btn">
+                            Стать партнером
+                        </button>
                     </div>
                 </div>
             </section>
@@ -121,7 +293,35 @@
             </div>
         </footer>
     </div>
+    <div class="contacts-modal" id="contactsModal" aria-hidden="true">
+        <div class="contacts-modal__blackdrop js-contact-close"></div>
+        <div class="contacts-modal__dialog">
+            <div class="contacts-modal__header">
+                <h3 class="contacts-modal__title">Наши контакты</h3>
+                <button type="button" class="contacts-modal__close js-contact-close">
+                    <img src="img/contactsModal/vector1.png" alt="закрыть" height="32" width="32">
+                </button>
+            </div>
+            <div class="contacts-modal__body">
+                <p class="contacts-modal__text">
+                    Для оперативности напишите ваш вопрос в один из мессенджеров. Оценим сроки и стоимость реализации
+                    вашего проекта.
+                </p>
+                <div class="contacts-modal__buttos">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="contacts-modal__button btn">
+                        <img src="img/contactsModal/vector2.png" alt="" aria-hidden="true" width="16" height="16">
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="contacts-modal__button btn">
+                        <img src="img/contactsModal/vector3.png" alt="" aria-hidden="true" width="20" height="17">
+                        <span>Telegram</span>
+                    </a>
+                </div>
+            </div>
 
+        </div>
+
+    </div>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="js/slick.min.js"></script>

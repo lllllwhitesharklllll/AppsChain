@@ -19,7 +19,7 @@
                 <nav class="header__menu menu">
                     <ul class="menu__list">
                         <li class="menu__item menu__item--dropdown">
-                            <a href="#" class="menu__link">Услуги</a>
+                            <button type="button" class="menu__link">Услуги</button>
                             <span class="menu__arrow arrow"></span>
                             <ul class="sub-menu">
                                 <li class="sub-menu__item">
@@ -41,7 +41,7 @@
                         </li>
                         <li class="menu__item">
                             <a href="turnkeysolutions.html" class="menu__link">
-                                <span class="menu__link-text menu__link-text--desktop">Готовые решения</span>
+                                <span class="menu__link-text menu__link-text--desktop">Готовые&nbsp;решения</span>
                                 <span class="menu__link-text menu__link-text--mobile">Блокчейн</span>
                             </a>
                         </li>
@@ -52,7 +52,7 @@
                             <a href="partners.html" class="menu__link">Партнерам</a>
                         </li>
                         <li class="menu__item">
-                            <a href="tel:+79778644070" class="menu__link">Контакты</a>
+                            <button type="button" class="menu__link js-contacts-open">Контакты</button>
                         </li>
                     </ul>
                 </nav>
@@ -70,9 +70,9 @@
                         <span class="lang__text">ENG</span>
                     </a>
                 </div>
-                <div class="header__burger-icon">
+                <button type="button" aria-label="меню" class="header__burger-icon">
                     <span></span>
-                </div>
+                </button>
                 <div class="header__mobile-menu mobile-menu"></div>
             </div>
         </header>
@@ -102,7 +102,7 @@
                 <div class="solutions__container container">
 
                     <!-- 1. NFT маркетплейс (Стрелка НАПРАВО, картинка справа / ноутбук) -->
-                    <article class="solutions__item card card--arrow-right card--laptop">
+                    <article class=" card card--arrow-right ">
                         <div class="card__body">
                             <div class="card__content">
                                 <h2 class="card__title">NFT маркетплейс или магазин</h2>
@@ -116,14 +116,14 @@
                             </div>
                             <div class="card__media">
                                 <img src="img/_solutions/Macbook1.png" alt="NFT маркетплейс или магазин" width="412"
-                                    height="258" class="card__img" loading="lazy" decoding="async">
+                                    height="258" class="card__img" decoding="async">
                             </div>
                         </div>
-                        <a href="#" class="card__btn btn">Заказать</a>
+                        <button type="button" class="card__btn btn">Заказать</button>
                     </article>
 
                     <!-- 2. Лаунчпад (Стрелка НАЛЕВО, картинка слева / ноутбук) -->
-                    <article class="solutions__item card card--arrow-left card--laptop">
+                    <article class=" card card--arrow-left ">
                         <div class="card__body">
                             <div class="card__content">
                                 <h2 class="card__title">Лаунчпад для привлечения инвестиций</h2>
@@ -139,14 +139,14 @@
                             </div>
                             <div class="card__media">
                                 <img src="img/_solutions/Macbook2.png" alt="Лаунчпад для привлечения инвестиций"
-                                    width="412" height="258" class="card__img" loading="lazy" decoding="async">
+                                    width="412" height="258" class="card__img" decoding="async">
                             </div>
                         </div>
-                        <a href="#" class="card__btn btn">Заказать</a>
+                        <button type="button" class="card__btn btn">Заказать</button>
                     </article>
 
                     <!-- 3. Платформа для видео-стриминга (Стрелка НАПРАВО, картинка справа / ноутбук) -->
-                    <article class="solutions__item card card--arrow-right card--laptop">
+                    <article class="card card--arrow-right">
                         <div class="card__body">
                             <div class="card__content">
                                 <h2 class="card__title">Платформа для видео-стриминга</h2>
@@ -164,12 +164,12 @@
                                     height="258" class="card__img" loading="lazy" decoding="async">
                             </div>
                         </div>
-                        <a href="#" class="card__btn btn">Заказать</a>
+                        <button type="button" class="card__btn btn">Заказать</button>
                     </article>
 
 
                     <!-- 4. Крипто-кошелек (Стрелка НАЛЕВО, картинка слева / телефон) -->
-                    <article class="solutions__item card card--arrow-left card--phone">
+                    <article class="card card--arrow-left card--phone">
                         <div class="card__body">
                             <div class="card__content">
                                 <h2 class="card__title">Крипто-кошелек на&nbsp;смартфон</h2>
@@ -191,11 +191,11 @@
                                 </picture>
                             </div>
                         </div>
-                        <a href="#" class="card__btn btn">Заказать</a>
+                        <button type="button" class="card__btn btn">Заказать</button>
                     </article>
 
                     <!-- 5. Телеграм-бот кошелек (Стрелка НАПРАВО, картинка справа / телефон) -->
-                    <article class="solutions__item card card--arrow-right card--phone">
+                    <article class=" card card--arrow-right card--phone">
                         <div class="card__body">
                             <div class="card__content">
                                 <h2 class="card__title">Телеграм-бот кошелек для крипто</h2>
@@ -217,11 +217,11 @@
                                 </picture>
                             </div>
                         </div>
-                        <a href="#" class="card__btn btn">Заказать</a>
+                        <button type="button" class="card__btn btn">Заказать</button>
                     </article>
 
                     <!-- 6. Торговый бот PancakeSwap (Стрелка НАЛЕВО, картинка слева / ноутбук) -->
-                    <article class="solutions__item card card--arrow-left card--laptop">
+                    <article class="card card--arrow-left">
                         <div class="card__body">
                             <div class="card__content">
                                 <h2 class="card__title">Торговый бот на&nbsp;DEX PancakeSwap</h2>
@@ -241,7 +241,7 @@
                                     height="258" class="card__img" loading="lazy" decoding="async">
                             </div>
                         </div>
-                        <a href="#" class="card__btn btn">Заказать</a>
+                        <button type="button" class="card__btn btn">Заказать</button>
                     </article>
 
                 </div>
@@ -265,6 +265,35 @@
                     рублей.</p>
             </div>
         </footer>
+    </div>
+    <div class="contacts-modal" id="contactsModal" aria-hidden="true">
+        <div class="contacts-modal__blackdrop js-contact-close"></div>
+        <div class="contacts-modal__dialog">
+            <div class="contacts-modal__header">
+                <h3 class="contacts-modal__title">Наши контакты</h3>
+                <button type="button" class="contacts-modal__close js-contact-close">
+                    <img src="img/contactsModal/vector1.png" alt="закрыть" height="32" width="32">
+                </button>
+            </div>
+            <div class="contacts-modal__body">
+                <p class="contacts-modal__text">
+                    Для оперативности напишите ваш вопрос в один из мессенджеров. Оценим сроки и стоимость реализации
+                    вашего проекта.
+                </p>
+                <div class="contacts-modal__buttos">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="contacts-modal__button btn">
+                        <img src="img/contactsModal/vector2.png" alt="" aria-hidden="true" width="16" height="16">
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="contacts-modal__button btn">
+                        <img src="img/contactsModal/vector3.png" alt="" aria-hidden="true" width="20" height="17">
+                        <span>Telegram</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>

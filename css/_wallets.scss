@@ -1,5 +1,8 @@
 .intro--wallets {
     padding-top: 100px;
+    @media (max-width: 767px) {
+        padding: 25px 0;
+    }
 
     .intro__body {
         flex: 1.2;
@@ -10,6 +13,9 @@
         margin-bottom: 20px;
         &:nth-last-of-type(1) {
             margin-bottom: 60px;
+            @media (max-width: 767px) {
+                margin-bottom: 35px;
+            }
         }
         @media (max-width: 500px) {
             margin-bottom: 0;
@@ -27,6 +33,10 @@
 .wallets {
     padding-top: 85px;
     padding-bottom: 100px;
+    @media (max-width: 767px) {
+        padding: 25px 0;
+    }
+
     &__list {
         display: flex;
         flex-direction: column;
@@ -230,11 +240,15 @@
 }
 .wallets-steps {
     padding-bottom: 140px;
-    &__container {
+    @media (max-width: 767px) {
+        padding: 25px 0 50px 0;
     }
 
     &__title {
         margin-bottom: 90px;
+        @media (max-width: 767px) {
+            margin-bottom: 35px;
+        }
     }
 
     &__list {
@@ -320,10 +334,4 @@
         margin: 0;
         transition: color 0.3s ease;
     }
-}
-.container {
-}
-.title {
-}
-.accent {
 }

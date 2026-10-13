@@ -185,3 +185,30 @@ tabs.forEach(tab => {
     document.getElementById(`tab-${target}`).classList.add('is-active');
   });
 });
+
+// 1. Находим саму модалку
+const contactsModal = document.getElementById('contactsModal');
+
+// 2. Находим кнопку в шапке (у нее должен быть класс js-contacts-open)
+const openBtn = document.querySelector('.js-contacts-open');
+
+// 3. Находим все элементы закрытия (и крестик, и темный фон)
+const closeBtns = document.querySelectorAll('.js-contact-close');
+
+// Если модалка и кнопка открытия есть на странице:
+if (contactsModal && openBtn) {
+    // Кликнули на "Контакты" в шапке -> добавляем класс is-open (окно открылось)
+    openBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        contactsModal.classList.add('is-open');
+        document.body.style.overflow = 'hidden'; // блокируем прокрутку страницы
+    });
+
+    // Кликнули на крестик или на темный фон -> удаляем класс is-open (окно закрылось)
+    closeBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            contactsModal.classList.remove('is-open');
+            document.body.style.overflow = ''; // возвращаем прокрутку страницы
+        });
+    });
+}

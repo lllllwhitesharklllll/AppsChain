@@ -1,8 +1,9 @@
 .team {
     padding-top: 85px;
     @media (max-width: 767px) {
-        padding-top: 0;
+        padding: 25px 0;
     }
+
     &__container {
         @media (max-width: 580px) {
             padding-right: 0;
@@ -19,11 +20,9 @@
     &__title {
         margin-bottom: 20px;
         @media (max-width: 1100px) {
-            margin-top: 146px;
             margin-bottom: 25px;
         }
         @media (max-width: 1100px) {
-            margin-top: 80px;
         }
     }
 

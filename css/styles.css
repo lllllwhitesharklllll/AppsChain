@@ -210,6 +210,71 @@ body {
   color: #10e17d;
 }
 
+.contacts-modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.contacts-modal__dialog {
+  position: relative;
+  z-index: 10;
+  justify-self: center;
+  max-width: 900px;
+  border-radius: 25px;
+  padding: 70px;
+  background: linear-gradient(262.53deg, #eaeaea 18.19%, #f9f8f8 51.98%, #f9f8f8 85.78%);
+}
+.contacts-modal__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.contacts-modal__title {
+  font-weight: 700;
+  font-size: 36px;
+}
+.contacts-modal__close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  line-height: 0;
+  transition: transform 0.3s ease;
+}
+.contacts-modal__close:hover {
+  transform: scale(1.1);
+}
+.contacts-modal__text {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 60px;
+}
+.contacts-modal__buttos {
+  display: flex;
+  gap: 30px;
+}
+.contacts-modal__button {
+  font-weight: 500;
+  font-size: 16px;
+  gap: 20px;
+}
+.contacts-modal__blackdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
 .header {
   padding: 21px 0 18px 0;
   position: fixed;
@@ -388,10 +453,10 @@ body {
 .sub-menu::before {
   content: "";
   position: absolute;
-  top: -30px;
+  top: -55px;
   left: 0;
   width: 100%;
-  height: 30px;
+  height: 55px;
   background: transparent;
 }
 .sub-menu__link {
@@ -419,8 +484,6 @@ body {
 .lang {
   max-width: 130px;
   position: relative;
-  padding-bottom: 15px;
-  margin-bottom: -15px;
 }
 @media (hover: hover) {
   .lang:hover .arrow {
@@ -438,6 +501,7 @@ body {
   visibility: visible;
   transform: translateY(0);
   pointer-events: auto;
+  transition-delay: 0s;
 }
 .lang.is-open .arrow {
   transform: rotate(-180deg);
@@ -474,6 +538,15 @@ body {
   display: flex;
   transform: translateY(15px);
   transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease, pointer-events 0.5s ease;
+}
+.lang__dropdown-link::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: transparent;
 }
 @media (hover: hover) {
   .lang__dropdown-link:hover {
@@ -582,6 +655,105 @@ body {
     transform: rotate(-180deg);
   }
 }
+.contacts-modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.contacts-modal.is-open {
+  display: flex;
+}
+.contacts-modal__dialog {
+  position: relative;
+  z-index: 10;
+  justify-self: center;
+  max-width: 900px;
+  border-radius: 25px;
+  padding: 70px;
+  background: linear-gradient(262.53deg, #eaeaea 18.19%, #f9f8f8 51.98%, #f9f8f8 85.78%);
+}
+@media (max-width: 1100px) {
+  .contacts-modal__dialog {
+    max-width: 600px;
+    padding: 40px;
+  }
+}
+.contacts-modal__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+  .contacts-modal__header {
+    margin-bottom: 20px;
+  }
+}
+.contacts-modal__title {
+  font-weight: 700;
+  font-size: 36px;
+}
+@media (max-width: 767px) {
+  .contacts-modal__title {
+    font-size: 24px;
+  }
+}
+.contacts-modal__close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  line-height: 0;
+  transition: transform 0.3s ease;
+}
+.contacts-modal__close:hover {
+  transform: scale(1.1);
+}
+.contacts-modal__text {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 60px;
+}
+@media (max-width: 767px) {
+  .contacts-modal__text {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+}
+.contacts-modal__buttos {
+  display: flex;
+  gap: 30px;
+}
+@media (max-width: 767px) {
+  .contacts-modal__buttos {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-content: center;
+  }
+}
+.contacts-modal__button {
+  justify-content: center;
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  gap: 20px;
+}
+.contacts-modal__blackdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
 .hero {
   padding-top: 80px;
   margin-bottom: 92px;
@@ -591,9 +763,9 @@ body {
     margin-bottom: 125px;
   }
 }
-@media (max-width: 567px) {
+@media (max-width: 767px) {
   .hero {
-    margin-bottom: 45px;
+    margin-bottom: 25px;
   }
 }
 .hero__container {
@@ -607,12 +779,17 @@ body {
   }
 }
 .hero__body {
+  padding-top: 79px;
   color: #343434;
   display: flex;
   flex-direction: column;
 }
+@media (max-width: 757px) {
+  .hero__body {
+    padding-top: 30px;
+  }
+}
 .hero__title {
-  margin-top: 79px;
   margin-bottom: 35px;
   font-weight: 700;
   font-size: 48px;
@@ -625,7 +802,6 @@ body {
 }
 @media (max-width: 757px) {
   .hero__title {
-    margin-top: 52px;
     margin-bottom: 23px;
   }
 }
@@ -711,11 +887,16 @@ body {
   flex-shrink: 1;
 }
 
+@media (max-width: 767px) {
+  .services {
+    padding: 25px 0;
+  }
+}
 .services__slider {
   margin-right: 40px; /* Автоматический отступ справа */
   margin-left: 40px; /* Автоматический отступ слева */
 }
-@media (max-width: 580px) {
+@media (max-width: 830px) {
   .services__slider {
     margin-right: 0;
     margin-left: 0;
@@ -943,9 +1124,9 @@ body {
     padding: 90px 0 122px 0;
   }
 }
-@media (max-width: 645px) {
+@media (max-width: 767px) {
   .work {
-    padding: 18px 0 70px 0;
+    padding: 25px 0;
   }
 }
 .work__title {
@@ -1069,6 +1250,11 @@ body {
 @media (max-width: 1245px) {
   .promotion {
     padding: 125px 0;
+  }
+}
+@media (max-width: 767px) {
+  .promotion {
+    padding: 25px 0;
   }
 }
 @media (max-width: 580px) {
@@ -1222,6 +1408,11 @@ body {
 .founder {
   padding-top: 100px;
 }
+@media (max-width: 767px) {
+  .founder {
+    padding: 25px 0;
+  }
+}
 .founder__card {
   min-height: 200px;
   position: relative;
@@ -1322,7 +1513,7 @@ body {
 }
 @media (max-width: 767px) {
   .team {
-    padding-top: 0;
+    padding: 25px 0;
   }
 }
 @media (max-width: 580px) {
@@ -1345,13 +1536,7 @@ body {
 }
 @media (max-width: 1100px) {
   .team__title {
-    margin-top: 146px;
     margin-bottom: 25px;
-  }
-}
-@media (max-width: 1100px) {
-  .team__title {
-    margin-top: 80px;
   }
 }
 .team__sub-title {
@@ -1520,9 +1705,9 @@ body {
     padding: 150px 0;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 767px) {
   .payment {
-    padding: 85px 0 90px 0;
+    padding: 25px 0;
   }
 }
 .payment__title {
@@ -1629,11 +1814,11 @@ body {
 }
 
 .maintenance {
-  margin-bottom: 145px;
+  padding-bottom: 145px;
 }
 @media (max-width: 830px) {
   .maintenance {
-    margin-bottom: 115px;
+    padding: 25px 0;
   }
 }
 .maintenance__container {
@@ -1713,6 +1898,7 @@ body {
 @media (max-width: 830px) {
   .maintenance__image {
     order: 2;
+    margin-bottom: 30px;
   }
 }
 @media (max-width: 530px) {
@@ -1725,9 +1911,9 @@ body {
 .media {
   padding: 80px 0 130px 0;
 }
-@media (max-width: 530px) {
+@media (max-width: 767px) {
   .media {
-    padding: 35px 0 95px 0;
+    padding: 25px 0 55px;
   }
 }
 .media {
@@ -1736,21 +1922,23 @@ body {
 .media__titile {
   margin-bottom: 80px;
 }
-@media (max-width: 530px) {
+@media (max-width: 767px) {
   .media__titile {
-    margin-bottom: 40px;
+    margin: 30px;
   }
 }
 .media__image {
   margin: 0 auto;
+  align-items: center;
+  align-self: center;
 }
 
 .keyteam {
   padding: 140px 0;
 }
-@media (max-width: 530px) {
+@media (max-width: 767px) {
   .keyteam {
-    padding: 70px 0;
+    padding: 25px 0 50px 0;
   }
 }
 .keyteam__card {
@@ -1857,7 +2045,7 @@ body {
 }
 @media (max-width: 757px) {
   .footer {
-    padding: 50px 20px;
+    padding: 20px 0px;
   }
 }
 .footer__container {
@@ -1948,9 +2136,9 @@ body {
   padding-top: 143px;
   padding-bottom: 120px;
 }
-@media (max-width: 667px) {
+@media (max-width: 767px) {
   .portfolio {
-    padding-bottom: 80px;
+    padding: 90px 0 50px 0;
   }
 }
 .portfolio__title {
@@ -2060,26 +2248,6 @@ body {
     display: none;
   }
 }
-@media (max-width: 667px) {
-  .portfolio__tablet [class*=tablet-] {
-    grid-template-columns: 1fr; /* Перестраиваем в 1 колонку */
-    grid-template-rows: auto; /* Высота строк подстраивается под контент */
-    gap: 20px; /* Чуть уменьшаем отступы на мобильных */
-  }
-  .portfolio__tablet a {
-    grid-column: auto !important;
-    grid-row: auto !important;
-    grid-column-start: auto !important;
-    grid-row-start: auto !important;
-    left: auto !important; /* Убираем левые фиксы */
-  }
-  .portfolio__tablet a img {
-    width: 100%;
-    height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-}
 .portfolio__tablet-top {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2168,6 +2336,26 @@ body {
   left: 0; /* Левый край остается строго по сетке */
 }
 
+@media (max-width: 667px) {
+  .portfolio__tablet [class*=tablet-] {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+  }
+  .portfolio__tablet [class*=tablet-] a {
+    grid-column: auto;
+    grid-row: auto;
+    grid-column-start: auto;
+    grid-row-start: auto;
+    left: auto;
+  }
+  .portfolio__tablet [class*=tablet-] a img {
+    width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
 .intro {
   padding-top: 95px;
   padding-bottom: 40px;
@@ -2175,7 +2363,7 @@ body {
 @media (max-width: 870px) {
   .intro {
     padding-top: 90px;
-    padding-bottom: 40px;
+    padding-bottom: 25px;
   }
 }
 .intro__container {
@@ -2201,6 +2389,7 @@ body {
   .intro__body {
     flex: 1 1 auto;
     width: 100%;
+    max-width: none;
   }
 }
 .intro__title {
@@ -2255,9 +2444,9 @@ body {
 .solutions {
   padding: 80px 0 0 0;
 }
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .solutions {
-    padding: 0;
+    padding: 25px 0;
   }
 }
 .solutions__container {
@@ -2277,14 +2466,6 @@ body {
     padding-top: 20px;
   }
 }
-.card:last-child .card__btn {
-  margin-bottom: 100px;
-}
-@media (max-width: 980px) {
-  .card:last-child .card__btn {
-    margin-bottom: 40px;
-  }
-}
 .card__body {
   position: relative;
   display: flex;
@@ -2296,14 +2477,14 @@ body {
 }
 @media (max-width: 980px) {
   .card__body {
-    flex-direction: column !important;
+    flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     min-height: auto;
     margin-bottom: 30px;
-    padding: 0 20px !important;
-    background-size: 100% 210px !important;
-    background-position: center top 90px !important;
+    padding: 0 20px;
+    background-size: 100% 210px;
+    background-position: center top 90px;
   }
 }
 .card__content {
@@ -2389,60 +2570,49 @@ body {
 }
 @media (max-width: 980px) {
   .card__btn {
-    align-self: center !important;
-    margin: 0 auto 30px !important;
+    align-self: center;
+    margin: 0 auto 30px;
   }
 }
-.card--arrow-right {
-  align-items: flex-start;
-}
-.card--arrow-right .card__body {
-  justify-content: space-between;
-  margin-bottom: 80px;
-  padding-left: 110px;
-  background-image: url("../img/_solutions/Rectanglerigth.png");
-}
-.card--arrow-right .card__media {
-  margin-top: -110px;
-}
-@media (max-width: 980px) {
+@media (min-width: 981px) {
+  .card--arrow-right {
+    align-items: flex-start;
+  }
+  .card--arrow-right .card__body {
+    justify-content: space-between;
+    margin-bottom: 80px;
+    padding-left: 110px;
+    background-image: url("../img/_solutions/Rectanglerigth.png");
+  }
   .card--arrow-right .card__media {
-    margin-top: 0;
+    margin-top: -110px;
+  }
+  .card--arrow-right .card__btn {
+    align-self: flex-start;
+    margin-left: 112px;
+    margin-bottom: 80px;
   }
 }
-.card--arrow-right .card__btn {
-  align-self: flex-start;
-  margin-left: 112px;
-  margin-bottom: 80px;
-}
-.card--arrow-left {
-  align-items: flex-start;
-}
-.card--arrow-left .card__body {
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  margin-bottom: 25px;
-  padding-right: 100px;
-  background-image: url("../img/_solutions/Rectangleleft.png");
-  background-position: right 0 top 0;
-}
-@media (max-width: 1224px) {
+@media (min-width: 981px) {
+  .card--arrow-left {
+    align-items: flex-start;
+  }
+  .card--arrow-left .card__body {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding-right: 100px;
+    background-image: url("../img/_solutions/Rectangleleft.png");
+    background-position: right 0 top 0;
+  }
   .card--arrow-left .card__media {
     margin-top: 70px;
   }
-}
-@media (max-width: 980px) {
-  .card--arrow-left .card__media {
-    margin-top: 0;
+  .card--arrow-left .card__btn {
+    align-self: flex-end;
+    margin-right: calc(100% - 140px - 520px);
+    margin-bottom: 120px;
   }
-}
-.card--arrow-left .card__btn {
-  align-self: flex-end;
-  margin-right: calc(100% - 140px - 520px);
-  margin-bottom: 120px;
-}
-.card--phone {
-  padding-top: 37px;
 }
 .card--phone .card__media {
   position: relative;
@@ -2472,13 +2642,18 @@ body {
   }
   .card--phone .card__media {
     max-height: 300px;
-    margin-top: -80px !important;
-    margin-bottom: 0 !important;
+    margin-top: -80px;
+    margin-bottom: 0;
   }
 }
 
 .intro--crypto {
   padding-top: 100px;
+}
+@media (max-width: 767px) {
+  .intro--crypto {
+    padding: 90px 0 25px 0;
+  }
 }
 .intro--crypto .intro__body {
   flex: 1 1 auto;
@@ -2486,11 +2661,21 @@ body {
 .intro--crypto .intro__title {
   margin-bottom: 44px;
 }
+@media (max-width: 767px) {
+  .intro--crypto .intro__title {
+    margin-bottom: 35px;
+  }
+}
 .intro--crypto .intro__text {
   margin-bottom: 21px;
 }
 .intro--crypto .intro__text:nth-of-type(2) {
   margin-bottom: 55px;
+}
+@media (max-width: 767px) {
+  .intro--crypto .intro__text:nth-of-type(2) {
+    margin-bottom: 35px;
+  }
 }
 .intro--crypto .intro__btn {
   padding: 16px 38px;
@@ -2508,6 +2693,11 @@ body {
   margin-right: 0;
 }
 
+@media (max-width: 767px) {
+  .features {
+    padding: 25px 0;
+  }
+}
 .features__row {
   display: flex;
   margin-bottom: 35px;
@@ -2709,8 +2899,18 @@ body {
   padding-top: 95px;
   padding-bottom: 140px;
 }
+@media (max-width: 767px) {
+  .roadmap {
+    padding: 25px 0 50px 0;
+  }
+}
 .roadmap__titile {
   margin-bottom: 120px;
+}
+@media (max-width: 767px) {
+  .roadmap__titile {
+    margin-bottom: 35px;
+  }
 }
 .roadmap__wrapper {
   position: relative;
@@ -2767,6 +2967,11 @@ body {
     grid-template-columns: repeat(1, 1fr);
     row-gap: 25px;
     padding: 0;
+  }
+}
+@media (max-width: 767px) {
+  .roadmap__list {
+    margin-bottom: 35px;
   }
 }
 .roadmap__item {
@@ -2881,6 +3086,11 @@ body {
 .intro--outsourced {
   padding-top: 123px;
 }
+@media (max-width: 767px) {
+  .intro--outsourced {
+    padding: 25px 0;
+  }
+}
 .intro--outsourced .intro__title {
   margin-bottom: 12px;
 }
@@ -2894,6 +3104,14 @@ body {
   font-size: 18px;
   margin-bottom: 60px;
 }
+@media (max-width: 767px) {
+  .intro--outsourced .intro__text {
+    margin-bottom: 35px;
+  }
+  .intro--outsourced .intro__text:nth-last-of-type(1) {
+    margin-bottom: 35px;
+  }
+}
 @media (max-width: 500px) {
   .intro--outsourced .intro__text {
     font-size: 20px;
@@ -2905,6 +3123,11 @@ body {
 
 .outsourced {
   padding: 62px 0 140px 0;
+}
+@media (max-width: 767px) {
+  .outsourced {
+    padding: 25px 0 50px 0;
+  }
 }
 .outsourced__container {
   display: flex;
@@ -3035,6 +3258,11 @@ body {
 .intro--wallets {
   padding-top: 100px;
 }
+@media (max-width: 767px) {
+  .intro--wallets {
+    padding: 25px 0;
+  }
+}
 .intro--wallets .intro__body {
   flex: 1.2;
 }
@@ -3044,6 +3272,11 @@ body {
 }
 .intro--wallets .intro__text:nth-last-of-type(1) {
   margin-bottom: 60px;
+}
+@media (max-width: 767px) {
+  .intro--wallets .intro__text:nth-last-of-type(1) {
+    margin-bottom: 35px;
+  }
 }
 @media (max-width: 500px) {
   .intro--wallets .intro__text {
@@ -3061,6 +3294,11 @@ body {
 .wallets {
   padding-top: 85px;
   padding-bottom: 100px;
+}
+@media (max-width: 767px) {
+  .wallets {
+    padding: 25px 0;
+  }
 }
 .wallets__list {
   display: flex;
@@ -3265,8 +3503,18 @@ body {
 .wallets-steps {
   padding-bottom: 140px;
 }
+@media (max-width: 767px) {
+  .wallets-steps {
+    padding: 25px 0 50px 0;
+  }
+}
 .wallets-steps__title {
   margin-bottom: 90px;
+}
+@media (max-width: 767px) {
+  .wallets-steps__title {
+    margin-bottom: 35px;
+  }
 }
 .wallets-steps__list {
   display: grid;
@@ -3353,6 +3601,11 @@ body {
 
 .development {
   padding-bottom: 90px;
+}
+@media (max-width: 767px) {
+  .development {
+    padding: 25px 0;
+  }
 }
 .development__nav {
   margin-bottom: 45px;
@@ -3461,8 +3714,18 @@ body {
 .development-format {
   padding-bottom: 80px;
 }
+@media (max-width: 767px) {
+  .development-format {
+    padding: 25px 0 50px 0;
+  }
+}
 .development-format__title {
   margin-bottom: 60px;
+}
+@media (max-width: 767px) {
+  .development-format__title {
+    margin-bottom: 25px;
+  }
 }
 .development-format__grid {
   margin-bottom: 60px;
@@ -3479,6 +3742,11 @@ body {
   .development-format__grid {
     gap: 20px;
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .development-format__grid {
+    margin-bottom: 35px;
   }
 }
 .development-format__card {
@@ -3612,14 +3880,48 @@ body {
 .nft-stages {
   padding: 60px 0;
 }
+@media (max-width: 767px) {
+  .nft-stages {
+    padding: 25px 0;
+  }
+}
+.nft-stages__wrapper {
+  margin-bottom: 35px;
+}
+@media (max-width: 1020px) {
+  .nft-stages__wrapper {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .nft-stages__wrapper::-webkit-scrollbar {
+    display: none;
+  }
+}
 .nft-stages__row {
   display: flex;
   gap: 30px;
   margin-bottom: 30px;
 }
-@media (max-width: 992px) {
+.nft-stages__row:first-of-type .nft-stages__step,
+.nft-stages__row:first-of-type .nft-card {
+  scroll-snap-align: start;
+}
+.nft-stages__row:nth-of-type(3) {
+  margin-bottom: 80px;
+}
+@media (max-width: 767px) {
+  .nft-stages__row:nth-of-type(3) {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 520px) {
   .nft-stages__row {
-    flex-direction: column;
+    gap: 20px;
   }
 }
 .nft-stages__step {
@@ -3632,9 +3934,14 @@ body {
   position: relative;
   overflow: hidden;
 }
-@media (max-width: 992px) {
+@media (max-width: 1020px) {
   .nft-stages__step {
-    flex: 1 1 auto;
+    padding: 20px;
+  }
+}
+@media (max-width: 520px) {
+  .nft-stages__step {
+    max-width: 327px;
   }
 }
 .nft-stages__step--with-img {
@@ -3645,11 +3952,21 @@ body {
   font-weight: 500;
   font-size: 96px;
 }
+@media (max-width: 1020px) {
+  .nft-stages__step-num {
+    font-size: 48px;
+  }
+}
 .nft-stages__step-title {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 1.35;
   color: #232323;
+}
+@media (max-width: 1020px) {
+  .nft-stages__step-title {
+    font-size: 18px;
+  }
 }
 .nft-stages__step-img {
   margin-left: auto;
@@ -3662,6 +3979,11 @@ body {
   -o-object-position: bottom right;
      object-position: bottom right;
 }
+@media (max-width: 1020px) {
+  .nft-stages__step-img {
+    max-height: 240px;
+  }
+}
 .nft-stages__content {
   flex: 1;
   display: flex;
@@ -3673,15 +3995,13 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-@media (max-width: 768px) {
-  .nft-stages__content--grid {
-    grid-template-columns: 1fr;
+@media (max-width: 1020px) {
+  .nft-stages__content {
+    flex-direction: row;
   }
 }
 .nft-stages__btn-wrap {
   text-align: center;
-  margin-top: 40px;
-  margin-bottom: 80px;
 }
 
 /* Карточки процессов stage 01 */
@@ -3692,24 +4012,49 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media (max-width: 1100px) {
+  .nft-card {
+    padding: 20px;
+  }
+}
+@media (max-width: 1020px) {
+  .nft-card {
+    min-width: 327px;
+  }
+}
 .nft-card__title {
   font-size: 18px;
   font-weight: 700;
   color: #232323;
   margin-bottom: 16px;
 }
+@media (max-width: 1100px) {
+  .nft-card__title {
+    font-size: 16px;
+  }
+}
 .nft-card__list {
   display: flex;
   flex-wrap: wrap;
   gap: 12px 30px;
 }
+@media (max-width: 1100px) {
+  .nft-card__list {
+    gap: 20px 15px;
+  }
+}
+@media (max-width: 1020px) {
+  .nft-card__list {
+    flex-direction: column;
+  }
+}
 .nft-card__item {
-  max-width: 220px;
+  max-width: 240px;
   font-size: 14px;
   color: #4f4f4f;
   line-height: 1.4;
   position: relative;
-  padding-left: 24px;
+  padding-left: 20px;
   display: flex;
   align-items: flex-start;
 }
@@ -3721,6 +4066,17 @@ body {
   width: 16px;
   height: 16px;
   background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.3332 4L5.99984 11.3333L2.6665 8' stroke='%2310E17D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center/contain;
+}
+@media (max-width: 1100px) {
+  .nft-card__item {
+    max-width: 167px;
+    line-height: 120%;
+  }
+}
+@media (max-width: 1020px) {
+  .nft-card__item {
+    max-width: none;
+  }
 }
 
 /* Вертикальные карточки stage 02 & 03 */
@@ -3734,28 +4090,38 @@ body {
   gap: 20px;
 }
 .nft-mini-card__text {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 1.4;
-  color: #232323;
+}
+@media (max-width: 1020px) {
+  .nft-mini-card {
+    min-width: 327px;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+@media (max-width: 1020px) {
+  .nft-mini-card__icon {
+    min-width: 55px;
+  }
 }
 
 /* Стек и Команда */
 .nft-stack {
   padding: 80px 0 100px 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .nft-stack {
-    padding: 50px 0 70px 0;
+    padding: 25px 0;
   }
 }
 .nft-stack__title {
   text-align: center;
   margin-bottom: 60px;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .nft-stack__title {
-    margin-bottom: 36px;
+    margin-bottom: 35px;
   }
 }
 .nft-stack__container {
@@ -3764,21 +4130,32 @@ body {
   justify-content: space-between;
   align-items: flex-start;
 }
-@media (max-width: 992px) {
+@media (max-width: 920px) {
   .nft-stack__container {
     flex-direction: column;
-    gap: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .nft-stack__container {
+    gap: 35px;
   }
 }
 .nft-stack__info {
   flex: 0 0 360px;
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 50px 35px;
 }
-@media (max-width: 992px) {
+@media (max-width: 920px) {
   .nft-stack__info {
     flex: 1 1 auto;
+    flex-direction: row;
+    gap: 70px;
+  }
+}
+@media (max-width: 550px) {
+  .nft-stack__info {
+    flex-direction: column;
   }
 }
 .nft-stack__subtitle {
@@ -3805,15 +4182,22 @@ body {
   top: -2px;
 }
 .nft-stack__grid {
+  width: 100%;
   flex: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 36px 30px;
 }
-@media (max-width: 600px) {
+@media (max-width: 920px) {
+  .nft-stack__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 16px;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 550px) {
   .nft-stack__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px 16px;
   }
 }
 
@@ -3852,38 +4236,30 @@ body {
   flex-shrink: 0;
 }
 @media (max-width: 768px) {
+  .nft-team-card__num::after {
+    width: 140px;
+    height: 68px;
+    border-radius: 16px;
+  }
+}
+@media (max-width: 768px) {
   .nft-team-card__num {
     font-size: 64px;
   }
 }
-.nft-team-card {
-  /*    &__icon {
-      width: 124px;
-      height: 80px;
-      background: #eaeaea;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-
-      @media (max-width: 768px) {
-          width: 88px;
-          height: 60px;
-          border-radius: 16px;
-      }
-
-      img {
-          max-width: 60%;
-          max-height: 60%;
-          width: auto;
-          height: auto;
-          object-fit: contain;
-          display: block;
-      }
-  } */
+.nft-team-card__icon img {
+  position: absolute;
+  z-index: 2;
+  max-width: 60%;
+  max-height: 60%;
+  width: auto;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
 }
 .nft-team-card__role {
+  margin-top: 30px;
   font-size: 15px;
   font-weight: 600;
   color: #232323;
@@ -3895,9 +4271,9 @@ body {
 .nft-portfolio {
   padding: 60px 0 120px 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .nft-portfolio {
-    padding: 40px 0 80px 0;
+    padding: 25px 0 50px 0;
   }
 }
 .nft-portfolio__title {
@@ -3982,4 +4358,310 @@ body {
   .nft-portfolio__grid {
     /* Меняем порядок отображения карточек (смена картинок местами) */
   }
+}
+
+.subtitle {
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+@media (max-width: 645px) {
+  .subtitle {
+    font-size: 24px;
+  }
+}
+
+.partner-income {
+  padding-top: 80px;
+}
+@media (max-width: 767px) {
+  .partner-income {
+    padding: 25px 0;
+  }
+}
+.partner-income__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+@media (max-width: 1024px) {
+  .partner-income__container {
+    flex-wrap: wrap;
+  }
+}
+.partner-income__body {
+  max-width: 500px;
+}
+@media (max-width: 1024px) {
+  .partner-income__body {
+    max-width: none;
+  }
+}
+.partner-income__text {
+  margin-bottom: 30px;
+}
+.partner-income__text:last-of-type {
+  margin-bottom: 50px;
+}
+@media (max-width: 767px) {
+  .partner-income__text:last-of-type {
+    margin-bottom: 35px;
+  }
+}
+.partner-income__example {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 0 50px 0 rgba(0, 255, 133, 0.15);
+  background: #fff;
+}
+.partner-income__example::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(92.92deg, #10e17d 4.27%, #73ffdd 97.99%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: -1;
+}
+.partner-income__example:hover::before {
+  opacity: 1;
+}
+
+.example-card {
+  isolation: isolate;
+  padding: 30px;
+  max-width: 605px;
+}
+.example-card:hover .example-card__badge::before {
+  opacity: 1;
+}
+@media (max-width: 1024px) {
+  .example-card {
+    max-width: none;
+  }
+}
+@media (max-width: 645px) {
+  .example-card {
+    padding: 10px;
+  }
+}
+.example-card__title {
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.example-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.example-card__item {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 7px;
+}
+@media (max-width: 1024px) {
+  .example-card__item {
+    justify-content: space-between;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 645px) {
+  .example-card__item {
+    gap: 10px;
+  }
+}
+.example-card__badge {
+  position: relative;
+  flex: 0 0 116px;
+  width: 123px;
+  height: 60px;
+  background: linear-gradient(92.92deg, #10e17d 4.27%, #73ffdd 97.99%);
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0 12px 6px 0;
+  isolation: isolate;
+}
+.example-card__badge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(262.53deg, #eaeaea 17.81%, #f9f8f8 51.35%, #f9f8f8 84.88%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: -1;
+}
+.example-card__num {
+  margin-bottom: 25px;
+  font-weight: 500;
+  font-size: 48px;
+}
+.example-card__icon {
+  margin-bottom: -10px;
+}
+.example-card__text {
+  font-size: 14px;
+}
+.partner-benefits {
+  padding-top: 90px;
+}
+@media (max-width: 767px) {
+  .partner-benefits {
+    padding: 25px 0;
+  }
+}
+.partner-benefits__subtitle {
+  margin-bottom: 30px;
+}
+.partner-benefits__text {
+  margin-bottom: 75px;
+}
+@media (max-width: 767px) {
+  .partner-benefits__text {
+    margin-bottom: 35px;
+  }
+}
+.partner-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+@media (max-width: 1160px) {
+  .partner-benefits__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .partner-benefits__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.partner-benefits__card {
+  padding: 35px 25px 25px 35px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background: linear-gradient(262.53deg, #eaeaea 14.55%, #f9f8f8 45.83%, #f9f8f8 77.1%);
+}
+@media (max-width: 700px) {
+  .partner-benefits__card {
+    padding: 25px;
+  }
+}
+.partner-benefits__icon {
+  margin-bottom: 40px;
+}
+@media (max-width: 600px) {
+  .partner-benefits__icon {
+    margin-bottom: 10px;
+  }
+}
+.partner-benefits__card-title {
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 35px;
+}
+@media (max-width: 600px) {
+  .partner-benefits__card-title {
+    margin-bottom: 15px;
+  }
+}
+.partner-scheme {
+  padding-top: 100px;
+  padding-bottom: 180px;
+}
+@media (max-width: 1150px) {
+  .partner-scheme {
+    padding: 60px 0;
+  }
+}
+@media (max-width: 767px) {
+  .partner-scheme {
+    padding: 25px 0 50px 0;
+  }
+}
+.partner-scheme__subtitle {
+  margin-bottom: 105px;
+}
+@media (max-width: 767px) {
+  .partner-scheme__subtitle {
+    margin-bottom: 65px;
+  }
+}
+.partner-scheme__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 75px;
+  gap: 30px;
+}
+@media (max-width: 1000px) {
+  .partner-scheme__steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 30px;
+  }
+}
+@media (max-width: 1100px) {
+  .partner-scheme__steps {
+    gap: 50px 20px;
+    margin-bottom: 35px;
+  }
+}
+.partner-scheme__item {
+  cursor: pointer;
+  position: relative;
+  background-image: url(../img/_partners/arrow.png);
+  background-repeat: no-repeat;
+  padding: 0 20px 35px 40px;
+  padding-bottom: 35px;
+  background-size: min(100%, 289px) auto;
+}
+.partner-scheme__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(../img/_partners/arrowhover.png);
+  background-repeat: no-repeat;
+  background-size: auto 123px;
+  padding-bottom: 35px;
+  background-size: 100% auto;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+@media (max-width: 1000px) {
+  .partner-scheme__item::after {
+    display: none;
+  }
+}
+.partner-scheme__item:hover::after {
+  opacity: 1;
+}
+@media (max-width: 580px) {
+  .partner-scheme__item {
+    padding: 10px;
+  }
+}
+.partner-scheme__num {
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin-top: -40px;
+  font-weight: 500;
+  font-size: 64px;
+}
+.partner-scheme__text {
+  max-width: 200px;
+  position: relative;
+  z-index: 2;
+  font-size: 16px;
+}
+.partner-scheme__btn-wrap {
+  justify-self: center;
 }/*# sourceMappingURL=styles.css.map */

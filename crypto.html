@@ -19,7 +19,7 @@
                 <nav class="header__menu menu">
                     <ul class="menu__list">
                         <li class="menu__item menu__item--dropdown">
-                            <a href="#" class="menu__link">Услуги</a>
+                            <button type="button" class="menu__link">Услуги</button>
                             <span class="menu__arrow arrow"></span>
                             <ul class="sub-menu">
                                 <li class="sub-menu__item">
@@ -41,7 +41,7 @@
                         </li>
                         <li class="menu__item">
                             <a href="turnkeysolutions.html" class="menu__link">
-                                <span class="menu__link-text menu__link-text--desktop">Готовые решения</span>
+                                <span class="menu__link-text menu__link-text--desktop">Готовые&nbsp;решения</span>
                                 <span class="menu__link-text menu__link-text--mobile">Блокчейн</span>
                             </a>
                         </li>
@@ -52,7 +52,7 @@
                             <a href="partners.html" class="menu__link">Партнерам</a>
                         </li>
                         <li class="menu__item">
-                            <a href="tel:+79778644070" class="menu__link">Контакты</a>
+                            <button type="button" class="menu__link js-contacts-open">Контакты</button>
                         </li>
                     </ul>
                 </nav>
@@ -70,9 +70,9 @@
                         <span class="lang__text">ENG</span>
                     </a>
                 </div>
-                <div class="header__burger-icon">
+                <button type="button" aria-label="меню" class="header__burger-icon">
                     <span></span>
-                </div>
+                </button>
                 <div class="header__mobile-menu mobile-menu"></div>
             </div>
         </header>
@@ -92,9 +92,9 @@
                             оперативно приступить к&nbsp;работе над вашим интересным проектом.
                         </p>
 
-                        <a href="tel:+79778644070" class="intro__btn btn">
+                        <button type="button" class="intro__btn btn">
                             Упаковать проект
-                        </a>
+                        </button>
                     </div>
 
                     <div class="intro__media">
@@ -122,8 +122,7 @@
                                 </p>
                             </div>
                             <img class="feature-card__img" src="img/_crypto/features1.png" width="230" height="230"
-                                alt="Иллюстрация анализа конкурентов: увеличительное стекло" loading="lazy"
-                                decoding="async">
+                                alt="Иллюстрация анализа конкурентов: увеличительное стекло" decoding="async">
                         </article>
 
                         <!-- 2. Инвесторы (Грамота/Кубок) -->
@@ -140,7 +139,7 @@
                                 </p>
                             </div>
                             <img class="feature-card__img" src="img/_crypto/features2.png" width="123" height="202"
-                                alt="Иллюстрация презентации проекта инвесторам" loading="lazy" decoding="async">
+                                alt="Иллюстрация презентации проекта инвесторам" decoding="async">
                         </article>
                     </div>
 
@@ -159,7 +158,7 @@
                                 </p>
                             </div>
                             <img class="feature-card__img" src="img/_crypto/features3.png" width="133" height="166"
-                                alt="Иллюстрация блокчейн-узла в виде куба" loading="lazy" decoding="async">
+                                alt="Иллюстрация блокчейн-узла в виде куба" decoding="async">
                         </article>
 
                         <!-- 4. Биржа (Монеты) -->
@@ -179,7 +178,7 @@
                                 </p>
                             </div>
                             <img class="feature-card__img" src="img/_crypto/features4.png" width="250" height="214"
-                                alt="Иллюстрация листинга токенов на бирже" loading="lazy" decoding="async">
+                                alt="Иллюстрация листинга токенов на бирже" decoding="async">
                         </article>
                     </div>
 
@@ -198,8 +197,7 @@
                                 </p>
                             </div>
                             <img class="feature-card__img" src="img/_crypto/features5.png" width="150" height="216"
-                                alt="Иллюстрация технической документации и White Paper" loading="lazy"
-                                decoding="async">
+                                alt="Иллюстрация технической документации и White Paper" decoding="async">
                         </article>
 
                         <!-- 6. DApp (Телефон) -->
@@ -215,7 +213,7 @@
                             </div>
                             <!-- Заменил путь на features6.png -->
                             <img class="feature-card__img" src="img/_crypto/features6.png" width="170" height="242"
-                                alt="Иллюстрация смартфона с крипто-приложением" loading="lazy" decoding="async">
+                                alt="Иллюстрация смартфона с крипто-приложением" decoding="async">
                         </article>
                     </div>
 
@@ -357,7 +355,7 @@
                             </li>
                         </ol>
                     </div>
-                    <a href="#" class="roadmap__btn btn">Узнать подробнее</a>
+                    <button type="button" class="roadmap__btn btn">Узнать подробнее</button>
                 </div>
             </section>
         </main>
@@ -377,7 +375,36 @@
                     рублей.</p>
             </div>
         </footer>
+        <div class="contacts-modal" id="contactsModal" aria-hidden="true">
+            <div class="contacts-modal__blackdrop js-contact-close"></div>
+            <div class="contacts-modal__dialog">
+                <div class="contacts-modal__header">
+                    <h3 class="contacts-modal__title">Наши контакты</h3>
+                    <button type="button" class="contacts-modal__close js-contact-close">
+                        <img src="img/contactsModal/vector1.png" alt="закрыть" height="32" width="32">
+                    </button>
+                </div>
+                <div class="contacts-modal__body">
+                    <p class="contacts-modal__text">
+                        Для оперативности напишите ваш вопрос в один из мессенджеров. Оценим сроки и стоимость
+                        реализации
+                        вашего проекта.
+                    </p>
+                    <div class="contacts-modal__buttos">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="contacts-modal__button btn">
+                            <img src="img/contactsModal/vector2.png" alt="" aria-hidden="true" width="16" height="16">
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="contacts-modal__button btn">
+                            <img src="img/contactsModal/vector3.png" alt="" aria-hidden="true" width="20" height="17">
+                            <span>Telegram</span>
+                        </a>
+                    </div>
+                </div>
 
+            </div>
+
+        </div>
         <script src="https://code.jquery.com/jquery-3.7.1.js"
             integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
         <script src="js/slick.min.js"></script>

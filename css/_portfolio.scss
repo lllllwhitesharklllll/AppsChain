@@ -22,13 +22,8 @@
 
     padding-top: 143px;
     padding-bottom: 120px;
-    @media (max-width: 667px) {
-        padding-bottom: 80px;
-    }
-    &__container {
-    }
-
-    &__body {
+    @media (max-width: 767px) {
+        padding: 90px 0 50px 0;
     }
 
     &__title {
@@ -153,29 +148,6 @@
             display: none;
         }
         // --- МОБИЛЬНЫЙ АДАПТИВ ДЛЯ ВСЕХ БЛОКОВ (до 667px) ---
-        @media (max-width: 667px) {
-            // Находим все grid-контейнеры внутри tablet
-            [class*="tablet-"] {
-                grid-template-columns: 1fr; /* Перестраиваем в 1 колонку */
-                grid-template-rows: auto; /* Высота строк подстраивается под контент */
-                gap: 20px; /* Чуть уменьшаем отступы на мобильных */
-            }
-
-            // Сбрасываем позиционирование всех картинок, чтобы они шли друг за другом
-            a {
-                grid-column: auto !important;
-                grid-row: auto !important;
-                grid-column-start: auto !important;
-                grid-row-start: auto !important;
-                left: auto !important; /* Убираем левые фиксы */
-
-                img {
-                    width: 100%;
-                    height: auto;
-                    object-fit: cover;
-                }
-            }
-        }
     }
 
     &__tablet-top {
@@ -277,6 +249,32 @@
                 grid-row-start: 2;
 
                 left: 0; /* Левый край остается строго по сетке */
+            }
+        }
+    }
+}
+// В САМОМ КОНЦЕ ФАЙЛА _portfolio.scss:
+@media (max-width: 667px) {
+    .portfolio__tablet {
+        // Перестраиваем сетку в 1 колонку:
+        [class*="tablet-"] {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            gap: 20px;
+
+            // Сбрасываем координаты для всех картинок:
+            a {
+                grid-column: auto;
+                grid-row: auto;
+                grid-column-start: auto;
+                grid-row-start: auto;
+                left: auto;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
             }
         }
     }

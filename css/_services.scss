@@ -1,9 +1,12 @@
 .services {
+    @media (max-width: 767px) {
+        padding: 25px 0;
+    }
     &__slider {
         margin-right: 40px; /* Автоматический отступ справа */
         margin-left: 40px; /* Автоматический отступ слева */
 
-        @media (max-width: 580px) {
+        @media (max-width: 830px) {
             margin-right: 0;
             margin-left: 0;
         }

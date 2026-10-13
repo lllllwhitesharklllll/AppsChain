@@ -19,7 +19,7 @@
                 <nav class="header__menu menu">
                     <ul class="menu__list">
                         <li class="menu__item menu__item--dropdown">
-                            <a href="#" class="menu__link">Услуги</a>
+                            <button type="button" class="menu__link">Услуги</button>
                             <span class="menu__arrow arrow"></span>
                             <ul class="sub-menu">
                                 <li class="sub-menu__item">
@@ -41,7 +41,7 @@
                         </li>
                         <li class="menu__item">
                             <a href="turnkeysolutions.html" class="menu__link">
-                                <span class="menu__link-text menu__link-text--desktop">Готовые решения</span>
+                                <span class="menu__link-text menu__link-text--desktop">Готовые&nbsp;решения</span>
                                 <span class="menu__link-text menu__link-text--mobile">Блокчейн</span>
                             </a>
                         </li>
@@ -52,7 +52,7 @@
                             <a href="partners.html" class="menu__link">Партнерам</a>
                         </li>
                         <li class="menu__item">
-                            <a href="tel:+79778644070" class="menu__link">Контакты</a>
+                            <button type="button" class="menu__link js-contacts-open">Контакты</button>
                         </li>
                     </ul>
                 </nav>
@@ -70,9 +70,9 @@
                         <span class="lang__text">ENG</span>
                     </a>
                 </div>
-                <div class="header__burger-icon">
+                <button type="button" aria-label="меню" class="header__burger-icon">
                     <span></span>
-                </div>
+                </button>
                 <div class="header__mobile-menu mobile-menu"></div>
             </div>
         </header>
@@ -90,9 +90,9 @@
                             активами. Работаем с&nbsp;Ethereum, BNB Chain, Velas, Solana, PolkaDot и&nbsp;другими
                             блокчейнами.
                         </p>
-                        <a href="tel:+79778644070" class="intro__btn btn">
+                        <button type="button" class="intro__btn btn">
                             Заказать
-                        </a>
+                        </button>
                     </div>
                     <div class="intro__media">
                         <img class="intro__img" src="img/services/services1.png" alt="NFT Маркетплейс" decoding="async"
@@ -105,127 +105,135 @@
             <div class="nft-stages">
                 <div class="nft-stages__container container">
                     <!-- Этап 01 -->
-                    <div class="nft-stages__row">
-                        <div class="nft-stages__step nft-stages__step--with-img">
-                            <div class="nft-stages__step-num">01</div>
-                            <div class="nft-stages__step-title">Проектируем прототип приложения:</div>
-                            <img class="nft-stages__step-img" src="img/_nft/nftnoorbook.png" width="367" height="377"
-                                alt="Прототип маркетплейса на ноутбуке" loading="lazy" decoding="async">
-                        </div>
-                        <div class="nft-stages__content">
-                            <!-- Карточка 1 -->
-                            <div class="nft-card">
-                                <p class="nft-card__title">Страница создания NFT, карточки товаров, логика интерфейса
-                                </p>
-                                <div class="nft-card__list">
-                                    <div class="nft-card__item">Определяем стиль приложения под целевую аудиторию</div>
-                                    <div class="nft-card__item">Составляем текст и&nbsp;техническое задание
-                                        по&nbsp;логике интерфейса</div>
-                                    <div class="nft-card__item">Создаем основные элементы маркетплейса для утверждения
-                                        стиля</div>
-                                </div>
+                    <div class="nft-stages__wrapper">
+                        <div class="nft-stages__row">
+                            <div class="nft-stages__step nft-stages__step--with-img">
+                                <div class="nft-stages__step-num">01</div>
+                                <div class="nft-stages__step-title">Проектируем прототип приложения:</div>
+                                <img class="nft-stages__step-img" src="img/_nft/nftnoorbook.png" width="367"
+                                    height="377" alt="Прототип маркетплейса на ноутбуке" decoding="async">
                             </div>
-                            <!-- Карточка 2 -->
-                            <div class="nft-card">
-                                <p class="nft-card__title">Главная страница маркетплейса, поиск с&nbsp;фильтрацией
-                                    и&nbsp;категориями</p>
-                                <div class="nft-card__list">
-                                    <div class="nft-card__item">Проектируем связующие экраны и&nbsp;всплывающие
-                                        уведомления</div>
-                                    <div class="nft-card__item">Определяем количество категорий и&nbsp;подкатегорий
-                                        цифровых товаров</div>
-                                    <div class="nft-card__item">Наполняем расширенный поиск уточняющими фильтрами</div>
-                                    <div class="nft-card__item">Создаем главную страницу маркетплейса с&nbsp;футтером
-                                        и&nbsp;хедером</div>
-                                </div>
-                            </div>
-                            <!-- Карточка 3 -->
-                            <div class="nft-card">
-                                <p class="nft-card__title">Личный кабинет, настройки, авторизация, страницы объявлений
-                                </p>
-                                <div class="nft-card__list">
-                                    <div class="nft-card__item">Проектируем логику и&nbsp;дизайн личного кабинета
-                                        пользователя</div>
-                                    <div class="nft-card__item">Определяем возможности настроек параметров аккаунта
+                            <div class="nft-stages__content">
+                                <!-- Карточка 1 -->
+                                <div class="nft-card">
+                                    <p class="nft-card__title">Страница создания NFT, карточки товаров, логика
+                                        интерфейса
+                                    </p>
+                                    <div class="nft-card__list">
+                                        <div class="nft-card__item">Определяем стиль приложения под целевую аудиторию
+                                        </div>
+                                        <div class="nft-card__item">Составляем текст и&nbsp;техническое задание
+                                            по&nbsp;логике интерфейса</div>
+                                        <div class="nft-card__item">Создаем основные элементы маркетплейса для
+                                            утверждения
+                                            стиля</div>
                                     </div>
-                                    <div class="nft-card__item">Создаем логику авторизации, регистрации
-                                        и&nbsp;восстановления пароля</div>
-                                    <div class="nft-card__item">Наполняем страницы объявления и&nbsp;товаров
-                                        их&nbsp;характеристиками</div>
-                                    <div class="nft-card__item">Подготовка прототипа к&nbsp;технической реализации
-                                        с&nbsp;текстовым заданием</div>
+                                </div>
+                                <!-- Карточка 2 -->
+                                <div class="nft-card">
+                                    <p class="nft-card__title">Главная страница маркетплейса, поиск с&nbsp;фильтрацией
+                                        и&nbsp;категориями</p>
+                                    <div class="nft-card__list">
+                                        <div class="nft-card__item">Проектируем связующие экраны и&nbsp;всплывающие
+                                            уведомления</div>
+                                        <div class="nft-card__item">Определяем количество категорий и&nbsp;подкатегорий
+                                            цифровых товаров</div>
+                                        <div class="nft-card__item">Наполняем расширенный поиск уточняющими фильтрами
+                                        </div>
+                                        <div class="nft-card__item">Создаем главную страницу маркетплейса
+                                            с&nbsp;футтером
+                                            и&nbsp;хедером</div>
+                                    </div>
+                                </div>
+                                <!-- Карточка 3 -->
+                                <div class="nft-card">
+                                    <p class="nft-card__title">Личный кабинет, настройки, авторизация, страницы
+                                        объявлений
+                                    </p>
+                                    <div class="nft-card__list">
+                                        <div class="nft-card__item">Проектируем логику и&nbsp;дизайн личного кабинета
+                                            пользователя</div>
+                                        <div class="nft-card__item">Определяем возможности настроек параметров аккаунта
+                                        </div>
+                                        <div class="nft-card__item">Создаем логику авторизации, регистрации
+                                            и&nbsp;восстановления пароля</div>
+                                        <div class="nft-card__item">Наполняем страницы объявления и&nbsp;товаров
+                                            их&nbsp;характеристиками</div>
+                                        <div class="nft-card__item">Подготовка прототипа к&nbsp;технической реализации
+                                            с&nbsp;текстовым заданием</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Этап 02 -->
-                    <div class="nft-stages__row">
-                        <div class="nft-stages__step">
-                            <div class="nft-stages__step-num">02</div>
-                            <div class="nft-stages__step-title">Программируем прототип и&nbsp;подготавливаем
-                                к&nbsp;интеграции с&nbsp;web3 кошельками</div>
+                        <!-- Этап 02 -->
+                        <div class="nft-stages__row">
+                            <div class="nft-stages__step">
+                                <div class="nft-stages__step-num">02</div>
+                                <div class="nft-stages__step-title">Программируем прототип и&nbsp;подготавливаем
+                                    к&nbsp;интеграции с&nbsp;web3 кошельками</div>
+                            </div>
+                            <div class="nft-stages__content nft-stages__content--grid">
+                                <div class="nft-mini-card">
+                                    <div class="nft-mini-card__icon">
+                                        <img src="img/_nft/nft0201.png" width="78" height="62" alt="Верстка веб-страниц"
+                                            decoding="async">
+                                    </div>
+                                    <p class="nft-mini-card__text">Верстка веб-страниц маркетплейса и&nbsp;подготовка
+                                        фронт-энд части</p>
+                                </div>
+                                <div class="nft-mini-card">
+                                    <div class="nft-mini-card__icon">
+                                        <img src="img/_nft/nft0202.png" width="78" height="62"
+                                            alt="Тестирование сценариев" decoding="async">
+                                    </div>
+                                    <p class="nft-mini-card__text">Тестирование пользовательских сценариев</p>
+                                </div>
+                                <div class="nft-mini-card">
+                                    <div class="nft-mini-card__icon">
+                                        <img src="img/_nft/nft0203.png" width="49" height="62" alt="Смарт-контракты"
+                                            decoding="async">
+                                    </div>
+                                    <p class="nft-mini-card__text">Разработка смарт-контрактов в&nbsp;тестовой сети</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="nft-stages__content nft-stages__content--grid">
-                            <div class="nft-mini-card">
-                                <div class="nft-mini-card__icon">
-                                    <img src="img/_nft/nft0201.png" width="78" height="62" alt="Верстка веб-страниц"
-                                        loading="lazy" decoding="async">
-                                </div>
-                                <p class="nft-mini-card__text">Верстка веб-страниц маркетплейса и&nbsp;подготовка
-                                    фронт-энд части</p>
+                        <!-- Этап 03 -->
+                        <div class="nft-stages__row">
+                            <div class="nft-stages__step">
+                                <div class="nft-stages__step-num">03</div>
+                                <div class="nft-stages__step-title">Создаем базу данных приложения и&nbsp;подключаем
+                                    к&nbsp;смарт-контрактам</div>
                             </div>
-                            <div class="nft-mini-card">
-                                <div class="nft-mini-card__icon">
-                                    <img src="img/_nft/nft0202.png" width="78" height="62" alt="Тестирование сценариев"
-                                        loading="lazy" decoding="async">
+                            <div class="nft-stages__content nft-stages__content--grid">
+                                <div class="nft-mini-card">
+                                    <div class="nft-mini-card__icon">
+                                        <img src="img/_nft/nft0301.png" width="49" height="62" alt="База данных"
+                                            loading="lazy" decoding="async">
+                                    </div>
+                                    <p class="nft-mini-card__text">Разработка базы данных и&nbsp;панели администратора
+                                    </p>
                                 </div>
-                                <p class="nft-mini-card__text">Тестирование пользовательских сценариев</p>
-                            </div>
-                            <div class="nft-mini-card">
-                                <div class="nft-mini-card__icon">
-                                    <img src="img/_nft/nft0203.png" width="49" height="62" alt="Смарт-контракты"
-                                        loading="lazy" decoding="async">
+                                <div class="nft-mini-card">
+                                    <div class="nft-mini-card__icon">
+                                        <img src="img/_nft/nft0302.png" width="78" height="62" alt="Логика интерфейса"
+                                            loading="lazy" decoding="async">
+                                    </div>
+                                    <p class="nft-mini-card__text">Подключение логики интерфейса к&nbsp;смарт-контрактам
+                                    </p>
                                 </div>
-                                <p class="nft-mini-card__text">Разработка смарт-контрактов в&nbsp;тестовой сети</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Этап 03 -->
-                    <div class="nft-stages__row">
-                        <div class="nft-stages__step">
-                            <div class="nft-stages__step-num">03</div>
-                            <div class="nft-stages__step-title">Создаем базу данных приложения и&nbsp;подключаем
-                                к&nbsp;смарт-контрактам</div>
-                        </div>
-                        <div class="nft-stages__content nft-stages__content--grid">
-                            <div class="nft-mini-card">
-                                <div class="nft-mini-card__icon">
-                                    <img src="img/_nft/nft0301.png" width="49" height="62" alt="База данных"
-                                        loading="lazy" decoding="async">
+                                <div class="nft-mini-card">
+                                    <div class="nft-mini-card__icon">
+                                        <img src="img/_nft/nft0303.png" width="62" height="62"
+                                            alt="Тестирование и запуск" loading="lazy" decoding="async">
+                                    </div>
+                                    <p class="nft-mini-card__text">Тестирование и&nbsp;запуск работающего приложения</p>
                                 </div>
-                                <p class="nft-mini-card__text">Разработка базы данных и&nbsp;панели администратора</p>
-                            </div>
-                            <div class="nft-mini-card">
-                                <div class="nft-mini-card__icon">
-                                    <img src="img/_nft/nft0302.png" width="78" height="62" alt="Логика интерфейса"
-                                        loading="lazy" decoding="async">
-                                </div>
-                                <p class="nft-mini-card__text">Подключение логики интерфейса к&nbsp;смарт-контрактам</p>
-                            </div>
-                            <div class="nft-mini-card">
-                                <div class="nft-mini-card__icon">
-                                    <img src="img/_nft/nft0303.png" width="62" height="62" alt="Тестирование и запуск"
-                                        loading="lazy" decoding="async">
-                                </div>
-                                <p class="nft-mini-card__text">Тестирование и&nbsp;запуск работающего приложения</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="nft-stages__btn-wrap">
-                        <a href="tel:+79778644070" class="btn">Узнать подробнее</a>
+                        <button type="button" class="btn">Узнать подробнее</button>
                     </div>
                 </div>
             </div>
@@ -324,7 +332,7 @@
                     <h2 class="title nft-portfolio__title"><span class="accent">Примеры</span> NFT Маркетплейсов:</h2>
                     <div class="nft-portfolio__grid">
                         <!-- Карточка 1: Barter Smartplace -->
-                        <a href="portfolio.html" class="nft-portfolio__item nft-portfolio__item--large">
+                        <a href="#" class="nft-portfolio__item nft-portfolio__item--large">
                             <picture>
                                 <source media="(max-width: 768px)" srcset="img/_portfolio/mobile/top1.png">
                                 <img src="img/_portfolio/top1.png" width="598" height="614"
@@ -333,7 +341,7 @@
                             </picture>
                         </a>
 
-                        <a href="portfolio.html" class="nft-portfolio__item">
+                        <a href="#" class="nft-portfolio__item">
                             <picture>
                                 <source media="(max-width: 768px)" srcset="img/_portfolio/mobile/top2.png">
                                 <img src="img/_portfolio/top2.png" width="291" height="292"
@@ -341,7 +349,7 @@
                             </picture>
                         </a>
                         <!-- Карточка 3: Generative Gallery -->
-                        <a href="portfolio.html" class="nft-portfolio__item">
+                        <a href="#" class="nft-portfolio__item">
                             <picture>
                                 <source media="(max-width: 768px)" srcset="img/_portfolio/mobile/center2.png">
                                 <img src="img/_portfolio/center2.png" width="291" height="292"
@@ -351,7 +359,7 @@
                         </a>
 
                         <!-- Карточка 4: MintyWay -->
-                        <a href="portfolio.html" class="nft-portfolio__item nft-portfolio__item--wide">
+                        <a href="#" class="nft-portfolio__item nft-portfolio__item--wide">
                             <picture>
                                 <source media="(max-width: 768px)" srcset="img/_portfolio/mobile/bottom3.png">
                                 <img src="img/_portfolio/bottom3.png" width="598" height="260"
@@ -382,7 +390,35 @@
             </div>
         </footer>
     </div>
+    <div class="contacts-modal" id="contactsModal" aria-hidden="true">
+        <div class="contacts-modal__blackdrop js-contact-close"></div>
+        <div class="contacts-modal__dialog">
+            <div class="contacts-modal__header">
+                <h3 class="contacts-modal__title">Наши контакты</h3>
+                <button type="button" class="contacts-modal__close js-contact-close">
+                    <img src="img/contactsModal/vector1.png" alt="закрыть" height="32" width="32">
+                </button>
+            </div>
+            <div class="contacts-modal__body">
+                <p class="contacts-modal__text">
+                    Для оперативности напишите ваш вопрос в один из мессенджеров. Оценим сроки и стоимость реализации
+                    вашего проекта.
+                </p>
+                <div class="contacts-modal__buttos">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="contacts-modal__button btn">
+                        <img src="img/contactsModal/vector2.png" alt="" aria-hidden="true" width="16" height="16">
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="contacts-modal__button btn">
+                        <img src="img/contactsModal/vector3.png" alt="" aria-hidden="true" width="20" height="17">
+                        <span>Telegram</span>
+                    </a>
+                </div>
+            </div>
 
+        </div>
+
+    </div>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="js/slick.min.js"></script>

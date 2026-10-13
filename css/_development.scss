@@ -1,5 +1,8 @@
 .development {
     padding-bottom: 90px;
+    @media (max-width: 767px) {
+        padding: 25px 0;
+    }
     &__container {
     }
 
@@ -115,12 +118,18 @@
 }
 .development-format {
     padding-bottom: 80px;
+    @media (max-width: 767px) {
+        padding: 25px 0 50px 0;
+    }
 
     &__container {
     }
 
     &__title {
         margin-bottom: 60px;
+        @media (max-width: 767px) {
+            margin-bottom: 25px;
+        }
     }
 
     &__grid {
@@ -135,6 +144,9 @@
         @media (max-width: 1024px) {
             gap: 20px;
             grid-template-columns: repeat(1, 1fr);
+        }
+        @media (max-width: 767px) {
+            margin-bottom: 35px;
         }
     }
 
@@ -270,12 +282,4 @@
         display: block;
         justify-self: center;
     }
-}
-.container {
-}
-.title {
-}
-.accent {
-}
-.btn {
 }

@@ -1,5 +1,8 @@
 .founder {
     padding-top: 100px;
+    @media (max-width: 767px) {
+        padding: 25px 0;
+    }
 
     &__card {
         min-height: 200px;

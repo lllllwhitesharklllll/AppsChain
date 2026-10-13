@@ -6,6 +6,9 @@
     @media (max-width: 1245px) {
         padding: 125px 0;
     }
+    @media (max-width: 767px) {
+        padding: 25px 0;
+    }
     &__container {
         @media (max-width: 580px) {
             padding-right: 0;

@@ -1,19 +1,27 @@
 .intro {
     &--crypto {
         padding-top: 100px;
-
+        @media (max-width: 767px) {
+            padding: 90px 0 25px 0;
+        }
         .intro__body {
             flex: 1 1 auto;
         }
 
         .intro__title {
             margin-bottom: 44px;
+            @media (max-width: 767px) {
+                margin-bottom: 35px;
+            }
         }
 
         .intro__text {
             margin-bottom: 21px;
             &:nth-of-type(2) {
                 margin-bottom: 55px;
+                @media (max-width: 767px) {
+                    margin-bottom: 35px;
+                }
             }
         }
 
@@ -35,6 +43,9 @@
 }
 
 .features {
+    @media (max-width: 767px) {
+        padding: 25px 0;
+    }
     &__row {
         display: flex;
         margin-bottom: 35px;
@@ -222,9 +233,15 @@
 .roadmap {
     padding-top: 95px;
     padding-bottom: 140px;
+    @media (max-width: 767px) {
+        padding: 25px 0 50px 0;
+    }
 
     &__titile {
         margin-bottom: 120px;
+        @media (max-width: 767px) {
+            margin-bottom: 35px;
+        }
     }
 
     &__wrapper {
@@ -277,6 +294,9 @@
             grid-template-columns: repeat(1, 1fr);
             row-gap: 25px;
             padding: 0;
+        }
+        @media (max-width: 767px) {
+            margin-bottom: 35px;
         }
     }
 

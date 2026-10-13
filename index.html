@@ -21,7 +21,7 @@
                 <nav class="header__menu menu">
                     <ul class="menu__list">
                         <li class="menu__item menu__item--dropdown">
-                            <a href="#" class="menu__link">Услуги</a>
+                            <button type="button" class="menu__link">Услуги</button>
                             <span class="menu__arrow arrow"></span>
                             <ul class="sub-menu">
                                 <li class="sub-menu__item">
@@ -43,7 +43,7 @@
                         </li>
                         <li class="menu__item">
                             <a href="turnkeysolutions.html" class="menu__link">
-                                <span class="menu__link-text menu__link-text--desktop">Готовые решения</span>
+                                <span class="menu__link-text menu__link-text--desktop">Готовые&nbsp;решения</span>
                                 <span class="menu__link-text menu__link-text--mobile">Блокчейн</span>
                             </a>
                         </li>
@@ -54,7 +54,7 @@
                             <a href="partners.html" class="menu__link">Партнерам</a>
                         </li>
                         <li class="menu__item">
-                            <a href="tel:+79778644070" class="menu__link">Контакты</a>
+                            <button type="button" class="menu__link js-contacts-open">Контакты</button>
                         </li>
                     </ul>
                 </nav>
@@ -72,9 +72,9 @@
                         <span class="lang__text">ENG</span>
                     </a>
                 </div>
-                <div class="header__burger-icon">
+                <button type="button" aria-label="меню" class="header__burger-icon">
                     <span></span>
-                </div>
+                </button>
                 <div class="header__mobile-menu mobile-menu"></div>
             </div>
         </header>
@@ -91,10 +91,10 @@
                         <p class="hero__text">
                             От&nbsp;идеи до&nbsp;реализации для стартапов и&nbsp;бизнеса
                         </p>
-                        <a href="tel:+79778644070" class="hero__btn btn">
+                        <button type="button" class="hero__btn btn">
                             <span class="hero__btn-text hero__btn-text--desktop">Получить консультацию</span>
                             <span class="hero__btn-text hero__btn-text--mobile">Заказать</span>
-                        </a>
+                        </button>
                     </div>
 
                     <!-- Настройка строгого диапазона для смены картинок -->
@@ -127,7 +127,7 @@
                                 <div class="services__img-wrapper">
                                     <img src="img/services/services1.png"
                                         alt="3D-иллюстрация магазинной тележки с NFT-токенами" width="500" height="400"
-                                        class="services__img" loading="lazy" decoding="async">
+                                        class="services__img" decoding="async">
                                 </div>
                             </div>
 
@@ -322,7 +322,7 @@
                                 рекламу
                                 только по&nbsp;нужным запросам и&nbsp;интересам.
                             </p>
-                            <a href="#" class="promotion__btn btn">заказать</a>
+                            <button type="button" class="promotion__btn btn">заказать</button>
                         </article>
 
                         <!-- Карточка 2 -->
@@ -338,7 +338,7 @@
                                 в&nbsp;ваших
                                 товарах или услугах. Мировой охват аудитории.
                             </p>
-                            <a href="#" class="promotion__btn btn">заказать</a>
+                            <button type="button" class="promotion__btn btn">заказать</button>
                         </article>
 
                         <!-- Карточка 3 -->
@@ -353,7 +353,7 @@
                                 услуги. Вы
                                 будете знать все о&nbsp;ваших клиентах.
                             </p>
-                            <a href="#" class="promotion__btn btn">заказать</a>
+                            <button type="button" class="promotion__btn btn">заказать</button>
                         </article>
 
                     </div>
@@ -472,7 +472,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="team__btn btn">заказать</a>
+                    <button type="button" class="team__btn btn">заказать</button>
                 </div>
             </section>
             <section class="payment">
@@ -533,7 +533,7 @@
                             конкретные задачи
 
                         </p>
-                        <a href="" class="maintenance__btn btn">заказать</a>
+                        <button type="button" class="maintenance__btn btn">заказать</button>
                     </div>
                     <div class="maintenance__image">
                         <img src="img/maintenance/maintenance1.png" width="550" height="490"
@@ -694,10 +694,40 @@
             </div>
         </footer>
     </div>
+    <div class="contacts-modal" id="contactsModal" aria-hidden="true">
+        <div class="contacts-modal__blackdrop js-contact-close"></div>
+        <div class="contacts-modal__dialog">
+            <div class="contacts-modal__header">
+                <h3 class="contacts-modal__title">Наши контакты</h3>
+                <button type="button" class="contacts-modal__close js-contact-close">
+                    <img src="img/contactsModal/vector1.png" alt="закрыть" height="32" width="32">
+                </button>
+            </div>
+            <div class="contacts-modal__body">
+                <p class="contacts-modal__text">
+                    Для оперативности напишите ваш вопрос в один из мессенджеров. Оценим сроки и стоимость реализации
+                    вашего проекта.
+                </p>
+                <div class="contacts-modal__buttos">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="contacts-modal__button btn">
+                        <img src="img/contactsModal/vector2.png" alt="" aria-hidden="true" width="16" height="16">
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="contacts-modal__button btn">
+                        <img src="img/contactsModal/vector3.png" alt="" aria-hidden="true" width="20" height="17">
+                        <span>Telegram</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/javascript.js"></script>
+
 
 </body>
 
