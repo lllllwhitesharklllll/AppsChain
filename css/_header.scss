@@ -332,6 +332,8 @@
 }
 @media (max-width: 1000px) {
     .mobile-menu {
+        overflow-y: auto;
+        overflow-x: hidden;
         position: fixed;
         top: 0;
         right: -100%; // Изначально прячем блок за правый край экрана
@@ -371,8 +373,10 @@
         }
 
         .header__menu {
+            margin: 0;
             display: block; // Отменяем display: none, чтобы показать меню в мобилке
             order: 2;
+            width: 100%;
 
             .menu__list {
                 padding-left: 60px;

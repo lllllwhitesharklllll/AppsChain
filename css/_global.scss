@@ -5,6 +5,9 @@ body {
     color: #343434;
     height: 100%;
     font-variant-numeric: lining-nums;
+    &.no-scroll {
+        overflow: hidden;
+    }
 }
 .wrapper {
     overflow: hidden;

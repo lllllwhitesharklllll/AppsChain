@@ -127,6 +127,9 @@ body {
   height: 100%;
   font-variant-numeric: lining-nums;
 }
+body.no-scroll {
+  overflow: hidden;
+}
 
 .wrapper {
   overflow: hidden;
@@ -509,6 +512,8 @@ body {
 
 @media (max-width: 1000px) {
   .mobile-menu {
+    overflow-y: auto;
+    overflow-x: hidden;
     position: fixed;
     top: 0;
     right: -100%;
@@ -543,8 +548,10 @@ body {
     transform: translateY(0);
   }
   .mobile-menu .header__menu {
+    margin: 0;
     display: block;
     order: 2;
+    width: 100%;
   }
   .mobile-menu .header__menu .menu__list {
     padding-left: 60px;
