@@ -210,71 +210,6 @@ body {
   color: #10e17d;
 }
 
-.contacts-modal {
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 100;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-.contacts-modal__dialog {
-  position: relative;
-  z-index: 10;
-  justify-self: center;
-  max-width: 900px;
-  border-radius: 25px;
-  padding: 70px;
-  background: linear-gradient(262.53deg, #eaeaea 18.19%, #f9f8f8 51.98%, #f9f8f8 85.78%);
-}
-.contacts-modal__header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 40px;
-}
-.contacts-modal__title {
-  font-weight: 700;
-  font-size: 36px;
-}
-.contacts-modal__close {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  line-height: 0;
-  transition: transform 0.3s ease;
-}
-.contacts-modal__close:hover {
-  transform: scale(1.1);
-}
-.contacts-modal__text {
-  font-weight: 500;
-  font-size: 24px;
-  margin-bottom: 60px;
-}
-.contacts-modal__buttos {
-  display: flex;
-  gap: 30px;
-}
-.contacts-modal__button {
-  font-weight: 500;
-  font-size: 16px;
-  gap: 20px;
-}
-.contacts-modal__blackdrop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-}
-
 .header {
   padding: 21px 0 18px 0;
   position: fixed;
@@ -982,7 +917,7 @@ body {
 }
 @media (max-width: 700px) {
   .services__title {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 0;
     margin-top: 0;
     flex: 1 1 auto;
@@ -1816,7 +1751,7 @@ body {
 .maintenance {
   padding-bottom: 145px;
 }
-@media (max-width: 830px) {
+@media (max-width: 767px) {
   .maintenance {
     padding: 25px 0;
   }
@@ -3701,6 +3636,7 @@ body {
     font-size: 16px;
   }
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -4509,6 +4445,7 @@ body {
 .example-card__text {
   font-size: 14px;
 }
+
 .partner-benefits {
   padding-top: 90px;
 }
@@ -4573,6 +4510,7 @@ body {
     margin-bottom: 15px;
   }
 }
+
 .partner-scheme {
   padding-top: 100px;
   padding-bottom: 180px;

@@ -37,9 +37,6 @@
         }
     }
 
-    &__btn {
-    }
-
     &__example {
         position: relative;
         display: flex;
@@ -143,16 +140,11 @@
     &__text {
         font-size: 14px;
     }
-
-    &__item--reverse {
-    }
 }
 .partner-benefits {
     padding-top: 90px;
     @media (max-width: 767px) {
         padding: 25px 0;
-    }
-    &__container {
     }
 
     &__subtitle {
@@ -202,9 +194,6 @@
             margin-bottom: 15px;
         }
     }
-
-    &__card-text {
-    }
 }
 .partner-scheme {
     padding-top: 100px;
@@ -214,9 +203,6 @@
     }
     @media (max-width: 767px) {
         padding: 25px 0 50px 0;
-    }
-
-    &__container {
     }
 
     &__subtitle {
@@ -290,9 +276,6 @@
         z-index: 2;
 
         font-size: 16px;
-    }
-
-    &__btn-wrap {
     }
 
     &__btn-wrap {

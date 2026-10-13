@@ -505,9 +505,6 @@
         }
     }
 
-    &__body {
-    }
-
     &__text {
         font-weight: 500;
         font-size: 24px;
@@ -546,8 +543,4 @@
         background-color: rgba(0, 0, 0, 0.5); // черный цвет на 50% прозрачности
         backdrop-filter: blur(4px); // красивое размытие сайта позади окна
     }
-}
-.js-contact-close {
-}
-.btn {
 }

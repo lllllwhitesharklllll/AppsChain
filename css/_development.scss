@@ -3,8 +3,6 @@
     @media (max-width: 767px) {
         padding: 25px 0;
     }
-    &__container {
-    }
 
     &__nav {
         margin-bottom: 45px;
@@ -52,9 +50,6 @@
         }
     }
 
-    &__wrapper {
-    }
-
     &__row {
         gap: 30px;
         grid-template-columns: repeat(2, 1fr);
@@ -65,9 +60,6 @@
         &.is-active {
             display: grid;
         }
-    }
-
-    &__row--exchanges {
     }
 
     &__card {
@@ -102,9 +94,6 @@
             font-size: 16px;
         }
     }
-
-    &__row--platforms {
-    }
 }
 @keyframes fadeIn {
     from {
@@ -120,9 +109,6 @@
     padding-bottom: 80px;
     @media (max-width: 767px) {
         padding: 25px 0 50px 0;
-    }
-
-    &__container {
     }
 
     &__title {
@@ -154,9 +140,6 @@
         border-radius: 15px;
         background: linear-gradient(262.53deg, #eaeaea 18.37%, #f9f8f8 52.3%, #f9f8f8 86.23%);
         box-sizing: border-box;
-    }
-
-    &__img-wrap {
     }
 
     &__img {
@@ -273,8 +256,6 @@
         }
         @media (max-width: 1024px) {
             flex-direction: column;
-            .development-format__img-wrap {
-            }
         }
     }
 
