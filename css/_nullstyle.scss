@@ -1,4 +1,4 @@
-// Глобальный сброс отступов и размеров
+// 1. Глобальный сброс коробки и отступов
 *,
 *::before,
 *::after {
@@ -8,36 +8,39 @@
     border: 0;
 }
 
-// Базовые настройки документа
+// 2. Настройки документа (доступный скролл)
 html {
     height: 100%;
-    font-size: 14px;
-
-    scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
 }
 
-// Базовые настройки тела страницы
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+// 3. Базовые настройки тела страницы
 body {
-    min-height: 100%;
-    text-rendering: optimizeSpeed;
+    min-height: 100dvh; // Учитывает плавающую адресную строку на смартфонах
+    overflow-wrap: break-word; // Защита от выпадания длинных слов за экран
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-// Списки
+// 4. Списки
 ul,
 ol {
     list-style: none;
 }
 
-// Ссылки
+// 5. Ссылки
 a {
     text-decoration: none;
     color: inherit;
 }
 
-// Элементы форм
+// 6. Формы и кнопки
 input,
 button,
 textarea,
@@ -49,9 +52,10 @@ select {
 
 button {
     cursor: pointer;
+    user-select: none; // Защита от случайного синего выделения
 }
 
-// Медиа-контент
+// 7. Медиа (картинки, видео, вектор)
 img,
 picture,
 svg,
@@ -61,7 +65,7 @@ video {
     height: auto;
 }
 
-// Заголовки
+// 8. Заголовки (без висячих слов в конце строк)
 h1,
 h2,
 h3,
@@ -70,22 +74,22 @@ h5,
 h6 {
     font-size: inherit;
     font-weight: inherit;
+    text-wrap: balance; // Красивое распределение строк без "одиноких" слов
 }
 
-// Интерактивные элементы: фокус и мобильные тапы
+// 9. Доступность и мобильные тапы
 input,
 textarea,
 button,
 a {
     -webkit-tap-highlight-color: transparent;
 
-    // Доступность: фокус только при навигации с клавиатуры
+    // Фокус только с клавиатуры (в фирменном цвете проекта)
     &:focus-visible {
-        outline: 2px solid #007bff;
+        outline: 2px solid #10e17d;
         outline-offset: 2px;
     }
 
-    // Скрытие контура при клике мышью
     &:focus:not(:focus-visible) {
         outline: none;
     }

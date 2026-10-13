@@ -77,10 +77,16 @@
                 bottom: 0;
             }
             &.is-active {
-                span,
-                &::before,
+                span {
+                    transform: scale(0); // средняя полоска плавно растворяется
+                }
+                &::before {
+                    top: 50%;
+                    transform: translateY(-50%) rotate(45deg); // верхняя встает под 45 градусов
+                }
                 &::after {
-                    background-color: #10e17d;
+                    bottom: 50%;
+                    transform: translateY(50%) rotate(-45deg); // нижняя встает под -45 градусов
                 }
             }
         }

@@ -10,14 +10,17 @@
 
 html {
   height: 100%;
-  font-size: 14px;
-  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
 body {
-  min-height: 100%;
-  text-rendering: optimizeSpeed;
+  min-height: 100dvh;
+  overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -43,6 +46,9 @@ select {
 
 button {
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 img,
@@ -62,6 +68,7 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
+  text-wrap: balance;
 }
 
 input,
@@ -74,7 +81,7 @@ input:focus-visible,
 textarea:focus-visible,
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid #007bff;
+  outline: 2px solid #10e17d;
   outline-offset: 2px;
 }
 input:focus:not(:focus-visible),
@@ -285,8 +292,16 @@ body {
     content: "";
     bottom: 0;
   }
-  .header__burger-icon.is-active span, .header__burger-icon.is-active::before, .header__burger-icon.is-active::after {
-    background-color: #10e17d;
+  .header__burger-icon.is-active span {
+    transform: scale(0);
+  }
+  .header__burger-icon.is-active::before {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .header__burger-icon.is-active::after {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
   }
 }
 
