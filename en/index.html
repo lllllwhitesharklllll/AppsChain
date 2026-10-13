@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appschain</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container container">
+                <a href="index.html" class="header__logo">
+                    <img src="../img/header/logotip.png" alt="appschain logo" class="header__logo-img" width="182"
+                        height="29" decoding="async">
+                </a>
+                <nav class="header__menu menu">
+                    <ul class="menu__list">
+                        <li class="menu__item menu__item--dropdown">
+                            <button type="button" class="menu__link">Services</button>
+                            <span class="menu__arrow arrow"></span>
+                            <ul class="sub-menu">
+                                <li class="sub-menu__item">
+                                    <a href="nft.html" class="sub-menu__link">NFT Marketplaces</a>
+                                </li>
+                                <li class="sub-menu__item">
+                                    <a href="development.html" class="sub-menu__link">Crypto Exchanges and Platforms</a>
+                                </li>
+                                <li class="sub-menu__item">
+                                    <a href="crypto.html" class="sub-menu__link">Ready-made solutions for cryptocurrency
+                                        projects</a>
+                                </li>
+                                <li class="sub-menu__item">
+                                    <a href="outsourced.html" class="sub-menu__link">Outsourced IT department for
+                                        hire</a>
+                                </li>
+                                <li class="sub-menu__item">
+                                    <a href="wallets.html" class="sub-menu__link">Crypto wallets</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__item">
+                            <a href="turnkeysolutions.html" class="menu__link">
+                                <span class="menu__link-text menu__link-text--desktop">Turnkey solutions</span>
+                                <span class="menu__link-text menu__link-text--mobile">Blockchain</span>
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="portfolio.html" class="menu__link">Portfolio</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="partners.html" class="menu__link">Partners</a>
+                        </li>
+                        <li class="menu__item">
+                            <button type="button" class="menu__link js-contacts-open">Contacts</button>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="tel:+79778644070" class="header__phone phone">+7 (977) 864-40-70</a>
+                <div class="header__lang lang">
+                    <button class="lang__current" type="button">
+                        <img src="../img/header/FlagoftheUnitedKingdom.png" alt="Flag of the United Kingdom"
+                            class="lang__flag" width="18" height="12" decoding="async">
+                        <span class="lang__text">ENG</span>
+                        <span class="lang__arrow arrow"></span>
+                    </button>
+                    <a href="../index.html" class="lang__dropdown-link">
+                        <img src="../img/header/FlagoftheRussianFederation.png" alt="Flag of the Russian Federation"
+                            class="lang__flag" width="18" height="12" decoding="async">
+                        <span class="lang__text">РУС</span>
+                    </a>
+                </div>
+                <button type="button" aria-label="Open menu" class="header__burger-icon">
+                    <span></span>
+                </button>
+                <div class="header__mobile-menu mobile-menu"></div>
+            </div>
+        </header>
+        <main class="content">
+            <section class="hero">
+                <div class="hero__container container">
+                    <div class="hero__body">
+                        <h1 class="hero__title">
+                            <span class="hero__title-text hero__title-text--desktop">Blockchain application
+                                development</span>
+                            <span class="hero__title-text hero__title-text--mobile">Blockchain application
+                                development</span>
+                        </h1>
+                        <p class="hero__text">
+                            From concept to implementation for start-ups and businesses
+                        </p>
+                        <button type="button" class="hero__btn btn">
+                            <span class="hero__btn-text hero__btn-text--desktop">Get a free consultation</span>
+                            <span class="hero__btn-text hero__btn-text--mobile">Get in touch</span>
+                        </button>
+                    </div>
+
+                    <!-- Настройка диапазона для смены картинок -->
+                    <picture class="hero__picture">
+                        <source media="(min-width: 757px) and (max-width: 1247px)" srcset="../img/hero/netphone.png"
+                            width="470" height="360">
+                        <img class="hero__img" src="../img/hero/nootbook.png" alt="Online platform interface"
+                            width="586" height="400" decoding="async">
+                    </picture>
+                </div>
+            </section>
+            <section class="services">
+                <div class="services__container container">
+                    <div class="services__slider swiper">
+                        <div class="services__swiper-wrapper">
+                            <!-- Слайд 1 -->
+                            <div class="services__slide swiper-slide">
+                                <div class="services__body">
+                                    <h2 class="services__title">NFT Marketplaces</h2>
+                                    <p class="services__text">
+                                        We develop the most convenient and modern NFT marketplaces of any complexity.
+                                        Custom smart contracts allow you to implement any features.
+                                    </p>
+                                    <a href="nft.html" class="services__btn btn">Learn more</a>
+                                </div>
+                                <div class="services__img-wrapper">
+                                    <img src="../img/services/services1.png"
+                                        alt="3D illustration of a shopping cart with NFT tokens" width="500"
+                                        height="400" class="services__img" decoding="async">
+                                </div>
+                            </div>
+
+                            <!-- Слайд 2 -->
+                            <div class="services__slide swiper-slide">
+                                <div class="services__body">
+                                    <h2 class="services__title">Crypto Exchanges and Platforms</h2>
+                                    <p class="services__text">
+                                        Development of centralized and decentralized cryptocurrency exchanges of any
+                                        complexity: web apps, mobile apps, and Telegram bot formats.
+                                    </p>
+                                    <a href="development.html" class="services__btn btn">Learn more</a>
+                                </div>
+                                <div class="services__img-wrapper">
+                                    <img src="../img/services/services2.png"
+                                        alt="3D model of a crypto coin and circular chart with arrows" width="500"
+                                        height="400" class="services__img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+
+                            <!-- Слайд 3 -->
+                            <div class="services__slide swiper-slide">
+                                <div class="services__body">
+                                    <h2 class="services__title">Ready-made solutions for cryptocurrency projects</h2>
+                                    <p class="services__text">
+                                        From an idea to a turnkey, working product. Fast, reliable, and high-quality.
+                                        Individual selection and implementation of the best solution. We will list your
+                                        project on exchanges.
+                                    </p>
+                                    <a href="crypto.html" class="services__btn btn">Learn more</a>
+                                </div>
+                                <div class="services__img-wrapper">
+                                    <img src="../img/services/services3.png"
+                                        alt="3D illustration of an open box with flying crypto coins" width="500"
+                                        height="400" class="services__img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+
+                            <!-- Слайд 4 -->
+                            <div class="services__slide swiper-slide">
+                                <div class="services__body">
+                                    <h2 class="services__title">Outsourced IT department for hire</h2>
+                                    <p class="services__text">
+                                        We offer you a professional team for your project implementation. You can hire a
+                                        few specialists for a specific task or the whole team for complex solutions
+                                        development.
+                                    </p>
+                                    <a href="outsourced.html" class="services__btn btn">Learn more</a>
+                                </div>
+                                <div class="services__img-wrapper">
+                                    <img src="../img/services/services4.png"
+                                        alt="3D model of an open laptop with network nodes" width="500" height="400"
+                                        class="services__img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+
+                            <!-- Слайд 5 -->
+                            <div class="services__slide swiper-slide">
+                                <div class="services__body">
+                                    <h2 class="services__title">Crypto wallets</h2>
+                                    <p class="services__text">
+                                        We develop custodial and non-custodial wallets of any complexity for storing
+                                        cryptocurrencies. Centralized and decentralized solutions for your users are
+                                        available.
+                                    </p>
+                                    <a href="wallets.html" class="services__btn btn">Learn more</a>
+                                </div>
+                                <div class="services__img-wrapper">
+                                    <img src="../img/services/services5.png"
+                                        alt="3D illustration of a green safe with a coin" width="500" height="400"
+                                        class="services__img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+
+                            <!-- Слайд 6 -->
+                            <div class="services__slide swiper-slide">
+                                <div class="services__body">
+                                    <h2 class="services__title">Turnkey solutions</h2>
+                                    <p class="services__text">
+                                        For those who need a solution here and now. Custom design and proven working
+                                        algorithms. Fast project launch in one month. Full customization to your
+                                        requirements.
+                                    </p>
+                                    <a href="turnkeysolutions.html" class="services__btn btn">Learn more</a>
+                                </div>
+                                <div class="services__img-wrapper">
+                                    <img src="../img/services/services6.png" alt="Turnkey IT solutions and services"
+                                        width="500" height="400" class="services__img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="work">
+                <div class="work__container container">
+                    <h2 class="work__title title">
+                        Briefly about the <span class="accent">work format:</span>
+                    </h2>
+                    <div class="work__body">
+                        <div class="work__item">
+                            <div class="work-step">
+                                <div class="work-step__number">
+                                    <span>01</span>
+                                </div>
+                                <p class="work-step__text">
+                                    We will define your target audience, business processes and service tasks
+                                </p>
+                            </div>
+                        </div>
+                        <div class="work__item">
+                            <div class="work-step">
+                                <div class="work-step__number">
+                                    <span>02</span>
+                                </div>
+                                <p class="work-step__text">
+                                    We will draw up terms of reference in a comfortable question and answer format
+                                </p>
+                            </div>
+                        </div>
+                        <div class="work__item">
+                            <div class="work-step">
+                                <div class="work-step__number">
+                                    <span>03</span>
+                                </div>
+                                <p class="work-step__text">
+                                    We will create corporate identity, design and user logic
+                                </p>
+                            </div>
+                        </div>
+                        <div class="work__item">
+                            <div class="work-step">
+                                <div class="work-step__number">
+                                    <span>04</span>
+                                </div>
+                                <p class="work-step__text">
+                                    We will program and implement the application interface
+                                </p>
+                            </div>
+                        </div>
+                        <div class="work__item">
+                            <div class="work-step">
+                                <div class="work-step__number">
+                                    <span>05</span>
+                                </div>
+                                <p class="work-step__text">
+                                    We will test and host the project on secure servers
+                                </p>
+                            </div>
+                        </div>
+                        <div class="work__item">
+                            <div class="work-step">
+                                <div class="work-step__number">
+                                    <span>06</span>
+                                </div>
+                                <p class="work-step__text">
+                                    We will provide technical support and extend the functionality
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="promotion">
+                <div class="promotion__container container">
+                    <h2 class="promotion__title title">
+                        <span class="accent">Your brand</span> promotion
+                    </h2>
+                    <p class="promotion__sublabel">
+                        We will create a loyal community of fans on social media for your new project or existing
+                        business and attract new users for the app and customers for your products and services.
+                    </p>
+                    <div class="promotion__body">
+
+                        <!-- Карточка 1 -->
+                        <article class="promotion__item">
+                            <img src="../img/promotion/promotion1.png"
+                                alt="Target icon with an arrow - targeted advertising" class="promotion__item-icon"
+                                width="270" height="180" loading="lazy" decoding="async">
+                            <h3 class="promotion__item-title">
+                                Targeted advertising
+                            </h3>
+                            <p class="promotion__item-text">
+                                We will attract only the target audience for your brand. Save your budget by displaying
+                                ads only for the right queries and interests.
+                            </p>
+                            <button type="button" class="promotion__btn btn">Get in touch</button>
+                        </article>
+
+                        <!-- Карточка 2 -->
+                        <article class="promotion__item">
+                            <img src="../img/promotion/promotion2.png"
+                                alt="Megaphone and browser window icon - contextual advertising"
+                                class="promotion__item-icon" width="270" height="180" loading="lazy" decoding="async">
+                            <h3 class="promotion__item-title">
+                                Contextual advertising
+                            </h3>
+                            <p class="promotion__item-text">
+                                Promote your offers on search engines to an audience interested in your products or
+                                services. Capture the attention of a global audience.
+                            </p>
+                            <button type="button" class="promotion__btn btn">Get in touch</button>
+                        </article>
+
+                        <!-- Карточка 3 -->
+                        <article class="promotion__item">
+                            <img src="../img/promotion/promotion3.png" alt="Charts and analytical diagrams icon"
+                                class="promotion__item-icon" width="270" height="180" loading="lazy" decoding="async">
+                            <h3 class="promotion__item-title">
+                                Analytics
+                            </h3>
+                            <p class="promotion__item-text">
+                                Find out the maximum reach of your potential clients and the ways in which they search
+                                for your services. You will know everything about your clients.
+                            </p>
+                            <button type="button" class="promotion__btn btn">Get in touch</button>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+            <div class="founder">
+                <div class="founder__container container">
+                    <article class="founder__card">
+                        <picture class="founder__picture">
+                            <source media="(min-width: 767px) and (max-width: 1245px)"
+                                srcset="../img/founder/foundermobile.png" width="271" height="355">
+                            <img src="../img/founder/founder.png" width="313" height="410" alt="Dmitry Zhukov"
+                                class="founder__image" loading="lazy" decoding="async">
+                        </picture>
+
+                        <div class="founder__body">
+                            <blockquote class="founder__text">
+                                <img src="../img/founder/quote.png" width="80" height="87" alt="quote"
+                                    class="founder__quote" loading="lazy" decoding="async">
+                                All you have to do is understand the importance of your project, and we will do the
+                                rest. Watch your bold ideas come to life.
+                            </blockquote>
+                            <div class="founder__info">
+                                <h3 class="founder__title">Dmitry Zhukov</h3>
+                                <p class="founder__copy">
+                                    AppsChain Founder
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <section class="team">
+                <div class="team__container container">
+                    <h2 class="team__title title">
+                        <span class="accent">The team</span> is the key to a successful project
+                    </h2>
+                    <p class="team__sub-title">
+                        When you book our services, you get a close-knit team of professionals
+                    </p>
+                    <div class="team__slider">
+                        <div class="team__swiper-wrapper">
+                            <!-- Слайд 1 -->
+                            <div class="team__slide">
+                                <img src="../img/team/icon1.png" alt="Project management icon" class="team__icon"
+                                    width="51" height="48" loading="lazy" decoding="async">
+                                <h3 class="team__label">Team lead</h3>
+                                <p class="team__text">
+                                    Always in touch, answers your questions promptly, leads on project results, helps
+                                    with ideas, suggests solutions, does analytics and competitor research, manages the
+                                    project team
+                                </p>
+                            </div>
+                            <!-- Слайд 2 -->
+                            <div class="team__slide">
+                                <img src="../img/team/icon2.png" alt="Design and graphics icon" class="team__icon"
+                                    width="51" height="48" loading="lazy" decoding="async">
+                                <h3 class="team__label">Art director and designers</h3>
+                                <p class="team__text">
+                                    Extensive experience of more than 10 years. Following the latest trends in the
+                                    digital space and app design. Pleasant visuals, user-friendly interface and
+                                    appropriate style. Convenient and simple process logic
+                                </p>
+                            </div>
+                            <!-- Слайд 3 -->
+                            <div class="team__slide">
+                                <img src="../img/team/icon3.png" alt="Programming and development icon"
+                                    class="team__icon" width="51" height="48" loading="lazy" decoding="async">
+                                <h3 class="team__label">Development team</h3>
+                                <p class="team__text">
+                                    Programming from website layout to blockchain (distributed registry) and smart
+                                    contracts of any complexity. High productivity of the application processes is
+                                    ensured by the team experience
+                                </p>
+                            </div>
+                            <!-- Слайд 4 -->
+                            <div class="team__slide">
+                                <img src="../img/team/icon4.png" alt="Copywriting and content icon" class="team__icon"
+                                    width="51" height="48" loading="lazy" decoding="async">
+                                <h3 class="team__label">Content creation team</h3>
+                                <p class="team__text">
+                                    Writing texts for media publications, presentations, White Papers. Defining topics
+                                    and creating a content plan for project blogs. Professional translation in several
+                                    languages.
+                                </p>
+                            </div>
+                            <!-- Слайд 5 -->
+                            <div class="team__slide">
+                                <img src="../img/team/icon5.png" alt="Marketing and promotion icon" class="team__icon"
+                                    width="51" height="48" loading="lazy" decoding="async">
+                                <h3 class="team__label">Marketing team</h3>
+                                <p class="team__text">
+                                    We will audit your current advertising campaign, advise you and develop a new and
+                                    effective business growth strategy to increase revenue. The result is guaranteed by
+                                    proven experience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="team__btn btn">Get in touch</button>
+                </div>
+            </section>
+            <section class="payment">
+                <div class="payment__container container">
+                    <h2 class="payment__title title">
+                        <span class="accent">Payment</span> methods
+                    </h2>
+                    <p class="payment__sub-title">
+                        A flexible payment system makes it possible to arrange a convenient payment schedule. Payments
+                        can be made on a weekly, monthly or scheduled basis
+                    </p>
+                    <div class="payment__wrapper">
+                        <div class="payment__item">
+                            <span class="payment__number">01</span>
+                            <div class="payment__body">
+                                <p class="payment__text">
+                                    Rubles, dollars, euros to the company bank account
+                                </p>
+                                <img src="../img/payment/payment1.png" width="54" height="49" alt="Bank card"
+                                    class="payment__icon" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                        <div class="payment__item">
+                            <span class="payment__number">02</span>
+                            <div class="payment__body">
+                                <p class="payment__text">
+                                    Cryptocurrencies: BTC, ETH, USDT, BRTR
+                                </p>
+                                <img src="../img/payment/payment2.png" width="54" height="49" alt="Cryptocurrency"
+                                    class="payment__icon" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="maintenance">
+                <div class="maintenance__container container">
+                    <div class="maintenance__body">
+                        <h2 class="maintenance__title title">
+                            Application maintenance
+                        </h2>
+                        <p class="maintenance__text">
+                            Once we have finished working on your application - there is a warranty period of 3 months.
+                            If you find bugs, we will fix them for free. If you already have an app - we will audit it
+                            and suggest improvements.
+                        </p>
+                        <p class="maintenance__text">
+                            If your business is growing, your app will eventually need some adjustments and improvements
+                            - we'll be happy to provide ongoing support on a subscription basis or for specific tasks.
+                        </p>
+                        <button type="button" class="maintenance__btn btn">Get in touch</button>
+                    </div>
+                    <div class="maintenance__image">
+                        <img src="../img/maintenance/maintenance1.png" width="550" height="490"
+                            alt="Application development and maintenance" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </section>
+            <section class="media">
+                <div class="media__container container">
+                    <h2 class="media__titile title">
+                        What <span class="accent">the media</span> says:
+                    </h2>
+                    <img src="../img/media/media1.png" alt="Media logos" class="media__image" width="532" height="53"
+                        loading="lazy" decoding="async">
+                </div>
+            </section>
+            <section class="keyteam">
+                <div class="keyteam__container container">
+                    <h2 class="keyteam__title title">The key <span class="accent">team members</span></h2>
+                    <div class="keyteam__wrapper">
+
+                        <!-- Card 1 -->
+                        <article class="keyteam__card">
+                            <div class="keyteam__header">
+                                <img src="../img/keyteam/keyteam1.png" width="210" height="161" alt="Dmitry Zhukov"
+                                    class="keyteam__icon" loading="lazy" decoding="async">
+                                <div class="keyteam__body">
+                                    <h3 class="keyteam__name">Dmitry Zhukov</h3>
+                                    <p class="keyteam__text">Team Lead</p>
+                                </div>
+                            </div>
+                            <ul class="keyteam__list">
+                                <li>Blockchain Application Architect</li>
+                                <li>Over 6&nbsp;years of&nbsp;experience in&nbsp;the blockchain industry</li>
+                                <li>Over 4&nbsp;years of&nbsp;experience in&nbsp;analytics and asset management</li>
+                                <li>Member of&nbsp;the Russian Association of&nbsp;Cryptoindustry, AI&nbsp;and
+                                    Blockchain</li>
+                                <li>Founder of&nbsp;the CryptoZhuk community</li>
+                                <li>President of&nbsp;Barter Smartplace</li>
+                            </ul>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="keyteam__card">
+                            <div class="keyteam__header">
+                                <img src="../img/keyteam/keyteam2.png" width="210" height="161" alt="Anna Guzeva"
+                                    class="keyteam__icon" loading="lazy" decoding="async">
+                                <div class="keyteam__body">
+                                    <h3 class="keyteam__name">Anna Guzeva</h3>
+                                    <p class="keyteam__text">Art Director</p>
+                                </div>
+                            </div>
+                            <ul class="keyteam__list">
+                                <li>UX&nbsp;/ UI&nbsp;Engineer and Designer</li>
+                                <li>Experience working with major brands</li>
+                                <li>Team management for over 3&nbsp;years</li>
+                                <li>Over 10&nbsp;years of&nbsp;total experience in&nbsp;design</li>
+                                <li>Extensive portfolio in&nbsp;the blockchain industry</li>
+                            </ul>
+                        </article>
+
+                        <!-- Card 3 -->
+                        <article class="keyteam__card">
+                            <div class="keyteam__header">
+                                <img src="../img/keyteam/keyteam3.png" width="210" height="161" alt="Dmitry Matnenko"
+                                    class="keyteam__icon" loading="lazy" decoding="async">
+                                <div class="keyteam__body">
+                                    <h3 class="keyteam__name">Dmitry Matnenko</h3>
+                                    <p class="keyteam__text">Marketing Specialist</p>
+                                </div>
+                            </div>
+                            <ul class="keyteam__list">
+                                <li>Over 10&nbsp;years in&nbsp;digital marketing</li>
+                                <li>Worked with major corporations and well-known brands</li>
+                                <li>Certified specialist in&nbsp;targeted and context advertising, optimization and
+                                    analytics</li>
+                                <li>Extensive case studies across diverse industries</li>
+                                <li>Team management for over 2&nbsp;years</li>
+                            </ul>
+                        </article>
+
+                        <!-- Card 4 -->
+                        <article class="keyteam__card">
+                            <div class="keyteam__header">
+                                <img src="../img/keyteam/kyeteam4.png" width="210" height="161" alt="Arseny Kulikov"
+                                    class="keyteam__icon" loading="lazy" decoding="async">
+                                <div class="keyteam__body">
+                                    <h3 class="keyteam__name">Arseny Kulikov</h3>
+                                    <p class="keyteam__text">Back-End Developer</p>
+                                </div>
+                            </div>
+                            <ul class="keyteam__list">
+                                <li>Front-end development for over 4&nbsp;years</li>
+                                <li>Extensive experience in&nbsp;creating complex website animations</li>
+                                <li>Experience with Web3 protocols and blockchain wallets</li>
+                                <li>Over 100 successfully delivered projects</li>
+                                <li>Front-end and layout team management</li>
+                                <li>Integrating smart contracts into web applications</li>
+                            </ul>
+                        </article>
+
+                        <!-- Card 5 -->
+                        <article class="keyteam__card">
+                            <div class="keyteam__header">
+                                <img src="../img/keyteam/keyteam5.png" width="210" height="161"
+                                    alt="Konstantin Zvyagintsev" class="keyteam__icon" loading="lazy" decoding="async">
+                                <div class="keyteam__body">
+                                    <h3 class="keyteam__name">Konstantin Zvyagintsev</h3>
+                                    <p class="keyteam__text">Front-End Developer</p>
+                                </div>
+                            </div>
+                            <ul class="keyteam__list">
+                                <li>Front-end development for over 4&nbsp;years</li>
+                                <li>Extensive experience in&nbsp;creating complex website animations</li>
+                                <li>Experience with Web3 protocols and blockchain wallets</li>
+                                <li>Over 100 successfully delivered projects</li>
+                                <li>Front-end and layout team management</li>
+                                <li>Integrating smart contracts into web applications</li>
+                            </ul>
+                        </article>
+
+                        <!-- Card 6 -->
+                        <article class="keyteam__card">
+                            <div class="keyteam__header">
+                                <img src="../img/keyteam/keyteam6.png" width="210" height="161" alt="Ekaterina Tovkun"
+                                    class="keyteam__icon" loading="lazy" decoding="async">
+                                <div class="keyteam__body">
+                                    <h3 class="keyteam__name">Ekaterina Tovkun</h3>
+                                    <p class="keyteam__text">Graphic Designer</p>
+                                </div>
+                            </div>
+                            <ul class="keyteam__list">
+                                <li>3&nbsp;years of&nbsp;experience in&nbsp;graphic design</li>
+                                <li>Design cases for P2P exchangers and crypto trading platforms</li>
+                                <li>Development of&nbsp;brand logos and illustrations</li>
+                                <li>2&nbsp;years in&nbsp;blockchain application design</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__container container">
+                <a href="index.html" class="footer__logo">
+                    <img src="../img/header/logotip.png" alt="appschain logo" class="footer__logo-img" width="182"
+                        height="29" loading="lazy" decoding="async">
+                </a>
+                <a href="#" class="footer__link">Privacy Policy</a>
+                <p class="footer__copy">© 2022 Barter Smartplace. All rights reserved</p>
+                <p class="footer__text">All rights reserved. Copying graphical or textual materials from this site is
+                    forbidden and constitutes an intellectual property rights infringement. The copyright holder has the
+                    right under Art. 1301(1) of the Civil Code of the Russian Federation to claim, at his own option,
+                    compensation from the infringer in the amount of ten thousand rubles to five million rubles, instead
+                    of reimbursement of damages.
+                </p>
+            </div>
+        </footer>
+    </div>
+    <div class="contacts-modal" id="contactsModal" aria-hidden="true">
+        <div class="contacts-modal__blackdrop js-contact-close"></div>
+        <div class="contacts-modal__dialog">
+            <div class="contacts-modal__header">
+                <h3 class="contacts-modal__title">Our contacts</h3>
+                <button type="button" class="contacts-modal__close js-contact-close">
+                    <img src="../img/contactsModal/vector1.png" alt="Close" height="32" width="32">
+                </button>
+            </div>
+            <div class="contacts-modal__body">
+                <p class="contacts-modal__text">
+                    Send your question to us in one of the messengers. We will assess the cost and project
+                    implementation time.
+                </p>
+                <div class="contacts-modal__buttos">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="contacts-modal__button btn">
+                        <img src="../img/contactsModal/vector2.png" alt="" aria-hidden="true" width="16" height="16">
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="contacts-modal__button btn">
+                        <img src="../img/contactsModal/vector3.png" alt="" aria-hidden="true" width="20" height="17">
+                        <span>Telegram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="../js/slick.min.js"></script>
+    <script src="../js/javascript.js"></script>
+</body>
+
+</html>
