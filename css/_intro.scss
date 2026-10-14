@@ -1,6 +1,6 @@
 .intro {
-    padding-top: 95px;
-    padding-bottom: 40px;
+    padding-top: clamp(80px, 4vw + 40px, 100px);
+    padding-bottom: var(--section-gap);
 
     @media (max-width: 870px) {
         padding-top: 90px;

@@ -79,16 +79,15 @@ body {
 }
 .title {
     font-weight: 700;
-    font-size: 36px;
+    font-size: clamp(24px, 1.15vw + 19.5px, 36px);
     text-align: center;
     color: #343434;
-    @media (max-width: 1245px) {
-        font-size: 32px;
-    }
-    @media (max-width: 645px) {
-        font-size: 24px;
-    }
 }
+
 .accent {
     color: #10e17d;
+}
+:root {
+    // Единый отступ между всеми секциями сайта
+    --section-gap: clamp(35px, 3.5vw + 15px, 80px);
 }

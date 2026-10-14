@@ -1,9 +1,4 @@
 .intro--outsourced {
-    padding-top: 123px;
-    @media (max-width: 767px) {
-        padding: 25px 0;
-    }
-
     .intro__title {
         margin-bottom: 12px;
     }
@@ -27,16 +22,10 @@
             font-size: 20px;
         }
     }
-    .intro__media {
-        padding-top: 32px;
-    }
 }
 
 .outsourced {
-    padding: 62px 0 140px 0;
-    @media (max-width: 767px) {
-        padding: 25px 0 50px 0;
-    }
+    padding-block: var(--section-gap);
     &__container {
         display: flex;
         flex-direction: column;

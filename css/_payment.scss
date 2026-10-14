@@ -1,11 +1,5 @@
 .payment {
-    padding: 140px 0 90px 0;
-    @media (max-width: 1140px) {
-        padding: 150px 0;
-    }
-    @media (max-width: 767px) {
-        padding: 25px 0;
-    }
+    padding-block: var(--section-gap);
 
     &__title {
         margin-bottom: 27px;

@@ -1,8 +1,5 @@
 .team {
-    padding-top: 85px;
-    @media (max-width: 767px) {
-        padding: 25px 0;
-    }
+    padding-block: var(--section-gap);
 
     &__container {
         @media (max-width: 580px) {

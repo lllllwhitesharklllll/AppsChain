@@ -1,7 +1,5 @@
 .services {
-    @media (max-width: 767px) {
-        padding: 25px 0;
-    }
+    padding-block: var(--section-gap);
     &__slider {
         margin-right: 40px; /* Автоматический отступ справа */
         margin-left: 40px; /* Автоматический отступ слева */

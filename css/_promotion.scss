@@ -1,14 +1,7 @@
 .promotion {
     background: linear-gradient(262.53deg, #eaeaea 17.85%, #f9f8f8 51.42%, #f9f8f8 84.99%);
-    padding: 116px 0 113px 0;
+    padding-block: var(--section-gap);
 
-    // Дублирующийся медиа-запрос удален, оставлен один корректный
-    @media (max-width: 1245px) {
-        padding: 125px 0;
-    }
-    @media (max-width: 767px) {
-        padding: 25px 0;
-    }
     &__container {
         @media (max-width: 580px) {
             padding-right: 0;

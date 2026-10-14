@@ -195,20 +195,23 @@ const openBtn = document.querySelector('.js-contacts-open');
 // 3. Находим все элементы закрытия (и крестик, и темный фон)
 const closeBtns = document.querySelectorAll('.js-contact-close');
 
-// Если модалка и кнопка открытия есть на странице:
+// Стало (по стандартам доступности):
 if (contactsModal && openBtn) {
-    // Кликнули на "Контакты" в шапке -> добавляем класс is-open (окно открылось)
+    // Открытие:
     openBtn.addEventListener('click', (e) => {
         e.preventDefault();
         contactsModal.classList.add('is-open');
-        document.body.style.overflow = 'hidden'; // блокируем прокрутку страницы
+        contactsModal.setAttribute('aria-hidden', 'false'); // 1. Делаем доступным
+        document.body.style.overflow = 'hidden';
     });
 
-    // Кликнули на крестик или на темный фон -> удаляем класс is-open (окно закрылось)
+    // Закрытие:
     closeBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
             contactsModal.classList.remove('is-open');
-            document.body.style.overflow = ''; // возвращаем прокрутку страницы
+            contactsModal.setAttribute('aria-hidden', 'true'); // 2. Снова прячем от скринридеров
+            document.body.style.overflow = '';
+            openBtn.focus(); // 3. Возвращаем фокус на кнопку "Контакты", чтобы он не зависал на крестике
         });
     });
 }

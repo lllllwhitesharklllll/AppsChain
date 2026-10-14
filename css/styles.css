@@ -200,23 +200,17 @@ body.no-scroll {
 
 .title {
   font-weight: 700;
-  font-size: 36px;
+  font-size: clamp(24px, 1.15vw + 19.5px, 36px);
   text-align: center;
   color: #343434;
-}
-@media (max-width: 1245px) {
-  .title {
-    font-size: 32px;
-  }
-}
-@media (max-width: 645px) {
-  .title {
-    font-size: 24px;
-  }
 }
 
 .accent {
   color: #10e17d;
+}
+
+:root {
+  --section-gap: clamp(35px, 3.5vw + 15px, 80px);
 }
 
 .header {
@@ -493,7 +487,7 @@ body.no-scroll {
 .lang__dropdown-link::before {
   content: "";
   position: absolute;
-  top: -20px;
+  top: -10px;
   left: 0;
   width: 100%;
   height: 20px;
@@ -721,25 +715,15 @@ body.no-scroll {
 }
 
 .hero {
-  padding-top: 80px;
-  margin-bottom: 92px;
-}
-@media (max-width: 1245px) {
-  .hero {
-    margin-bottom: 125px;
-  }
-}
-@media (max-width: 767px) {
-  .hero {
-    margin-bottom: 25px;
-  }
+  padding-top: clamp(80px, 4vw + 40px, 100px);
+  padding-bottom: var(--section-gap);
 }
 .hero__container {
   gap: 20px;
   display: flex;
   justify-content: space-between;
 }
-@media (max-width: 757px) {
+@media (max-width: 997px) {
   .hero__container {
     flex-wrap: wrap-reverse;
   }
@@ -750,30 +734,19 @@ body.no-scroll {
   display: flex;
   flex-direction: column;
 }
-@media (max-width: 757px) {
+@media (max-width: 997px) {
   .hero__body {
-    padding-top: 30px;
+    padding-top: 0;
   }
 }
 .hero__title {
   margin-bottom: 35px;
   font-weight: 700;
-  font-size: 48px;
+  font-size: clamp(28px, 1.88vw + 21px, 48px);
 }
-@media (max-width: 1245px) {
+@media (max-width: 557px) {
   .hero__title {
-    font-size: 36px;
-    margin-bottom: 30px;
-  }
-}
-@media (max-width: 757px) {
-  .hero__title {
-    margin-bottom: 23px;
-  }
-}
-@media (max-width: 464px) {
-  .hero__title {
-    line-height: 70%;
+    margin-bottom: 20px;
   }
 }
 .hero__title-text--desktop {
@@ -802,15 +775,13 @@ body.no-scroll {
 @media (max-width: 1245px) {
   .hero__text {
     font-size: 20px;
-    margin-right: -40px;
     margin-bottom: 65px;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 557px) {
   .hero__text {
     font-size: 14px;
-    margin-right: -40px;
-    margin-bottom: 45px;
+    margin-bottom: 20px;
   }
 }
 .hero__btn {
@@ -835,6 +806,11 @@ body.no-scroll {
   width: 100%;
   max-width: 586px;
 }
+@media (max-width: 997px) {
+  .hero__picture {
+    margin: 0 auto;
+  }
+}
 @media (min-width: 757px) and (max-width: 1245px) {
   .hero__picture {
     max-width: 470px;
@@ -853,10 +829,8 @@ body.no-scroll {
   flex-shrink: 1;
 }
 
-@media (max-width: 767px) {
-  .services {
-    padding: 25px 0;
-  }
+.services {
+  padding-block: var(--section-gap);
 }
 .services__slider {
   margin-right: 40px; /* Автоматический отступ справа */
@@ -1083,17 +1057,7 @@ body.no-scroll {
 }
 
 .work {
-  padding: 112px 0 135px 0;
-}
-@media (max-width: 1245px) {
-  .work {
-    padding: 90px 0 122px 0;
-  }
-}
-@media (max-width: 767px) {
-  .work {
-    padding: 25px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .work__title {
   margin-bottom: 70px;
@@ -1211,17 +1175,7 @@ body.no-scroll {
 
 .promotion {
   background: linear-gradient(262.53deg, #eaeaea 17.85%, #f9f8f8 51.42%, #f9f8f8 84.99%);
-  padding: 116px 0 113px 0;
-}
-@media (max-width: 1245px) {
-  .promotion {
-    padding: 125px 0;
-  }
-}
-@media (max-width: 767px) {
-  .promotion {
-    padding: 25px 0;
-  }
+  padding-block: var(--section-gap);
 }
 @media (max-width: 580px) {
   .promotion__container {
@@ -1372,12 +1326,7 @@ body.no-scroll {
 }
 
 .founder {
-  padding-top: 100px;
-}
-@media (max-width: 767px) {
-  .founder {
-    padding: 25px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .founder__card {
   min-height: 200px;
@@ -1475,12 +1424,7 @@ body.no-scroll {
 }
 
 .team {
-  padding-top: 85px;
-}
-@media (max-width: 767px) {
-  .team {
-    padding: 25px 0;
-  }
+  padding-block: var(--section-gap);
 }
 @media (max-width: 580px) {
   .team__container {
@@ -1664,17 +1608,7 @@ body.no-scroll {
 }
 
 .payment {
-  padding: 140px 0 90px 0;
-}
-@media (max-width: 1140px) {
-  .payment {
-    padding: 150px 0;
-  }
-}
-@media (max-width: 767px) {
-  .payment {
-    padding: 25px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .payment__title {
   margin-bottom: 27px;
@@ -1780,12 +1714,7 @@ body.no-scroll {
 }
 
 .maintenance {
-  padding-bottom: 145px;
-}
-@media (max-width: 767px) {
-  .maintenance {
-    padding: 25px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .maintenance__container {
   display: flex;
@@ -1875,14 +1804,7 @@ body.no-scroll {
 }
 
 .media {
-  padding: 80px 0 130px 0;
-}
-@media (max-width: 767px) {
-  .media {
-    padding: 25px 0 55px;
-  }
-}
-.media {
+  padding-block: var(--section-gap);
   background: linear-gradient(262.53deg, #eaeaea 18.27%, #f9f8f8 52.13%, #f9f8f8 85.98%);
 }
 .media__titile {
@@ -1900,12 +1822,7 @@ body.no-scroll {
 }
 
 .keyteam {
-  padding: 140px 0;
-}
-@media (max-width: 767px) {
-  .keyteam {
-    padding: 25px 0 50px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .keyteam__card {
   justify-self: center;
@@ -2079,6 +1996,10 @@ body.no-scroll {
   }
 }
 
+.portfolio {
+  padding-top: clamp(80px, 4vw + 40px, 100px);
+  padding-bottom: var(--section-gap);
+}
 .portfolio a {
   display: block;
   width: 100%;
@@ -2096,15 +2017,6 @@ body.no-scroll {
   }
   .portfolio a img:hover {
     filter: grayscale(0%) brightness(1); /* Возвращаем цвет при наведении */
-  }
-}
-.portfolio {
-  padding-top: 143px;
-  padding-bottom: 120px;
-}
-@media (max-width: 767px) {
-  .portfolio {
-    padding: 90px 0 50px 0;
   }
 }
 .portfolio__title {
@@ -2323,8 +2235,8 @@ body.no-scroll {
   }
 }
 .intro {
-  padding-top: 95px;
-  padding-bottom: 40px;
+  padding-top: clamp(80px, 4vw + 40px, 100px);
+  padding-bottom: var(--section-gap);
 }
 @media (max-width: 870px) {
   .intro {
@@ -2408,12 +2320,7 @@ body.no-scroll {
 }
 
 .solutions {
-  padding: 80px 0 0 0;
-}
-@media (max-width: 767px) {
-  .solutions {
-    padding: 25px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .solutions__container {
   display: flex;
@@ -2659,10 +2566,8 @@ body.no-scroll {
   margin-right: 0;
 }
 
-@media (max-width: 767px) {
-  .features {
-    padding: 25px 0;
-  }
+.features {
+  padding-block: var(--section-gap);
 }
 .features__row {
   display: flex;
@@ -2862,13 +2767,7 @@ body.no-scroll {
 }
 
 .roadmap {
-  padding-top: 95px;
-  padding-bottom: 140px;
-}
-@media (max-width: 767px) {
-  .roadmap {
-    padding: 25px 0 50px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .roadmap__titile {
   margin-bottom: 120px;
@@ -2947,6 +2846,9 @@ body.no-scroll {
   /* Стили для ховера */
 }
 .roadmap__item:hover .roadmap__num {
+  color: #343434;
+}
+.roadmap__item:hover .roadmap__text {
   color: #343434;
 }
 .roadmap__item:hover .roadmap__box::before {
@@ -3049,14 +2951,6 @@ body.no-scroll {
   text-align: center;
 }
 
-.intro--outsourced {
-  padding-top: 123px;
-}
-@media (max-width: 767px) {
-  .intro--outsourced {
-    padding: 25px 0;
-  }
-}
 .intro--outsourced .intro__title {
   margin-bottom: 12px;
 }
@@ -3083,17 +2977,9 @@ body.no-scroll {
     font-size: 20px;
   }
 }
-.intro--outsourced .intro__media {
-  padding-top: 32px;
-}
 
 .outsourced {
-  padding: 62px 0 140px 0;
-}
-@media (max-width: 767px) {
-  .outsourced {
-    padding: 25px 0 50px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .outsourced__container {
   display: flex;
@@ -3221,14 +3107,6 @@ body.no-scroll {
   }
 }
 
-.intro--wallets {
-  padding-top: 100px;
-}
-@media (max-width: 767px) {
-  .intro--wallets {
-    padding: 25px 0;
-  }
-}
 .intro--wallets .intro__body {
   flex: 1.2;
 }
@@ -3253,18 +3131,9 @@ body.no-scroll {
     margin-bottom: 60px;
   }
 }
-.intro--wallets .intro__media {
-  padding-top: 55px;
-}
 
 .wallets {
-  padding-top: 85px;
-  padding-bottom: 100px;
-}
-@media (max-width: 767px) {
-  .wallets {
-    padding: 25px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .wallets__list {
   display: flex;
@@ -3467,12 +3336,7 @@ body.no-scroll {
 }
 
 .wallets-steps {
-  padding-bottom: 140px;
-}
-@media (max-width: 767px) {
-  .wallets-steps {
-    padding: 25px 0 50px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .wallets-steps__title {
   margin-bottom: 90px;
@@ -3543,6 +3407,11 @@ body.no-scroll {
 .wallets-steps__card:hover .wallets-steps__text {
   color: #123d2b; /* Цвет текста при наведении */
 }
+@media (max-width: 1033px) {
+  .wallets-steps__card {
+    background: none;
+  }
+}
 .wallets-steps {
   /* Поднимаем контент над зеленым ховером (z-index: 2) */
 }
@@ -3566,12 +3435,7 @@ body.no-scroll {
 }
 
 .development {
-  padding-bottom: 90px;
-}
-@media (max-width: 767px) {
-  .development {
-    padding: 25px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .development__nav {
   margin-bottom: 45px;
@@ -3668,23 +3532,8 @@ body.no-scroll {
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .development-format {
-  padding-bottom: 80px;
-}
-@media (max-width: 767px) {
-  .development-format {
-    padding: 25px 0 50px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .development-format__title {
   margin-bottom: 60px;
@@ -3845,12 +3694,7 @@ body.no-scroll {
    NFT Page Styles
    ========================================================================== */
 .nft-stages {
-  padding: 60px 0;
-}
-@media (max-width: 767px) {
-  .nft-stages {
-    padding: 25px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .nft-stages__wrapper {
   margin-bottom: 35px;
@@ -4075,12 +3919,7 @@ body.no-scroll {
 
 /* Стек и Команда */
 .nft-stack {
-  padding: 80px 0 100px 0;
-}
-@media (max-width: 767px) {
-  .nft-stack {
-    padding: 25px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .nft-stack__title {
   text-align: center;
@@ -4236,12 +4075,7 @@ body.no-scroll {
 
 /* Блок примеров NFT маркетплейсов */
 .nft-portfolio {
-  padding: 60px 0 120px 0;
-}
-@media (max-width: 767px) {
-  .nft-portfolio {
-    padding: 25px 0 50px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .nft-portfolio__title {
   text-align: center;
@@ -4339,12 +4173,7 @@ body.no-scroll {
 }
 
 .partner-income {
-  padding-top: 80px;
-}
-@media (max-width: 767px) {
-  .partner-income {
-    padding: 25px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .partner-income__container {
   display: flex;
@@ -4478,12 +4307,7 @@ body.no-scroll {
 }
 
 .partner-benefits {
-  padding-top: 90px;
-}
-@media (max-width: 767px) {
-  .partner-benefits {
-    padding: 25px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .partner-benefits__subtitle {
   margin-bottom: 30px;
@@ -4543,18 +4367,7 @@ body.no-scroll {
 }
 
 .partner-scheme {
-  padding-top: 100px;
-  padding-bottom: 180px;
-}
-@media (max-width: 1150px) {
-  .partner-scheme {
-    padding: 60px 0;
-  }
-}
-@media (max-width: 767px) {
-  .partner-scheme {
-    padding: 25px 0 50px 0;
-  }
+  padding-block: var(--section-gap);
 }
 .partner-scheme__subtitle {
   margin-bottom: 105px;

@@ -43,9 +43,7 @@
 }
 
 .features {
-    @media (max-width: 767px) {
-        padding: 25px 0;
-    }
+    padding-block: var(--section-gap);
     &__row {
         display: flex;
         margin-bottom: 35px;
@@ -231,11 +229,7 @@
     }
 }
 .roadmap {
-    padding-top: 95px;
-    padding-bottom: 140px;
-    @media (max-width: 767px) {
-        padding: 25px 0 50px 0;
-    }
+    padding-block: var(--section-gap);
 
     &__titile {
         margin-bottom: 120px;
@@ -307,6 +301,9 @@
 
         /* Стили для ховера */
         &:hover .roadmap__num {
+            color: #343434;
+        }
+        &:hover .roadmap__text {
             color: #343434;
         }
         &:hover .roadmap__box::before {

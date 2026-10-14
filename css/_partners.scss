@@ -7,10 +7,7 @@
     }
 }
 .partner-income {
-    padding-top: 80px;
-    @media (max-width: 767px) {
-        padding: 25px 0;
-    }
+    padding-block: var(--section-gap);
     &__container {
         display: flex;
         justify-content: space-between;
@@ -142,10 +139,7 @@
     }
 }
 .partner-benefits {
-    padding-top: 90px;
-    @media (max-width: 767px) {
-        padding: 25px 0;
-    }
+    padding-block: var(--section-gap);
 
     &__subtitle {
         margin-bottom: 30px;
@@ -196,15 +190,7 @@
     }
 }
 .partner-scheme {
-    padding-top: 100px;
-    padding-bottom: 180px;
-    @media (max-width: 1150px) {
-        padding: 60px 0;
-    }
-    @media (max-width: 767px) {
-        padding: 25px 0 50px 0;
-    }
-
+    padding-block: var(--section-gap);
     &__subtitle {
         margin-bottom: 105px;
         @media (max-width: 767px) {

@@ -3,10 +3,7 @@
    ========================================================================== */
 
 .nft-stages {
-    padding: 60px 0;
-    @media (max-width: 767px) {
-        padding: 25px 0;
-    }
+    padding-block: var(--section-gap);
     &__wrapper {
         margin-bottom: 35px;
         @media (max-width: 1020px) {
@@ -215,12 +212,7 @@
 
 /* Стек и Команда */
 .nft-stack {
-    padding: 80px 0 100px 0;
-
-    @media (max-width: 767px) {
-        padding: 25px 0;
-    }
-
+    padding-block: var(--section-gap);
     &__title {
         text-align: center;
         margin-bottom: 60px;
@@ -375,12 +367,7 @@
 
 /* Блок примеров NFT маркетплейсов */
 .nft-portfolio {
-    padding: 60px 0 120px 0;
-
-    @media (max-width: 767px) {
-        padding: 25px 0 50px 0;
-    }
-
+    padding-block: var(--section-gap);
     &__title {
         text-align: center;
         margin-bottom: 60px;

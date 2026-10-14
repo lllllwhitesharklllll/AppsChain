@@ -1,4 +1,6 @@
 .portfolio {
+    padding-top: clamp(80px, 4vw + 40px, 100px);
+    padding-bottom: var(--section-gap);
     a {
         display: block;
         width: 100%;
@@ -18,12 +20,6 @@
                 }
             }
         }
-    }
-
-    padding-top: 143px;
-    padding-bottom: 120px;
-    @media (max-width: 767px) {
-        padding: 90px 0 50px 0;
     }
 
     &__title {
