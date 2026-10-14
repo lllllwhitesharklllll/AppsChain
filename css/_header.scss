@@ -408,26 +408,34 @@
                 }
             }
             // Переделываем выпадающее окно ПК-версии в мобильный спойлер
+            // Переделываем выпадающее окно ПК-версии в мобильный спойлер
             .sub-menu {
                 font-size: 18px;
                 min-width: 164px;
                 margin-left: -10px;
                 flex-basis: 100%;
                 position: static;
-                opacity: 1;
-                visibility: visible;
-                pointer-events: auto;
-                transform: none;
                 box-shadow: none;
                 background: transparent;
                 width: 100%;
                 height: auto;
                 text-align: left;
                 gap: 15px;
-                // Плавное открытие спойлера через высоту
+                border-radius: 0;
+                // 1. ПОЛНОСТЬЮ ПРЯЧЕМ В ЗАКРЫТОМ СОСТОЯНИИ:
                 max-height: 0;
+                padding: 0; // Сбрасываем 15px паддинга, чтобы высота была ровно 0px!
+                opacity: 0; // Прячем прозрачностью
+                visibility: hidden; // Исключаем из видимости браузера
+                pointer-events: none; // Запрещаем случайные нажатия
                 overflow: hidden;
-                transition: max-height 0.5s ease-out;
+
+                // Плавная анимация раскрытия
+                transition:
+                    max-height 0.4s ease,
+                    opacity 0.3s ease,
+                    visibility 0.4s ease,
+                    padding 0.4s ease;
 
                 &::before {
                     display: none; // Убираем невидимую плашку для ховера
@@ -437,7 +445,6 @@
                     font-size: 14px;
                     color: #666;
 
-                    // Зеленый цвет для «Биржи и Обменники», как в вашем макете
                     &:hover,
                     &.active {
                         color: #10e17d;
@@ -445,6 +452,19 @@
                 }
             }
 
+            // Когда на «Услуги» кликнули — раскрываем:
+            .menu__item--dropdown.is-open {
+                .sub-menu {
+                    max-height: 300px;
+                    padding-top: 15px; // Возвращаем аккуратный отступ сверху при открытии
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: auto;
+                }
+                .arrow {
+                    transform: rotate(-180deg);
+                }
+            }
             // Когда на спойлер кликнули, раскрываем его высоту
             .menu__item--dropdown.is-open {
                 .sub-menu {
