@@ -203,7 +203,7 @@
         grid-template-columns: repeat(4, 1fr);
         margin-bottom: 75px;
         gap: 30px;
-        @media (max-width: 1000px) {
+        @media (max-width: 800px) {
             grid-template-columns: repeat(2, 1fr);
             gap: 60px 30px;
         }
@@ -234,12 +234,15 @@
             opacity: 0; // по умолчанию скрыта
             transition: opacity 0.35s ease; // плавность появления градиента
             pointer-events: none; // не мешает кликам
-            @media (max-width: 1000px) {
+            @media (max-width: 1033px) {
                 display: none;
             }
         }
         &:hover::after {
             opacity: 1;
+        }
+        @media (max-width: 1033px) {
+            background-image: none;
         }
         @media (max-width: 580px) {
             padding: 10px;

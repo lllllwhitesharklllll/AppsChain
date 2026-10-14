@@ -121,6 +121,8 @@
     }
 
     &__card {
+        justify-self: center;
+        max-width: 750px;
         border-radius: 15px;
         background: linear-gradient(262.53deg, #eaeaea 18.37%, #f9f8f8 52.3%, #f9f8f8 86.23%);
         box-sizing: border-box;
